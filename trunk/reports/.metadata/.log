@@ -16,3 +16,120 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data @noDefault
 
 !ENTRY org.eclipse.osgi 2 1 2014-05-01 11:14:53.250
 !MESSAGE NLS missing message: ImageSectionDialog_bytes in: com.jaspersoft.studio.messages.messages
+!SESSION 2014-05-01 13:10:35.564 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data @noDefault
+
+!ENTRY com.jaspersoft.studio 1 0 2014-05-01 13:10:50.838
+!MESSAGE Starting JaspersoftStudio bundle - Version: 5.5.2.final
+
+!ENTRY org.eclipse.core.resources 2 10035 2014-05-01 13:10:51.227
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.osgi 2 1 2014-05-01 13:10:56.749
+!MESSAGE NLS unused message: ImageCreationDialog_bytes in: com.jaspersoft.studio.messages.messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-05-01 13:10:56.762
+!MESSAGE NLS missing message: DataAdapterEditorPage_6 in: com.jaspersoft.studio.messages.messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-05-01 13:10:56.764
+!MESSAGE NLS missing message: ImageSectionDialog_bytes in: com.jaspersoft.studio.messages.messages
+!SESSION 2014-05-01 13:10:54.492 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data @noDefault
+
+!ENTRY com.jaspersoft.studio 1 0 2014-05-01 13:11:02.177
+!MESSAGE Starting JaspersoftStudio bundle - Version: 5.5.2.final
+
+!ENTRY org.eclipse.core.resources 2 10035 2014-05-01 13:11:02.337
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.osgi 2 1 2014-05-01 13:11:05.119
+!MESSAGE NLS unused message: ImageCreationDialog_bytes in: com.jaspersoft.studio.messages.messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-05-01 13:11:05.129
+!MESSAGE NLS missing message: DataAdapterEditorPage_6 in: com.jaspersoft.studio.messages.messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-05-01 13:11:05.130
+!MESSAGE NLS missing message: ImageSectionDialog_bytes in: com.jaspersoft.studio.messages.messages
+
+!ENTRY org.eclipse.egit.ui 2 0 2014-05-01 14:00:28.705
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2014-05-01 14:00:28.726
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\jaime'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2014-05-01 14:02:06.739 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data @noDefault
+
+!ENTRY com.jaspersoft.studio 1 0 2014-05-01 14:02:18.308
+!MESSAGE Starting JaspersoftStudio bundle - Version: 5.5.2.final
+
+!ENTRY org.eclipse.core.resources 2 10035 2014-05-01 14:02:18.607
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.osgi 2 1 2014-05-01 14:02:23.354
+!MESSAGE NLS unused message: ImageCreationDialog_bytes in: com.jaspersoft.studio.messages.messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-05-01 14:02:23.371
+!MESSAGE NLS missing message: DataAdapterEditorPage_6 in: com.jaspersoft.studio.messages.messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-05-01 14:02:23.373
+!MESSAGE NLS missing message: ImageSectionDialog_bytes in: com.jaspersoft.studio.messages.messages
+!SESSION 2014-05-01 14:07:59.255 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data @noDefault
+
+!ENTRY com.jaspersoft.studio 1 0 2014-05-01 14:08:09.884
+!MESSAGE Starting JaspersoftStudio bundle - Version: 5.5.2.final
+
+!ENTRY org.eclipse.core.resources 2 10035 2014-05-01 14:08:10.154
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.osgi 2 1 2014-05-01 14:08:14.081
+!MESSAGE NLS unused message: ImageCreationDialog_bytes in: com.jaspersoft.studio.messages.messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-05-01 14:08:14.094
+!MESSAGE NLS missing message: DataAdapterEditorPage_6 in: com.jaspersoft.studio.messages.messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-05-01 14:08:14.096
+!MESSAGE NLS missing message: ImageSectionDialog_bytes in: com.jaspersoft.studio.messages.messages
+
+!ENTRY org.eclipse.equinox.security 1 0 2014-05-01 14:09:04.909
+!MESSAGE New keyring password generated. 
+
+!ENTRY org.eclipse.egit.ui 2 0 2014-05-01 14:12:07.549
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2014-05-01 14:12:07.551
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\jaime'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.

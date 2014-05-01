@@ -18,7 +18,7 @@
 <coolItem id="com.jaspersoft.studio.community.toolbar" itemType="typeToolBarContribution" x="38" y="30"/>
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="53" y="30"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="91" y="22"/>
+<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="91" y="30"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
@@ -34,7 +34,9 @@
 </editorArea>
 </editors>
 <views>
-<view id="org.eclipse.ui.navigator.ProjectExplorer" partName="Project Explorer"/>
+<view id="org.eclipse.ui.navigator.ProjectExplorer" partName="Project Explorer">
+<viewState CommonNavigator.LINKING_ENABLED="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0"/>
+</view>
 <view id="com.jaspersoft.studio.Repository" partName="Repository Explorer">
 <viewState/>
 </view>
@@ -74,8 +76,8 @@
 <alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
 <hide_menu_item_id id="org.eclipse.ui.run"/>
 <hide_menu_item_id id="org.eclipse.search.menu"/>
-<hide_toolbar_item_id id="org.eclipse.ui.workbench.navigate"/>
 <hide_toolbar_item_id id="org.eclipse.debug.ui.commands.RunToLine"/>
+<hide_toolbar_item_id id="org.eclipse.ui.workbench.navigate"/>
 <hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <view id="com.jaspersoft.studio.Repository"/>
