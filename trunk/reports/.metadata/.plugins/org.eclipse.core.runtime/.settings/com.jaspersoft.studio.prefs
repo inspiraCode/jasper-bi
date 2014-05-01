@@ -1,0 +1,8 @@
+UUID=ce5c8dbf-4bc7-4cf1-903c-9b551c7c8b53
+com.jaspersoft.studio.theme.ui.dark=gridColor\=255,255,255\npageMarginColor\=255,0,0\ncontainerMarginColor\=0,255,0\nelementDesignBorderColor\=255,255,0\npageBackground\=0,0,0\n
+com.jaspersoft.studio.theme.ui.light=gridColor\=192,192,192\npageMarginColor\=170,168,255\ncontainerMarginColor\=170,168,255\nelementDesignBorderColor\=0,0,0\npageBackground\=255,255,255\n
+dataAdapters=<dataAdapters>\n<emptyDataAdapter class\="net.sf.jasperreports.data.empty.EmptyDataAdapterImpl"><name>One Empty Record</name><recordCount>1</recordCount></emptyDataAdapter><jdbcDataAdapter class\="net.sf.jasperreports.data.jdbc.JdbcDataAdapterImpl"><name>Sample DB</name><driver>org.hsqldb.jdbcDriver</driver><username>sa</username><password></password><savePassword>true</savePassword><url>jdbc\:hsqldb\:res\:/defaults/hsqldb/test</url><database></database><serverAddress></serverAddress></jdbcDataAdapter></dataAdapters>
+eclipse.preferences.version=1
+jssbranding_product_mainbundle=com.jaspersoft.studio.rcp
+jssbranding_product_name=Jaspersoft Studio Community Edition
+jssbranding_product_version=5.5.2.final
