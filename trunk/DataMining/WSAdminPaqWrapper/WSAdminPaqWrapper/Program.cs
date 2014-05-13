@@ -13,13 +13,13 @@ namespace WSAdminPaqWrapper
         /// </summary>
         static void Main()
         {
-            /*ServiceBase[] ServicesToRun;
+            ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[] 
 			{ 
 				new WSAdminPaqWrapper() 
 			};
-            ServiceBase.Run(ServicesToRun);*/
-            Process.Main.Execute();
+            ServiceBase.Run(ServicesToRun);
+            //Process.Main.Execute();
         }
     }
 }

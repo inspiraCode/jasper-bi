@@ -25,7 +25,7 @@ namespace WSAdminPaqWrapper.Miner
             string sqlString = "SELECT id_empresa, nombre_empresa, ruta " +
                 "FROM cat_empresa;";
 
-            string connectionString = ConfigurationManager.ConnectionStrings[Configuration.Common.MONFOLL].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings[Config.Common.MONFOLL].ConnectionString;
             conn = new NpgsqlConnection(connectionString);
             conn.Open();
 

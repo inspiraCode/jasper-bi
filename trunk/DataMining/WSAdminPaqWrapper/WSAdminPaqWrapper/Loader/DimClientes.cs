@@ -32,7 +32,7 @@ namespace WSAdminPaqWrapper.Loader
 
             if (conn == null || !(conn.State == ConnectionState.Open))
             {
-                string connectionString = ConfigurationManager.ConnectionStrings[Configuration.Common.JASPER].ConnectionString;
+                string connectionString = ConfigurationManager.ConnectionStrings[Config.Common.JASPER].ConnectionString;
                 conn = new NpgsqlConnection(connectionString);
                 conn.Open();
                 didOpenConnection = true;
@@ -78,7 +78,7 @@ namespace WSAdminPaqWrapper.Loader
 
             if (conn == null || !(conn.State == ConnectionState.Open))
             {
-                string connectionString = ConfigurationManager.ConnectionStrings[Configuration.Common.JASPER].ConnectionString;
+                string connectionString = ConfigurationManager.ConnectionStrings[Config.Common.JASPER].ConnectionString;
                 conn = new NpgsqlConnection(connectionString);
                 conn.Open();
                 didOpenConnection = true;
@@ -123,7 +123,7 @@ namespace WSAdminPaqWrapper.Loader
 
             if (conn == null || !(conn.State == ConnectionState.Open))
             {
-                string connectionString = ConfigurationManager.ConnectionStrings[Configuration.Common.JASPER].ConnectionString;
+                string connectionString = ConfigurationManager.ConnectionStrings[Config.Common.JASPER].ConnectionString;
                 conn = new NpgsqlConnection(connectionString);
                 conn.Open();
                 didOpenConnection = true;

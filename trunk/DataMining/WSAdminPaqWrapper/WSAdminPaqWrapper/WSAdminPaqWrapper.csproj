@@ -51,7 +51,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuration\Common.cs" />
+    <Compile Include="Config\Common.cs" />
+    <Compile Include="Config\EnterpriseSection.cs" />
     <Compile Include="Loader\DimClientes.cs" />
     <Compile Include="Loader\DimGrupoVencimiento.cs" />
     <Compile Include="Loader\DimMeses.cs" />
@@ -60,8 +61,11 @@
     <Compile Include="Miner\CatEmpresa.cs" />
     <Compile Include="Miner\CurrentBalances.cs" />
     <Compile Include="Miner\DueBalances.cs" />
+    <Compile Include="Miner\FactUncollectable.cs" />
+    <Compile Include="Miner\SalesPicker.cs" />
     <Compile Include="Process\ETLClientes.cs" />
     <Compile Include="Process\ETLMeses.cs" />
+    <Compile Include="Process\FactCobranza.cs" />
     <Compile Include="Process\FactPorVencer.cs" />
     <Compile Include="Process\FactVencido.cs" />
     <Compile Include="Process\FactVencimiento.cs" />
@@ -96,8 +100,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Configuration\App.config">
+    <None Include="Config\App.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
