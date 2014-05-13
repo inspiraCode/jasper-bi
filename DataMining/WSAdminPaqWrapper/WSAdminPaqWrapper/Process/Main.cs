@@ -43,11 +43,14 @@ namespace WSAdminPaqWrapper.Process
                     MergeCollection(ref cobranzas, FactCobranza.GetFactByEnterprise(empresa, conn));
             }
 
-            foreach (FactCobranza fact in cobranzas)
+            if (cobranzas != null)
             {
-                FactUncollectable incobrable = new FactUncollectable(fact.Month);
-                fact.Uncollectable = incobrable.Uncollectable;
-                AddCollection(fact, conn);
+                foreach (FactCobranza fact in cobranzas)
+                {
+                    FactUncollectable incobrable = new FactUncollectable(fact.Month);
+                    fact.Uncollectable = incobrable.Uncollectable;
+                    AddCollection(fact, conn);
+                }
             }
 
             conn.Close();
