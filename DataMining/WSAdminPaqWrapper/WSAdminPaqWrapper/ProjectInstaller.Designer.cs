@@ -36,11 +36,12 @@
             this.apwServiceProcessInstaller.Account = System.ServiceProcess.ServiceAccount.LocalSystem;
             this.apwServiceProcessInstaller.Password = null;
             this.apwServiceProcessInstaller.Username = null;
+            this.apwServiceProcessInstaller.BeforeInstall += new System.Configuration.Install.InstallEventHandler(this.apwServiceProcessInstaller_BeforeInstall);
             // 
             // apwServiceInstaller
             // 
             this.apwServiceInstaller.Description = "AdminPaq wrapper for postgres database";
-            this.apwServiceInstaller.DisplayName = "apwWrapper";
+            this.apwServiceInstaller.DisplayName = "WSAdminPaqWrapper";
             this.apwServiceInstaller.ServiceName = "WSAdminPaqWrapper";
             this.apwServiceInstaller.StartType = System.ServiceProcess.ServiceStartMode.Automatic;
             // 

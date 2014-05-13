@@ -101,7 +101,7 @@ namespace WSAdminPaqWrapper.Miner
         protected List<string> ConceptosFactura(int empresaId)
         {
             List<string> conceptos = new List<string>();
-            string connectionString = ConfigurationManager.ConnectionStrings[Configuration.Common.MONFOLL].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings[Config.Common.MONFOLL].ConnectionString;
             NpgsqlConnection conn = new NpgsqlConnection(connectionString);
 
             NpgsqlDataReader dr;

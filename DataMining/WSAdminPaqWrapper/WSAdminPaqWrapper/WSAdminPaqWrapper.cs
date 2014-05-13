@@ -6,49 +6,53 @@ using System.Diagnostics;
 using System.Linq;
 using System.ServiceProcess;
 using System.Text;
+using System.Timers;
 
 namespace WSAdminPaqWrapper
 {
     public partial class WSAdminPaqWrapper : ServiceBase
     {
+        private Timer tmrDelay;
+
         public WSAdminPaqWrapper()
         {
             InitializeComponent();
-            if (!System.Diagnostics.EventLog.SourceExists("WSAdminPaqWrapper"))
+            if (!System.Diagnostics.EventLog.SourceExists("WSAdminPaqWrapperService"))
             {
-                System.Diagnostics.EventLog.CreateEventSource("WSAdminPaqWrapper", "WSAdminPaqWrapperLog");
+                System.Diagnostics.EventLog.CreateEventSource("WSAdminPaqWrapperService", "WSAdminPaqWrapperLog");
             }
 
-            eventLogService.Source = "WSAdminPaqWrapper";
+            eventLogService.Source = "WSAdminPaqWrapperService";
             eventLogService.Log = "WSAdminPaqWrapperLog";
+            CommonAdminPaq.AdminPaqLib apl = new CommonAdminPaq.AdminPaqLib();
+            apl.SetDllFolder();
         }
 
         protected override void OnStart(string[] args)
         {
             eventLogService.WriteEntry("WSAdminPaqWrapper Service started.");
-            // Retrieve information
-            try {
-                Process.Main.Execute();
-            }catch(Exception ex){
-                eventLogService.WriteEntry("Exception while running process. " + ex.Message, EventLogEntryType.Error);
-            }
-            Process.Main.Execute();
             // Timer start
-            timerDelay.Start();
+            tmrDelay = new Timer(30000);
+            tmrDelay.Elapsed += new ElapsedEventHandler(timerDelay_Tick);
+            tmrDelay.Enabled = true;
+            tmrDelay.Start();
         }
 
         protected override void OnStop()
         {
-            timerDelay.Stop();
+            tmrDelay.Stop();
             eventLogService.WriteEntry("WSAdminPaqWrapper Service stoped.");
         }
 
         private void timerDelay_Tick(object sender, EventArgs e)
         {
             try {
+                tmrDelay.Interval = 1800000;
+                eventLogService.WriteEntry("PERIODICAL ETL Process Execution BEGIN.");
                 Process.Main.Execute();
+                eventLogService.WriteEntry("PERIODICAL ETL Process Execution END.");
             }catch(Exception ex){
-                eventLogService.WriteEntry("Exception while running process. " + ex.Message, EventLogEntryType.Error);
+                eventLogService.WriteEntry("Exception while running process. " + ex.Message + "::" + ex.StackTrace, EventLogEntryType.Error);
             }
         }
     }

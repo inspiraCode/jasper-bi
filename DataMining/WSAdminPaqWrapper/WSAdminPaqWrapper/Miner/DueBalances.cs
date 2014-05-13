@@ -38,7 +38,9 @@ namespace WSAdminPaqWrapper.Miner
             {
                 throw new Exception("Unable to work with route [" + rutaEmpresa + "]");
             }
-            
+
+            List<string> conceptosCobro = ConceptosFactura(empresaId);
+
             dbResponse = AdminPaqLib.dbGetNoLock(connDocos, TABLE_NAME, INDEX, sFromDate);
             
             while(dbResponse==0)
@@ -77,7 +79,7 @@ namespace WSAdminPaqWrapper.Miner
                     continue;
                 }
 
-                List<string> conceptosCobro = ConceptosFactura(empresaId);
+                
                 if (!conceptosCobro.Contains(concept))
                 {
                     dbResponse = AdminPaqLib.dbSkip(connDocos, TABLE_NAME, INDEX, 1);

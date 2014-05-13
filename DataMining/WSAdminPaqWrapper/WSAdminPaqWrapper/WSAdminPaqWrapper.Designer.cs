@@ -28,15 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.eventLogService = new System.Diagnostics.EventLog();
-            this.timerDelay = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.eventLogService)).BeginInit();
-            // 
-            // timerDelay
-            // 
-            this.timerDelay.Interval = 1800000;
-            this.timerDelay.Tick += new System.EventHandler(this.timerDelay_Tick);
             // 
             // WSAdminPaqWrapper
             // 
@@ -52,6 +45,5 @@
         #endregion
 
         private System.Diagnostics.EventLog eventLogService;
-        private System.Windows.Forms.Timer timerDelay;
     }
 }
