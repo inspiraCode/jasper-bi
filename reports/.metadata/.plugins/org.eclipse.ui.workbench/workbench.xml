@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="11" version="2.0">
+<workbench progressCount="14" version="2.0">
 <workbenchAdvisor/>
 <window height="738" maximized="true" width="683" x="0" y="0">
 <fastViewData fastViewLocation="1024"/>
@@ -21,7 +21,6 @@
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="91" y="30"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
 <coolItem id="com.jaspersoft.studio.editor.JrxmlEditor" itemType="typeToolBarContribution" x="61" y="30"/>
-<coolItem id="com.jaspersoft.studio.graphic.size" itemType="typeToolBarContribution" x="84" y="30"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
@@ -46,13 +45,13 @@
 <editor id="com.jaspersoft.studio.editor.JrxmlEditor" name="Saldos por vencer %.jrxml" partName="Saldos por vencer %.jrxml" path="C:/Users/jaime/Documents/svn_repos/jasper-bi/trunk/reports/MyReports/Saldos por vencer %.jrxml" title="Saldos por vencer %.jrxml" tooltip="MyReports/Saldos por vencer %.jrxml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MyReports/Saldos por vencer %.jrxml"/>
 </editor>
-<editor id="com.jaspersoft.studio.editor.JrxmlEditor" name="Saldos vencidos %.jrxml" partName="Saldos vencidos %.jrxml" path="C:/Users/jaime/Documents/svn_repos/jasper-bi/trunk/reports/MyReports/Saldos vencidos %.jrxml" title="Saldos vencidos %.jrxml" tooltip="MyReports/Saldos vencidos %.jrxml" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="com.jaspersoft.studio.editor.JrxmlEditor" name="Saldos vencidos %.jrxml" partName="Saldos vencidos %.jrxml" path="C:/Users/jaime/Documents/svn_repos/jasper-bi/trunk/reports/MyReports/Saldos vencidos %.jrxml" title="Saldos vencidos %.jrxml" tooltip="MyReports/Saldos vencidos %.jrxml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MyReports/Saldos vencidos %.jrxml"/>
 </editor>
 <editor id="com.jaspersoft.studio.editor.JrxmlEditor" name="Locales.jrxml" partName="Locales.jrxml" path="C:/Users/jaime/Documents/svn_repos/jasper-bi/trunk/reports/MyReports/Locales.jrxml" title="Locales.jrxml" tooltip="MyReports/Locales.jrxml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MyReports/Locales.jrxml"/>
 </editor>
-<editor activePart="true" focus="true" id="com.jaspersoft.studio.editor.JrxmlEditor" name="vencidos % Locales.jrxml" partName="vencidos % Locales.jrxml" path="C:/Users/jaime/Documents/svn_repos/jasper-bi/trunk/reports/MyReports/vencidos % Locales.jrxml" title="vencidos % Locales.jrxml" tooltip="MyReports/vencidos % Locales.jrxml" workbook="DefaultEditorWorkbook">
+<editor id="com.jaspersoft.studio.editor.JrxmlEditor" name="vencidos % Locales.jrxml" partName="vencidos % Locales.jrxml" path="C:/Users/jaime/Documents/svn_repos/jasper-bi/trunk/reports/MyReports/vencidos % Locales.jrxml" title="vencidos % Locales.jrxml" tooltip="MyReports/vencidos % Locales.jrxml" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MyReports/vencidos % Locales.jrxml"/>
 </editor>
 </editors>
@@ -89,8 +88,8 @@
 <alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
 <hide_menu_item_id id="org.eclipse.ui.run"/>
 <hide_menu_item_id id="org.eclipse.search.menu"/>
-<hide_toolbar_item_id id="org.eclipse.ui.workbench.navigate"/>
 <hide_toolbar_item_id id="org.eclipse.debug.ui.commands.RunToLine"/>
+<hide_toolbar_item_id id="org.eclipse.ui.workbench.navigate"/>
 <hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <view id="org.eclipse.ui.views.PropertySheet"/>
@@ -121,7 +120,7 @@
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.11291513" ratioLeft="153" ratioRight="1202" relationship="2" relative="org.eclipse.ui.internal.ViewStack@5b35fd64"/>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@7e6a5a2a" ratio="0.6788991" ratioLeft="814" ratioRight="385" relationship="2" relative="org.eclipse.ui.editorss">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@7e6a5a2a" ratio="0.9082569" ratioLeft="1089" ratioRight="110" relationship="2" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.gef.ui.palette_view" appearance="2" expanded="2">
 <page content="org.eclipse.gef.ui.palette_view" label="Palette"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
@@ -161,60 +160,78 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" path="/MyReports/Cuentas por cobrar (Locales).jrxml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" path="/MyReports/Saldos por vencer %.jrxml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" path="/MyReports/Saldos vencidos %.jrxml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" path="/MyReports/Locales.jrxml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" path="/MyReports/Saldo vencido en días.jrxml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" path="/MyReports/vencidos % Locales.jrxml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" path="/MyReports/Saldos vencidos %.jrxml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" path="/MyReports/Locales.jrxml"/>
 </editors>
-<item historyLabel="Cuentas por cobrar (Locales).jrxml" index="0"/>
-<item historyLabel="Cuentas por cobrar (Locales).jrxml" index="0"/>
-<item historyLabel="Saldos por vencer %.jrxml" index="1">
-<position/>
-</item>
-<item historyLabel="Saldos vencidos %.jrxml" index="2"/>
-<item historyLabel="Saldos por vencer %.jrxml" index="1"/>
-<item historyLabel="Saldos vencidos %.jrxml" index="2"/>
-<item historyLabel="Cuentas por cobrar (Locales).jrxml" index="0"/>
-<item historyLabel="Saldos vencidos %.jrxml" index="2"/>
-<item historyLabel="Saldos por vencer %.jrxml" index="1"/>
-<item historyLabel="Cuentas por cobrar (Locales).jrxml" index="0"/>
-<item historyLabel="Saldos por vencer %.jrxml" index="1"/>
-<item historyLabel="Saldos vencidos %.jrxml" index="2"/>
-<item historyLabel="Cuentas por cobrar (Locales).jrxml" index="0"/>
-<item historyLabel="Locales.jrxml" index="3"/>
-<item historyLabel="Saldos vencidos %.jrxml" index="2"/>
-<item historyLabel="Locales.jrxml" index="3"/>
-<item historyLabel="Saldos vencidos %.jrxml" index="2"/>
-<item historyLabel="Locales.jrxml" index="3"/>
-<item historyLabel="Saldos vencidos %.jrxml" index="2"/>
-<item historyLabel="Locales.jrxml" index="3"/>
-<item historyLabel="Saldos vencidos %.jrxml" index="2"/>
-<item historyLabel="Locales.jrxml" index="3"/>
-<item historyLabel="Saldos vencidos %.jrxml" index="2"/>
-<item historyLabel="Locales.jrxml" index="3"/>
-<item historyLabel="Saldos vencidos %.jrxml" index="2"/>
-<item historyLabel="Locales.jrxml" index="3"/>
-<item historyLabel="Saldos vencidos %.jrxml" index="2"/>
-<item historyLabel="Locales.jrxml" index="3"/>
-<item historyLabel="Saldos por vencer %.jrxml" index="1"/>
-<item historyLabel="Locales.jrxml" index="3"/>
-<item historyLabel="Saldo vencido en días.jrxml" index="4"/>
-<item historyLabel="Locales.jrxml" index="3"/>
-<item historyLabel="Saldo vencido en días.jrxml" index="4"/>
-<item historyLabel="Locales.jrxml" index="3"/>
-<item historyLabel="Saldos vencidos %.jrxml" index="2"/>
-<item historyLabel="Locales.jrxml" index="3"/>
-<item historyLabel="Saldos vencidos %.jrxml" index="2"/>
-<item historyLabel="Locales.jrxml" index="3"/>
-<item active="true" historyLabel="vencidos % Locales.jrxml" index="5"/>
+<item historyLabel="Locales.jrxml" index="2"/>
+<item historyLabel="Saldos vencidos %.jrxml" index="1"/>
+<item historyLabel="Locales.jrxml" index="2"/>
+<item historyLabel="Saldos vencidos %.jrxml" index="1"/>
+<item historyLabel="Locales.jrxml" index="2"/>
+<item historyLabel="Saldos vencidos %.jrxml" index="1"/>
+<item historyLabel="Locales.jrxml" index="2"/>
+<item historyLabel="Saldos vencidos %.jrxml" index="1"/>
+<item historyLabel="Locales.jrxml" index="2"/>
+<item historyLabel="Saldos vencidos %.jrxml" index="1"/>
+<item historyLabel="Locales.jrxml" index="2"/>
+<item historyLabel="Saldos por vencer %.jrxml" index="0"/>
+<item historyLabel="Locales.jrxml" index="2"/>
+<item historyLabel="Saldo vencido en días.jrxml" index="3"/>
+<item historyLabel="Locales.jrxml" index="2"/>
+<item historyLabel="Saldo vencido en días.jrxml" index="3"/>
+<item historyLabel="Locales.jrxml" index="2"/>
+<item historyLabel="Saldos vencidos %.jrxml" index="1"/>
+<item historyLabel="Locales.jrxml" index="2"/>
+<item historyLabel="Saldos vencidos %.jrxml" index="1"/>
+<item historyLabel="Locales.jrxml" index="2"/>
+<item historyLabel="vencidos % Locales.jrxml" index="4"/>
+<item historyLabel="Saldos vencidos %.jrxml" index="5"/>
+<item historyLabel="vencidos % Locales.jrxml" index="4"/>
+<item historyLabel="Locales.jrxml" index="6"/>
+<item historyLabel="vencidos % Locales.jrxml" index="4"/>
+<item historyLabel="Saldos vencidos %.jrxml" index="5"/>
+<item historyLabel="vencidos % Locales.jrxml" index="4"/>
+<item historyLabel="Locales.jrxml" index="6"/>
+<item historyLabel="vencidos % Locales.jrxml" index="4"/>
+<item historyLabel="Saldos vencidos %.jrxml" index="5"/>
+<item historyLabel="vencidos % Locales.jrxml" index="4"/>
+<item historyLabel="Saldos vencidos %.jrxml" index="5"/>
+<item historyLabel="vencidos % Locales.jrxml" index="4"/>
+<item historyLabel="Saldos vencidos %.jrxml" index="5"/>
+<item historyLabel="vencidos % Locales.jrxml" index="4"/>
+<item historyLabel="Saldos vencidos %.jrxml" index="5"/>
+<item historyLabel="vencidos % Locales.jrxml" index="4"/>
+<item historyLabel="Saldos vencidos %.jrxml" index="5"/>
+<item historyLabel="vencidos % Locales.jrxml" index="4"/>
+<item historyLabel="Saldos vencidos %.jrxml" index="5"/>
+<item historyLabel="vencidos % Locales.jrxml" index="4"/>
+<item historyLabel="Saldos vencidos %.jrxml" index="5"/>
+<item historyLabel="vencidos % Locales.jrxml" index="4"/>
+<item historyLabel="Locales.jrxml" index="6"/>
+<item historyLabel="vencidos % Locales.jrxml" index="4"/>
+<item historyLabel="Locales.jrxml" index="6"/>
+<item historyLabel="vencidos % Locales.jrxml" index="4"/>
+<item historyLabel="Locales.jrxml" index="6"/>
+<item active="true" historyLabel="Saldos vencidos %.jrxml" index="5"/>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
+<trimArea IMemento.internal.id="16384">
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@5b35fd64"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@36d39b14"/>
+</trimArea>
+<trimArea IMemento.internal.id="131072">
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@7845bc3c"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@7e6a5a2a"/>
+</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 </trimArea>
@@ -222,6 +239,7 @@
 <trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@2a4944d4"/>
 </trimArea>
 </trimLayout>
 </window>
