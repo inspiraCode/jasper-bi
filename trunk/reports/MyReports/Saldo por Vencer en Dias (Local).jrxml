@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="saldos por vencer en días (Local)" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c3ad74a4-1abb-4f78-b6e7-18b8fd071e2f">
+	<property name="com.jaspersoft.studio.data.sql.tables" value="ZGltX2dydXBvX3ZlbmNpbWllbnRvICwyMTgsMzg7ZGltX2NsaWVudGVzICwyMCwxNzc7ZmFjdF9w&#xA;b3JfdmVuY2VyICwyMCwyMDs="/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="rhjasper"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT dim_grupo_vencimiento.minimo_dias || '-' || dim_grupo_vencimiento.maximo_dias AS Grupo, 
+COALESCE (Suma_Saldo.por_vencer, 0 ) AS saldo_x_vencer
+FROM dim_grupo_vencimiento
+
+LEFT JOIN
+
+(SELECT SUM(fact_por_vencer.saldo_por_vencer) AS por_vencer,
+	dim_grupo_vencimiento.minimo_dias || '-' || dim_grupo_vencimiento.maximo_dias AS Grupo
+FROM dim_grupo_vencimiento
+	 LEFT JOIN fact_por_vencer ON 
+	 fact_por_vencer.id_grupo_vencimiento = dim_grupo_vencimiento.id_grupo_vencimiento 
+	 LEFT JOIN dim_clientes ON 
+	 dim_clientes.id_cliente = fact_por_vencer.id_cliente
+WHERE dim_clientes.es_local = true
+GROUP BY Grupo) AS Suma_Saldo ON Suma_Saldo.Grupo = dim_grupo_vencimiento.minimo_dias || '-' || dim_grupo_vencimiento.maximo_dias
+
+ORDER BY Grupo ASC]]>
+	</queryString>
+	<field name="grupo" class="java.lang.String"/>
+	<field name="saldo_x_vencer" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="389" splitType="Stretch">
+			<barChart>
+				<chart isShowLegend="false" evaluationTime="Report">
+					<reportElement mode="Opaque" x="10" y="80" width="730" height="289" backcolor="#FFFFFF" uuid="4bc6a7f8-18a8-4e31-aa92-24f70d2efa75"/>
+					<chartTitle>
+						<font size="10" isBold="true"/>
+						<titleExpression><![CDATA["Local"]]></titleExpression>
+					</chartTitle>
+					<chartSubtitle>
+						<font size="14" isBold="true"/>
+						<subtitleExpression><![CDATA["Saldos por vencer en días"]]></subtitleExpression>
+					</chartSubtitle>
+					<chartLegend textColor="#FFFFFF" backgroundColor="#000000">
+						<font isBold="true"/>
+					</chartLegend>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{saldo_x_vencer}]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{grupo}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{saldo_x_vencer}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot isShowLabels="true" isShowTickLabels="true" isShowTickMarks="true">
+					<plot backcolor="#FFFFFF">
+						<seriesColor seriesOrder="0" color="rgba(0, 171, 6, 0.99607843)"/>
+						<seriesColor seriesOrder="1" color="#0AB600"/>
+						<seriesColor seriesOrder="2" color="#0AB600"/>
+						<seriesColor seriesOrder="3" color="#0AB600"/>
+					</plot>
+					<itemLabel color="#000000" backgroundColor="#000000">
+						<font isBold="true"/>
+					</itemLabel>
+					<categoryAxisLabelExpression><![CDATA["Días de saldos por vencer"]]></categoryAxisLabelExpression>
+					<categoryAxisFormat>
+						<axisFormat verticalTickLabels="false">
+							<labelFont>
+								<font size="11" isBold="true"/>
+							</labelFont>
+							<tickLabelFont>
+								<font isBold="true"/>
+							</tickLabelFont>
+						</axisFormat>
+					</categoryAxisFormat>
+					<valueAxisLabelExpression><![CDATA["$ Montos "]]></valueAxisLabelExpression>
+					<valueAxisFormat>
+						<axisFormat>
+							<labelFont>
+								<font isBold="true"/>
+							</labelFont>
+						</axisFormat>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+		</band>
+	</title>
+</jasperReport>

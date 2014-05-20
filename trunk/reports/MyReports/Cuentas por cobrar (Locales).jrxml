@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Cuentas por cobrar (Locales)" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9d18ae23-2b54-4bb8-af47-4cc91e8a5cbe">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="rhjasper"/>
+	<queryString>
+		<![CDATA[SELECT (SELECT SUM(saldo_vencido) FROM fact_vencido
+	JOIN dim_clientes ON fact_vencido.id_cliente = dim_clientes.id_cliente
+	WHERE dim_clientes.es_local = true) AS vencido, (SELECT SUM(saldo_por_vencer) FROM fact_por_vencer JOIN dim_clientes ON fact_por_vencer.id_cliente = dim_clientes.id_cliente
+	WHERE dim_clientes.es_local = true) AS por_vencer]]>
+	</queryString>
+	<field name="vencido" class="java.math.BigDecimal"/>
+	<field name="por_vencer" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<summary>
+		<band height="273" splitType="Stretch">
+			<pie3DChart>
+				<chart evaluationTime="Report">
+					<reportElement key="" x="80" y="10" width="590" height="240" uuid="ae9b541d-a40b-419f-b1bd-61802f389f64"/>
+					<chartTitle>
+						<font size="14" isBold="true"/>
+						<titleExpression><![CDATA["Cuentas por cobrar locales"]]></titleExpression>
+					</chartTitle>
+					<chartSubtitle/>
+					<chartLegend>
+						<font isBold="true"/>
+					</chartLegend>
+				</chart>
+				<pieDataset maxCount="2">
+					<pieSeries>
+						<keyExpression><![CDATA[$F{por_vencer}]]></keyExpression>
+						<valueExpression><![CDATA[$F{por_vencer}]]></valueExpression>
+					</pieSeries>
+					<pieSeries>
+						<keyExpression><![CDATA[$F{vencido}]]></keyExpression>
+						<valueExpression><![CDATA[$F{vencido}]]></valueExpression>
+					</pieSeries>
+					<otherKeyExpression><![CDATA[]]></otherKeyExpression>
+				</pieDataset>
+				<pie3DPlot isShowLabels="true" isCircular="true">
+					<plot>
+						<seriesColor seriesOrder="0" color="#25A308"/>
+						<seriesColor seriesOrder="1" color="#FF0000"/>
+					</plot>
+					<itemLabel color="#000000" backgroundColor="#FFFFFF">
+						<font isBold="true"/>
+					</itemLabel>
+				</pie3DPlot>
+			</pie3DChart>
+		</band>
+	</summary>
+</jasperReport>

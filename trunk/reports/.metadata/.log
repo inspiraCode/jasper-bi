@@ -6018,3 +6018,24 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data @noDefault
 
 !ENTRY org.eclipse.osgi 2 1 2014-05-13 11:19:39.599
 !MESSAGE NLS missing message: ImageSectionDialog_bytes in: com.jaspersoft.studio.messages.messages
+!SESSION 2014-05-20 08:36:09.208 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data @noDefault
+
+!ENTRY com.jaspersoft.studio 1 0 2014-05-20 08:36:21.249
+!MESSAGE Starting JaspersoftStudio bundle - Version: 5.5.2.final
+
+!ENTRY org.eclipse.core.resources 2 10035 2014-05-20 08:36:21.747
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.osgi 2 1 2014-05-20 08:36:29.898
+!MESSAGE NLS unused message: ImageCreationDialog_bytes in: com.jaspersoft.studio.messages.messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-05-20 08:36:29.996
+!MESSAGE NLS missing message: DataAdapterEditorPage_6 in: com.jaspersoft.studio.messages.messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-05-20 08:36:29.998
+!MESSAGE NLS missing message: ImageSectionDialog_bytes in: com.jaspersoft.studio.messages.messages
