@@ -26,4 +26,11 @@
 		<nature>net.sf.jasperreports.nature</nature>
 		<nature>com.jaspersoft.studio.babel.editor.rbeNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>chartSamples.jrxml</name>
+			<type>1</type>
+			<location>C:/Jaspersoft/jasperreports-server-cp-5.5.0/samples/reports/chartSamples.jrxml</location>
+		</link>
+	</linkedResources>
 </projectDescription>
