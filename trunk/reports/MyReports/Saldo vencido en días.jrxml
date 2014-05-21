@@ -65,7 +65,7 @@ ORDER BY Grupo ASC]]>
 					</itemLabel>
 					<categoryAxisLabelExpression><![CDATA["Días de saldos vencidos"]]></categoryAxisLabelExpression>
 					<categoryAxisFormat>
-						<axisFormat tickLabelMask="">
+						<axisFormat>
 							<labelFont>
 								<font size="11" isBold="true"/>
 							</labelFont>

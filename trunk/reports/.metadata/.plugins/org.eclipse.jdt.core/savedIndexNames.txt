@@ -1,20 +1,2 @@
 INDEX VERSION 1.126+C:\Users\jaime\Documents\svn_repos\jasper-bi\trunk\reports\.metadata\.plugins\org.eclipse.jdt.core
-2631092911.index
 2142118396.index
-4050785559.index
-4032378076.index
-4275410420.index
-320408656.index
-352824406.index
-3644003544.index
-1780150184.index
-1258356551.index
-4005298880.index
-636658067.index
-421996297.index
-1758512887.index
-2603285800.index
-3114181969.index
-3820149984.index
-1126513878.index
-716075945.index

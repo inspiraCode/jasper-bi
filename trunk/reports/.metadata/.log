@@ -6039,3 +6039,423 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data @noDefault
 
 !ENTRY org.eclipse.osgi 2 1 2014-05-20 08:36:29.998
 !MESSAGE NLS missing message: ImageSectionDialog_bytes in: com.jaspersoft.studio.messages.messages
+!SESSION 2014-05-20 08:52:27.291 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data @noDefault
+
+!ENTRY com.jaspersoft.studio 1 0 2014-05-20 08:52:34.244
+!MESSAGE Starting JaspersoftStudio bundle - Version: 5.5.2.final
+
+!ENTRY org.eclipse.core.resources 2 10035 2014-05-20 08:52:34.377
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.osgi 2 1 2014-05-20 08:52:36.224
+!MESSAGE NLS unused message: ImageCreationDialog_bytes in: com.jaspersoft.studio.messages.messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-05-20 08:52:36.232
+!MESSAGE NLS missing message: DataAdapterEditorPage_6 in: com.jaspersoft.studio.messages.messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-05-20 08:52:36.233
+!MESSAGE NLS missing message: ImageSectionDialog_bytes in: com.jaspersoft.studio.messages.messages
+!SESSION 2014-05-20 08:53:52.031 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data @noDefault
+
+!ENTRY com.jaspersoft.studio 1 0 2014-05-20 08:53:59.955
+!MESSAGE Starting JaspersoftStudio bundle - Version: 5.5.2.final
+
+!ENTRY org.eclipse.core.resources 2 10035 2014-05-20 08:54:00.138
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.osgi 2 1 2014-05-20 08:54:02.640
+!MESSAGE NLS unused message: ImageCreationDialog_bytes in: com.jaspersoft.studio.messages.messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-05-20 08:54:02.647
+!MESSAGE NLS missing message: DataAdapterEditorPage_6 in: com.jaspersoft.studio.messages.messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-05-20 08:54:02.648
+!MESSAGE NLS missing message: ImageSectionDialog_bytes in: com.jaspersoft.studio.messages.messages
+
+!ENTRY org.eclipse.egit.ui 2 0 2014-05-20 09:11:07.724
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2014-05-20 09:11:07.726
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\jaime'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2014-05-20 09:19:18.801 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data @noDefault
+
+!ENTRY com.jaspersoft.studio 1 0 2014-05-20 09:19:27.213
+!MESSAGE Starting JaspersoftStudio bundle - Version: 5.5.2.final
+
+!ENTRY org.eclipse.core.resources 2 10035 2014-05-20 09:19:27.439
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.osgi 2 1 2014-05-20 09:19:30.203
+!MESSAGE NLS unused message: ImageCreationDialog_bytes in: com.jaspersoft.studio.messages.messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-05-20 09:19:30.251
+!MESSAGE NLS missing message: DataAdapterEditorPage_6 in: com.jaspersoft.studio.messages.messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-05-20 09:19:30.253
+!MESSAGE NLS missing message: ImageSectionDialog_bytes in: com.jaspersoft.studio.messages.messages
+
+!ENTRY org.eclipse.egit.ui 2 0 2014-05-20 09:19:53.827
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2014-05-20 09:19:53.884
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\jaime'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2014-05-20 09:20:53.794 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data @noDefault
+
+!ENTRY com.jaspersoft.studio 1 0 2014-05-20 09:21:02.354
+!MESSAGE Starting JaspersoftStudio bundle - Version: 5.5.2.final
+
+!ENTRY org.eclipse.core.resources 2 10035 2014-05-20 09:21:02.498
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.osgi 2 1 2014-05-20 09:21:05.077
+!MESSAGE NLS unused message: ImageCreationDialog_bytes in: com.jaspersoft.studio.messages.messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-05-20 09:21:05.086
+!MESSAGE NLS missing message: DataAdapterEditorPage_6 in: com.jaspersoft.studio.messages.messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-05-20 09:21:05.087
+!MESSAGE NLS missing message: ImageSectionDialog_bytes in: com.jaspersoft.studio.messages.messages
+
+!ENTRY org.eclipse.egit.ui 2 0 2014-05-20 09:21:08.467
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2014-05-20 09:21:08.468
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\jaime'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.jface 4 2 2014-05-20 10:29:57.692
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jface".
+!STACK 0
+java.lang.NullPointerException
+	at com.jaspersoft.studio.preferences.util.FieldEditorOverlayPage.setupWPREnabled(FieldEditorOverlayPage.java:275)
+	at com.jaspersoft.studio.preferences.util.FieldEditorOverlayPage.createSelectionGroup(FieldEditorOverlayPage.java:260)
+	at com.jaspersoft.studio.preferences.util.FieldEditorOverlayPage.createContents(FieldEditorOverlayPage.java:216)
+	at org.eclipse.jface.preference.PreferencePage.createControl(PreferencePage.java:232)
+	at com.jaspersoft.studio.preferences.util.FieldEditorOverlayPage.createControl(FieldEditorOverlayPage.java:190)
+	at org.eclipse.jface.preference.PreferenceDialog.createPageControl(PreferenceDialog.java:1502)
+	at org.eclipse.jface.preference.PreferenceDialog$14.run(PreferenceDialog.java:1259)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.JFaceUtil$1.run(JFaceUtil.java:49)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:175)
+	at org.eclipse.jface.preference.PreferenceDialog.showPage(PreferenceDialog.java:1253)
+	at org.eclipse.ui.internal.dialogs.FilteredPreferenceDialog.showPage(FilteredPreferenceDialog.java:676)
+	at org.eclipse.jface.preference.PreferenceDialog$10.run(PreferenceDialog.java:709)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.jface.preference.PreferenceDialog$9.selectionChanged(PreferenceDialog.java:705)
+	at org.eclipse.jface.viewers.StructuredViewer$3.run(StructuredViewer.java:888)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.JFaceUtil$1.run(JFaceUtil.java:49)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:175)
+	at org.eclipse.jface.viewers.StructuredViewer.firePostSelectionChanged(StructuredViewer.java:886)
+	at org.eclipse.jface.viewers.StructuredViewer.setSelection(StructuredViewer.java:1726)
+	at org.eclipse.jface.viewers.TreeViewer.setSelection(TreeViewer.java:1139)
+	at org.eclipse.jface.preference.PreferenceDialog.selectSavedItem(PreferenceDialog.java:1055)
+	at org.eclipse.ui.internal.dialogs.FilteredPreferenceDialog.selectSavedItem(FilteredPreferenceDialog.java:731)
+	at org.eclipse.jface.preference.PreferenceDialog$4.run(PreferenceDialog.java:376)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.jface.preference.PreferenceDialog.createContents(PreferenceDialog.java:372)
+	at org.eclipse.jface.window.Window.create(Window.java:431)
+	at org.eclipse.jface.dialogs.Dialog.create(Dialog.java:1089)
+	at org.eclipse.ui.internal.dialogs.PropertyDialog.createDialogOn(PropertyDialog.java:83)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.createDialog(PropertyDialogAction.java:175)
+	at org.eclipse.ui.dialogs.PropertyDialogAction.run(PropertyDialogAction.java:156)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:498)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:584)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:501)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:411)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4169)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3758)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at com.jaspersoft.studio.rcp.intro.Application.start(Application.java:97)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+
+!ENTRY org.eclipse.ui 4 0 2014-05-20 10:58:22.675
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.ClassCastException: com.jaspersoft.studio.components.chart.editor.ChartThemeEditor cannot be cast to com.jaspersoft.studio.editor.report.AbstractVisualEditor
+	at com.jaspersoft.studio.editor.outline.JDReportOutlineView$5.mouseDoubleClick(JDReportOutlineView.java:342)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:196)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4169)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3758)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at com.jaspersoft.studio.rcp.intro.Application.start(Application.java:97)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+
+!ENTRY org.eclipse.ui 4 0 2014-05-20 12:10:19.001
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Graphic is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4361)
+	at org.eclipse.swt.SWT.error(SWT.java:4276)
+	at org.eclipse.swt.SWT.error(SWT.java:4247)
+	at org.eclipse.swt.graphics.Image.getBounds(Image.java:1165)
+	at org.eclipse.swt.widgets.Button.computeSize(Button.java:439)
+	at org.eclipse.swt.layout.GridData.computeSize(GridData.java:491)
+	at org.eclipse.swt.layout.GridLayout.layout(GridLayout.java:218)
+	at org.eclipse.swt.layout.GridLayout.computeSize(GridLayout.java:163)
+	at org.eclipse.swt.widgets.Composite.computeSize(Composite.java:233)
+	at org.eclipse.ui.forms.widgets.LayoutComposite.computeSize(LayoutComposite.java:35)
+	at org.eclipse.swt.layout.GridData.computeSize(GridData.java:491)
+	at org.eclipse.swt.layout.GridLayout.layout(GridLayout.java:218)
+	at org.eclipse.swt.layout.GridLayout.computeSize(GridLayout.java:163)
+	at org.eclipse.swt.widgets.Composite.computeSize(Composite.java:233)
+	at org.eclipse.ui.forms.widgets.LayoutComposite.computeSize(LayoutComposite.java:35)
+	at org.eclipse.ui.forms.widgets.SizeCache.controlComputeSize(SizeCache.java:390)
+	at org.eclipse.ui.forms.widgets.SizeCache.computeMinimumWidth(SizeCache.java:429)
+	at org.eclipse.ui.forms.widgets.SizeCache.computeSize(SizeCache.java:189)
+	at org.eclipse.ui.forms.widgets.ExpandableComposite$ExpandableLayout.computeSize(ExpandableComposite.java:478)
+	at org.eclipse.ui.forms.widgets.ExpandableComposite.computeSize(ExpandableComposite.java:954)
+	at org.eclipse.swt.layout.GridData.computeSize(GridData.java:491)
+	at org.eclipse.swt.layout.GridLayout.layout(GridLayout.java:218)
+	at org.eclipse.swt.layout.GridLayout.computeSize(GridLayout.java:163)
+	at org.eclipse.swt.widgets.Composite.computeSize(Composite.java:233)
+	at org.eclipse.ui.forms.widgets.LayoutComposite.computeSize(LayoutComposite.java:35)
+	at org.eclipse.swt.widgets.Control.computeSize(Control.java:614)
+	at org.eclipse.ui.forms.widgets.ColumnLayout.computeControlSize(ColumnLayout.java:156)
+	at org.eclipse.ui.forms.widgets.ColumnLayout.computeSize(ColumnLayout.java:105)
+	at org.eclipse.ui.forms.widgets.ColumnLayout.computeSize(ColumnLayout.java:84)
+	at org.eclipse.ui.forms.widgets.LayoutComposite.computeSize(LayoutComposite.java:33)
+	at org.eclipse.swt.layout.GridData.computeSize(GridData.java:491)
+	at org.eclipse.swt.layout.GridLayout.layout(GridLayout.java:218)
+	at org.eclipse.swt.layout.GridLayout.computeSize(GridLayout.java:163)
+	at org.eclipse.swt.widgets.Composite.computeSize(Composite.java:233)
+	at org.eclipse.ui.forms.widgets.LayoutComposite.computeSize(LayoutComposite.java:35)
+	at org.eclipse.swt.layout.GridData.computeSize(GridData.java:491)
+	at org.eclipse.swt.layout.GridLayout.layout(GridLayout.java:218)
+	at org.eclipse.swt.layout.GridLayout.computeSize(GridLayout.java:163)
+	at org.eclipse.swt.widgets.Composite.computeSize(Composite.java:233)
+	at org.eclipse.ui.forms.widgets.LayoutComposite.computeSize(LayoutComposite.java:35)
+	at org.eclipse.swt.custom.ScrolledCompositeLayout.computeSize(ScrolledCompositeLayout.java:32)
+	at org.eclipse.swt.widgets.Composite.computeSize(Composite.java:233)
+	at org.eclipse.swt.layout.GridData.computeSize(GridData.java:491)
+	at org.eclipse.swt.layout.GridLayout.layout(GridLayout.java:218)
+	at org.eclipse.swt.layout.GridLayout.computeSize(GridLayout.java:163)
+	at org.eclipse.swt.widgets.Composite.computeSize(Composite.java:233)
+	at org.eclipse.ui.forms.widgets.LayoutComposite.computeSize(LayoutComposite.java:35)
+	at org.eclipse.swt.layout.FormData.computeSize(FormData.java:128)
+	at org.eclipse.swt.layout.FormLayout.layout(FormLayout.java:320)
+	at org.eclipse.swt.layout.FormLayout.layout(FormLayout.java:286)
+	at org.eclipse.swt.widgets.Composite.updateLayout(Composite.java:1263)
+	at org.eclipse.swt.widgets.Composite.updateLayout(Composite.java:1270)
+	at org.eclipse.swt.widgets.Composite.updateLayout(Composite.java:1270)
+	at org.eclipse.swt.widgets.Composite.updateLayout(Composite.java:1270)
+	at org.eclipse.swt.widgets.Composite.updateLayout(Composite.java:1270)
+	at org.eclipse.swt.widgets.Composite.updateLayout(Composite.java:1270)
+	at org.eclipse.swt.widgets.Composite.updateLayout(Composite.java:1270)
+	at org.eclipse.swt.widgets.Composite.updateLayout(Composite.java:1249)
+	at org.eclipse.swt.widgets.Composite.layout(Composite.java:664)
+	at org.eclipse.swt.widgets.Display.runSettings(Display.java:4233)
+	at org.eclipse.swt.widgets.Display.messageProc(Display.java:3355)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:2546)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3756)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at com.jaspersoft.studio.rcp.intro.Application.start(Application.java:97)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+
+!ENTRY org.eclipse.ui 4 0 2014-05-20 16:00:18.993
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.ui.internal.EditorSiteDragAndDropServiceImpl$1.dragLeave(EditorSiteDragAndDropServiceImpl.java:107)
+	at org.eclipse.swt.dnd.DNDListener.handleEvent(DNDListener.java:70)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1062)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:774)
+	at org.eclipse.swt.dnd.DropTarget.Drop(DropTarget.java:403)
+	at org.eclipse.swt.dnd.DropTarget.Drop_64(DropTarget.java:392)
+	at org.eclipse.swt.dnd.DropTarget$3.method6(DropTarget.java:260)
+	at org.eclipse.swt.internal.ole.win32.COMObject.callback6(COMObject.java:119)
+	at org.eclipse.swt.internal.ole.win32.COM.DoDragDrop(Native Method)
+	at org.eclipse.swt.dnd.DragSource.drag(DragSource.java:363)
+	at org.eclipse.swt.dnd.DragSource.access$0(DragSource.java:289)
+	at org.eclipse.swt.dnd.DragSource$1.handleEvent(DragSource.java:172)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4169)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3758)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at com.jaspersoft.studio.rcp.intro.Application.start(Application.java:97)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+
+!ENTRY org.eclipse.jface 4 0 2014-05-20 17:12:19.616
+!MESSAGE Unhandled event loop exception during blocked modal context.
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (org.eclipse.swt.SWTException: Widget is disposed)
+	at org.eclipse.swt.SWT.error(SWT.java:4361)
+	at org.eclipse.swt.SWT.error(SWT.java:4276)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:138)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4144)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3761)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.block(ModalContext.java:173)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:388)
+	at com.jaspersoft.studio.property.dataset.dialog.RunWithProgressBar.run(RunWithProgressBar.java:51)
+	at com.jaspersoft.studio.property.dataset.dialog.DataQueryAdapters.run(DataQueryAdapters.java:285)
+	at com.jaspersoft.studio.data.sql.SQLQueryDesigner.updateMetadata(SQLQueryDesigner.java:285)
+	at com.jaspersoft.studio.data.sql.SQLQueryDesigner$3.run(SQLQueryDesigner.java:272)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4144)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3761)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:825)
+	at org.eclipse.jface.window.Window.open(Window.java:801)
+	at com.jaspersoft.studio.property.dataset.dialog.DatasetAction.run(DatasetAction.java:76)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:498)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:584)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:501)
+	at org.eclipse.jface.action.ActionContributionItem$6.handleEvent(ActionContributionItem.java:452)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4169)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3758)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at com.jaspersoft.studio.rcp.intro.Application.start(Application.java:97)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+Caused by: org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4361)
+	at org.eclipse.swt.SWT.error(SWT.java:4276)
+	at org.eclipse.swt.SWT.error(SWT.java:4247)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:468)
+	at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:340)
+	at org.eclipse.swt.widgets.Composite.layout(Composite.java:620)
+	at com.jaspersoft.studio.data.sql.ui.metadata.DBMetadata$11.run(DBMetadata.java:424)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	... 43 more
