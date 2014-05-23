@@ -5,12 +5,13 @@ using System.Text;
 using WSAdminPaqWrapper.Miner;
 using Npgsql;
 using System.Configuration;
+using System.Diagnostics;
 
 namespace WSAdminPaqWrapper.Process
 {
     public class Main
     {
-        public static void Execute()
+        public static void Execute(EventLog log)
         {
             NpgsqlConnection conn = new NpgsqlConnection();
             string connectionString = ConfigurationManager.ConnectionStrings[Config.Common.JASPER].ConnectionString;
@@ -18,14 +19,18 @@ namespace WSAdminPaqWrapper.Process
             conn.Open();
 
             List<CatEmpresa> empresas = CatEmpresa.GetEmpresas();
+            log.WriteEntry(empresas.Count + " found empresas in monfoll.");
             List<FactCobranza> cobranzas = null;
 
             DeleteCollection(conn);
 
             foreach (CatEmpresa empresa in empresas)
             {
+                log.WriteEntry("Downloading from AdminPaq: " + empresa.RutaEmpresa);
                 // DIM ETLs
-                ETLClientes.Execute(empresa.IdEmpresa, empresa.NombreEmpresa, CatCliente.GetClientes(empresa.RutaEmpresa), conn);
+                List<CatCliente> clientes = CatCliente.GetClientes(empresa.RutaEmpresa);
+                log.WriteEntry(clientes.Count + " clientes found for " + empresa.NombreEmpresa + " in monfoll");
+                ETLClientes.Execute(empresa.IdEmpresa, empresa.NombreEmpresa, clientes, conn);
                 ETLMeses.Execute(conn);
 
                 // FACT ETLs.
@@ -51,6 +56,10 @@ namespace WSAdminPaqWrapper.Process
                     fact.Uncollectable = incobrable.Uncollectable;
                     AddCollection(fact, conn);
                 }
+            }
+            else 
+            {
+                log.WriteEntry("No information found in database.", EventLogEntryType.Warning);
             }
 
             conn.Close();
