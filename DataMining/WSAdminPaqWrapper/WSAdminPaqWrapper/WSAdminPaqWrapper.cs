@@ -49,7 +49,7 @@ namespace WSAdminPaqWrapper
             try {
                 tmrDelay.Interval = 1800000;
                 eventLogService.WriteEntry("PERIODICAL ETL Process Execution BEGIN.");
-                Process.Main.Execute();
+                Process.Main.Execute(eventLogService);
                 eventLogService.WriteEntry("PERIODICAL ETL Process Execution END.");
             }catch(Exception ex){
                 eventLogService.WriteEntry("Exception while running process. " + ex.Message + "::" + ex.StackTrace, EventLogEntryType.Error);
