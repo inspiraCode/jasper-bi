@@ -47,3 +47,23 @@ CREATE TABLE fact_collection (
 	cobrado NUMERIC DEFAULT 0,
 	incobrable NUMERIC DEFAULT 0
 );
+
+DROP TABLE IF EXISTS dim_sellers CASCADE;
+CREATE TABLE dim_sellers(
+	seller_id SERIAL PRIMARY KEY,
+	ap_id INTEGER NOT NULL,
+	agent_code VARCHAR(10),
+	agent_name VARCHAR(150),
+	email VARCHAR(150),
+	weekly_goal NUMERIC DEFAULT 0,
+	empresa VARCHAR(150),
+	id_empresa INTEGER
+);
+
+DROP TABLE IF EXISTS fact_sales CASCADE;
+CREATE TABLE fact_sales(
+	seller_id INTEGER NOT NULL REFERENCES dim_sellers(seller_id),
+	sold_today NUMERIC DEFAULT 0,
+	sold_week NUMERIC DEFAULT 0,
+	sold_month NUMERIC DEFAULT 0
+);

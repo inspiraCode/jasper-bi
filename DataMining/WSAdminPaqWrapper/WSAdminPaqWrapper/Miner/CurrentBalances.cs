@@ -142,7 +142,7 @@ namespace WSAdminPaqWrapper.Miner
 
                     bool InfiniteGroup = fact.GrupoVencimiento.Fin == 0;
                     bool AfterGroupStartDate = dueDate.CompareTo(startFactDate) >= 0;
-                    bool BeforeGroupEndDate = dueDate.CompareTo(endFactDate) < 0;
+                    bool BeforeGroupEndDate = dueDate.CompareTo(endFactDate) <= 0;
 
                     if ((InfiniteGroup && AfterGroupStartDate)
                         || (BeforeGroupEndDate && AfterGroupStartDate))
