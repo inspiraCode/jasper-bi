@@ -20,7 +20,7 @@
 		<band height="273" splitType="Stretch">
 			<pie3DChart>
 				<chart evaluationTime="Report">
-					<reportElement key="" x="80" y="10" width="590" height="240" uuid="ae9b541d-a40b-419f-b1bd-61802f389f64"/>
+					<reportElement key="" x="80" y="10" width="590" height="240" uuid="b05ea213-31b6-4a92-947d-f021f6da161f"/>
 					<chartTitle>
 						<font size="14" isBold="true"/>
 						<titleExpression><![CDATA["Cuentas por cobrar locales"]]></titleExpression>
@@ -32,11 +32,11 @@
 				</chart>
 				<pieDataset maxCount="2">
 					<pieSeries>
-						<keyExpression><![CDATA[$F{por_vencer}]]></keyExpression>
+						<keyExpression><![CDATA["Por vencer"]]></keyExpression>
 						<valueExpression><![CDATA[$F{por_vencer}]]></valueExpression>
 					</pieSeries>
 					<pieSeries>
-						<keyExpression><![CDATA[$F{vencido}]]></keyExpression>
+						<keyExpression><![CDATA["Vencido"]]></keyExpression>
 						<valueExpression><![CDATA[$F{vencido}]]></valueExpression>
 					</pieSeries>
 					<otherKeyExpression><![CDATA[]]></otherKeyExpression>

@@ -1,2 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.jfree.chart.renderer.category.BarRenderer"/>
+<fullyQualifiedTypeName name="org.jfree.chart.plot.CategoryPlot"/>
+<fullyQualifiedTypeName name="java.awt.Font"/>
+<fullyQualifiedTypeName name="org.jfree.chart.axis.CategoryAxis"/>
+<fullyQualifiedTypeName name="java.awt.Color"/>
+<fullyQualifiedTypeName name="org.jfree.chart.plot.Plot"/>
+<fullyQualifiedTypeName name="org.jfree.chart.plot.XYPlot"/>
+</qualifiedTypeNameHistroy>

@@ -6,3 +6,4 @@ eclipse.preferences.version=1
 jssbranding_product_mainbundle=com.jaspersoft.studio.rcp
 jssbranding_product_name=Jaspersoft Studio Community Edition
 jssbranding_product_version=5.5.2.final
+serverprofiles=<serverprofiles>\n<serverProfile><name>JasperReports Server</name><jrVersion>5.5.0</jrVersion><url>http\://localhost\:8080/jasperserver/</url><user>jasperadmin</user><pass>4fe1fbf9-550c-4065-b64c-ee3df711cb7d</pass><supportsDateRanges>true</supportsDateRanges><useOnlySOAP>false</useOnlySOAP><chunked>false</chunked><mime>true</mime><timeout>60000</timeout></serverProfile></serverprofiles>
