@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Locales" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5a263bd9-9df1-4f03-81bf-f0eba600df2d">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="rhjasper"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value="ZGltX2NsaWVudGVzIEFTICwwLDA7"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT dim_clientes.nombre_cliente, dim_clientes.es_local
+FROM dim_clientes]]>
+	</queryString>
+	<field name="nombre_cliente" class="java.lang.String"/>
+	<field name="es_local" class="java.lang.Boolean"/>
+	<title>
+		<band height="78" splitType="Stretch"/>
+	</title>
+	<summary>
+		<band height="231" splitType="Stretch">
+			<frame>
+				<reportElement x="-1" y="13" width="401" height="100" uuid="c874e86a-5eed-483e-b9a2-ae01a7d56cc7"/>
+				<subreport>
+					<reportElement x="0" y="1" width="400" height="98" uuid="9e9319d0-b602-4151-b271-f025e9ce6a36"/>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression><![CDATA["saldos vencidos en días (Foraneos).jasper"]]></subreportExpression>
+				</subreport>
+			</frame>
+			<frame>
+				<reportElement x="400" y="12" width="402" height="100" uuid="bc78c068-5533-4e2d-83fc-cbdc77904bab"/>
+				<subreport>
+					<reportElement x="0" y="1" width="401" height="98" uuid="b15f3664-2be9-41a6-a541-92824e813eed"/>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression><![CDATA["Saldos por vencer en días (Foraneos).jasper"]]></subreportExpression>
+				</subreport>
+			</frame>
+			<frame>
+				<reportElement x="0" y="120" width="399" height="100" uuid="069fd3e4-86e2-49f9-bab5-70b0b7889b49"/>
+				<subreport>
+					<reportElement x="0" y="0" width="399" height="100" uuid="4d1e5662-c89d-4135-95d1-173f3858c204"/>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression><![CDATA["vencidos PCT Foraneos.jasper"]]></subreportExpression>
+				</subreport>
+			</frame>
+			<frame>
+				<reportElement x="401" y="120" width="399" height="100" uuid="84c6b5a5-32f2-4fd6-bdd7-139d70cf916e"/>
+				<subreport>
+					<reportElement x="0" y="0" width="399" height="100" uuid="be4f2b96-8454-4f08-a0e7-cd9fbc21a17f"/>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression><![CDATA["Saldos por vencerPCT Foraneo.jasper"]]></subreportExpression>
+				</subreport>
+			</frame>
+		</band>
+	</summary>
+</jasperReport>
