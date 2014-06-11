@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Saldos por vencer PCT Foraneo %" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="60fa82d5-9db7-43c7-8f97-5dc7350fac85">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="rhjasper"/>
+	<queryString language="SQL">
+		<![CDATA[SElECT CASE WHEN Total.total_por_vencer = 0 THEN 0
+ELSE SUM(saldo_por_vencer) / Total.total_por_vencer END AS Porcentaje,
+CASE WHEN dim_grupo_vencimiento.maximo_dias = 0 THEN dim_grupo_vencimiento.minimo_dias || ' Días o más' 
+ELSE dim_grupo_vencimiento.minimo_dias || '-' || dim_grupo_vencimiento.maximo_dias || ' Días' END AS Grupo
+FROM fact_por_vencer
+INNER JOIN dim_grupo_vencimiento 
+ON fact_por_vencer.id_grupo_vencimiento = dim_grupo_vencimiento.id_grupo_vencimiento
+INNER JOIN dim_clientes
+ON fact_por_vencer.id_cliente = dim_clientes.id_cliente
+INNER JOIN (SElECT SUM(saldo_por_vencer) AS total_por_vencer, es_local
+FROM fact_por_vencer
+INNER JOIN dim_clientes
+ON fact_por_vencer.id_cliente = dim_clientes.id_cliente
+GROUP BY es_local) AS Total
+ON dim_clientes.es_local = Total.es_local
+WHERE dim_clientes.es_local = False
+GROUP BY Grupo, dim_grupo_vencimiento.id_grupo_vencimiento, Total.total_por_vencer
+ORDER BY dim_grupo_vencimiento.id_grupo_vencimiento]]>
+	</queryString>
+	<field name="grupo" class="java.lang.String"/>
+	<field name="porcentaje" class="java.lang.Number"/>
+	<summary>
+		<band height="359" splitType="Stretch">
+			<barChart>
+				<chart evaluationTime="Report">
+					<reportElement x="0" y="0" width="380" height="350" uuid="98af4419-9e8e-414c-a052-0fda4a4b8ad9"/>
+					<chartTitle>
+						<font isBold="true"/>
+						<titleExpression><![CDATA["Foraneo"]]></titleExpression>
+					</chartTitle>
+					<chartSubtitle>
+						<font size="14" isBold="true"/>
+						<subtitleExpression><![CDATA["Saldos por vencer %"]]></subtitleExpression>
+					</chartSubtitle>
+					<chartLegend>
+						<font isBold="true"/>
+					</chartLegend>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA["Saldos por vencer"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{grupo}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{porcentaje}]]></valueExpression>
+						<labelExpression><![CDATA[new java.text.DecimalFormat("#0 %").format($F{porcentaje}.doubleValue())]]></labelExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot isShowLabels="true" isShowTickLabels="true" isShowTickMarks="true">
+					<plot>
+						<seriesColor seriesOrder="0" color="#00CC03"/>
+						<seriesColor seriesOrder="1" color="#0CC40C"/>
+						<seriesColor seriesOrder="2" color="#0CC300"/>
+						<seriesColor seriesOrder="3" color="#0CC300"/>
+					</plot>
+					<itemLabel color="#000000" backgroundColor="#000000">
+						<font size="10" isBold="true"/>
+					</itemLabel>
+					<categoryAxisLabelExpression><![CDATA["Días de saldos por vencer"]]></categoryAxisLabelExpression>
+					<categoryAxisFormat>
+						<axisFormat tickLabelMask="#%" verticalTickLabels="true">
+							<labelFont>
+								<font size="10" isBold="true"/>
+							</labelFont>
+							<tickLabelFont>
+								<font size="8" isBold="true"/>
+							</tickLabelFont>
+						</axisFormat>
+					</categoryAxisFormat>
+					<valueAxisLabelExpression><![CDATA["%"]]></valueAxisLabelExpression>
+					<valueAxisFormat>
+						<axisFormat tickLabelMask="#%">
+							<labelFont>
+								<font size="8" isBold="true"/>
+							</labelFont>
+							<tickLabelFont>
+								<font size="8" isBold="true" isItalic="false"/>
+							</tickLabelFont>
+						</axisFormat>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+		</band>
+	</summary>
+</jasperReport>
