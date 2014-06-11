@@ -3,21 +3,46 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Metricos Locales" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="beb11353-7f2b-42cc-b2bf-0cf38a292260">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="rhjasper"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value="ZGltX2NsaWVudGVzIEFTICw0NCwyOTs="/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<queryString language="SQL">
 		<![CDATA[SELECT dim_clientes.id_cliente
 FROM dim_clientes]]>
 	</queryString>
 	<field name="id_cliente" class="java.lang.Integer"/>
-	<background>
-		<band splitType="Stretch"/>
-	</background>
-	<title>
-		<band height="324" splitType="Stretch">
+	<summary>
+		<band height="304">
+			<frame>
+				<reportElement stretchType="RelativeToBandHeight" x="10" y="70" width="360" height="110" uuid="04aaf091-ff8c-4f12-9056-2d460411ee25"/>
+				<subreport>
+					<reportElement x="0" y="0" width="360" height="110" uuid="dbe53ca1-7212-474e-82b5-010a621d8199"/>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression><![CDATA["Saldos  vencidos en dias.jasper"]]></subreportExpression>
+				</subreport>
+			</frame>
+			<frame>
+				<reportElement x="390" y="70" width="350" height="110" uuid="a565ca38-8f53-4bd4-a4ab-dcd62998bf04"/>
+			</frame>
+			<frame>
+				<reportElement x="390" y="190" width="350" height="100" uuid="0fc084ca-dbe6-417e-9400-97a5588d714d"/>
+				<subreport>
+					<reportElement x="0" y="0" width="350" height="100" uuid="da7acaab-bffa-46d2-9b46-6897bd37473e"/>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression><![CDATA["Saldos por vencer PCT.jasper"]]></subreportExpression>
+				</subreport>
+			</frame>
+			<frame>
+				<reportElement x="10" y="190" width="360" height="100" uuid="0bde14e2-4804-412e-a040-d738c7221032"/>
+			</frame>
 			<subreport>
-				<reportElement x="14" y="26" width="200" height="200" uuid="3dec8edc-ff0a-4936-ad2c-777e3c908d82"/>
+				<reportElement x="10" y="190" width="360" height="100" uuid="1a07b2d9-dbba-403e-8dc3-157d4f205bc5"/>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 				<subreportExpression><![CDATA["vencidos PCT Locales.jasper"]]></subreportExpression>
 			</subreport>
+			<subreport>
+				<reportElement x="390" y="70" width="350" height="110" uuid="65a408a9-abd7-400b-8cb5-ccef22ff9285"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["Saldo por Vencer en Dias (Local).jasper"]]></subreportExpression>
+			</subreport>
 		</band>
-	</title>
+	</summary>
 </jasperReport>

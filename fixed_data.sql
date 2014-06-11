@@ -1,8 +1,8 @@
 INSERT INTO dim_grupo_vencimiento(minimo_dias, maximo_dias)
 VALUES(0,15);
 INSERT INTO dim_grupo_vencimiento(minimo_dias, maximo_dias)
-VALUES(15,30);
+VALUES(16,30);
 INSERT INTO dim_grupo_vencimiento(minimo_dias, maximo_dias)
-VALUES(30,45);
+VALUES(31,45);
 INSERT INTO dim_grupo_vencimiento(minimo_dias, maximo_dias)
-VALUES(45,0);
+VALUES(46,0);
