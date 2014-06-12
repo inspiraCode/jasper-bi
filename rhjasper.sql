@@ -21,14 +21,16 @@ CREATE TABLE fact_vencido
 (
 	id_cliente INTEGER NOT NULL REFERENCES dim_clientes(id_cliente),
 	id_grupo_vencimiento INTEGER NOT NULL REFERENCES dim_grupo_vencimiento(id_grupo_vencimiento),
-	saldo_vencido NUMERIC NOT NULL DEFAULT 0
+	saldo_vencido NUMERIC NOT NULL DEFAULT 0,
+	dias_vencimiento INTEGER
 );
 
 DROP TABLE IF EXISTS fact_por_vencer CASCADE;
 CREATE TABLE fact_por_vencer(
 	id_cliente INTEGER NOT NULL REFERENCES dim_clientes(id_cliente),
 	id_grupo_vencimiento INTEGER NOT NULL REFERENCES dim_grupo_vencimiento(id_grupo_vencimiento),
-	saldo_por_vencer NUMERIC NOT NULL DEFAULT 0
+	saldo_por_vencer NUMERIC NOT NULL DEFAULT 0,
+	dias_por_vencer INTEGER
 );
 
 DROP TABLE IF EXISTS dim_meses CASCADE;
