@@ -110,10 +110,7 @@ namespace WSAdminPaqWrapper.Miner
             int connDocos, dbResponse, fqResponse;
 
             DateTime today = DateTime.Today;
-#if DEBUG
-            today = new DateTime(2014, 4, 12);
-#endif
-
+            //today = new DateTime(2014, 4, 12);
             string sFromDate = today.AddMonths(-1).ToString("yyyyMM");
             
             int cancelado = 0, devuelto = 0, impreso = 0, conceptId = 0, currencyId = 0, idAgente = 0;
@@ -220,9 +217,8 @@ namespace WSAdminPaqWrapper.Miner
         private void FillSellers(int idAgente, string sFechaDoc, double sold)
         {
             DateTime today = DateTime.Today;
-#if DEBUG
-            today = new DateTime(2014, 4, 12);
-#endif
+            //today = new DateTime(2014, 4, 12);
+
             //weekly       
             int weekStartDelta = 1 - (int)today.DayOfWeek;
             DateTime weekStart = today.AddDays(weekStartDelta);
