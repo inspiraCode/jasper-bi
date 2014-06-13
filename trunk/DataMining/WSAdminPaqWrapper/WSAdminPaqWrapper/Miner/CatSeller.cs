@@ -33,7 +33,7 @@ namespace WSAdminPaqWrapper.Miner
         {
             List<CatSeller> result = new List<CatSeller>();
 
-            int dbResponse, fqResponse;
+            int dbResponse;
 
             int STEP = 1;
             int CIDAGENTE = 1, CCODIGOA01 = 2, CNOMBREA01 = 3, CTIPOAGE01=5;

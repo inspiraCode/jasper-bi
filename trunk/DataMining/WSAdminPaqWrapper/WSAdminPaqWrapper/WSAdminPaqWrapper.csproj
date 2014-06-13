@@ -70,6 +70,7 @@
     <Compile Include="Process\ETLSellers.cs" />
     <Compile Include="Process\FactCobranza.cs" />
     <Compile Include="Process\FactPorVencer.cs" />
+    <Compile Include="Process\FactSales.cs" />
     <Compile Include="Process\FactVencido.cs" />
     <Compile Include="Process\FactVencimiento.cs" />
     <Compile Include="Process\Main.cs" />

@@ -7,6 +7,7 @@ using Npgsql;
 using WSAdminPaqWrapper.Miner;
 using System.Data;
 using System.Configuration;
+using System.Diagnostics;
 
 namespace WSAdminPaqWrapper.Process
 {
@@ -18,7 +19,7 @@ namespace WSAdminPaqWrapper.Process
         public double Uncollectable { get; set; }
 
 
-        internal static List<FactCobranza> GetFactByEnterprise(CatEmpresa empresa, NpgsqlConnection conn)
+        internal static List<FactCobranza> GetFactByEnterprise(CatEmpresa empresa, NpgsqlConnection conn, EventLog log)
         {
             List<DimMeses> meses = DimMeses.GetMeses(conn);
             List<FactCobranza> cobranzas = new List<FactCobranza>();
@@ -37,7 +38,7 @@ namespace WSAdminPaqWrapper.Process
             SalesPicker sales = new SalesPicker();
             sales.Empresa = empresa;
             sales.Facts = cobranzas;
-            sales.FillFacts();
+            sales.FillFacts(log);
 
             return sales.Facts;
         }
