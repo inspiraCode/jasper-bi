@@ -13,6 +13,7 @@ namespace WSAdminPaqWrapper.Loader
         public int IdSeller { get; set; }
         public int ApId { get; set; }
         public string Code { get; set; }
+        public string AgentName { get; set; }
         public string Email { get; set; }
         public double WeeklyGoal { get; set; }
         public string Empresa { get; set; }
@@ -25,7 +26,7 @@ namespace WSAdminPaqWrapper.Loader
             NpgsqlCommand cmd;
             DimSellers result = null;
 
-            string sqlString = "SELECT seller_id, ap_id, agent_code, email, weekly_goal, empresa, id_empresa " +
+            string sqlString = "SELECT seller_id, ap_id, agent_code, agent_name, email, weekly_goal, empresa, id_empresa " +
                 "FROM dim_sellers " +
                 "WHERE ap_id=@id AND id_empresa = @enterpriseId;";
 
@@ -51,6 +52,7 @@ namespace WSAdminPaqWrapper.Loader
                 result.IdSeller = int.Parse(dr["seller_id"].ToString());
                 result.ApId = int.Parse(dr["ap_id"].ToString());
                 result.Code = dr["agent_code"].ToString();
+                result.AgentName = dr["agent_code"].ToString();
                 result.Email = dr["email"].ToString();
                 result.WeeklyGoal = double.Parse(dr["weekly_goal"].ToString());
                 result.Empresa = dr["empresa"].ToString();
@@ -72,7 +74,7 @@ namespace WSAdminPaqWrapper.Loader
             NpgsqlCommand cmd;
             DimSellers result = null;
 
-            string sqlString = "SELECT seller_id, ap_id, agent_code, email, weekly_goal, empresa, id_empresa " +
+            string sqlString = "SELECT seller_id, ap_id, agent_code, agent_name, email, weekly_goal, empresa, id_empresa " +
                 "FROM dim_sellers " +
                 "WHERE seller_id=@id;";
 
@@ -96,6 +98,7 @@ namespace WSAdminPaqWrapper.Loader
                 result.IdSeller = int.Parse(dr["seller_id"].ToString());
                 result.ApId = int.Parse(dr["ap_id"].ToString());
                 result.Code = dr["agent_code"].ToString();
+                result.AgentName = dr["agent_name"].ToString();
                 result.Email = dr["email"].ToString();
                 result.WeeklyGoal = double.Parse(dr["weekly_goal"].ToString());
                 result.Empresa = dr["empresa"].ToString();
