@@ -85,9 +85,9 @@ table.altrowstable td {
                     <td><c:out value="${seller.agentName}" /></td>
                     <td>$<input type="text" value='<c:out value="${seller.weeklyGoal}" />' 
                     name='txtGoal<c:out value="${seller.sellerId}"/>' 
-                    id='txtGoal<c:out value="${seller.sellerId}"
-                    onkeypress="return isNumberKey(event)"/>'
-                    pattern="[0-9]" /></td>
+                    id='txtGoal<c:out value="${seller.sellerId}"/>'
+                    onkeypress="return isNumberKey(event)"
+                    pattern="[0-9]+(\.[0-9]?)?" /></td>
                 </tr>
             </c:forEach>
         </tbody>

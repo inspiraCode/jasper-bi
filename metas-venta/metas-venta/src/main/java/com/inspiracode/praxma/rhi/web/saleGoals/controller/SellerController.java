@@ -39,7 +39,7 @@ public class SellerController extends HttpServlet {
 			String goal = request.getParameter("txtGoal" + seller.getSellerId());
 			
 			double dGoal = Double.parseDouble(goal);
-			if(dGoal == 0 || dGoal == seller.getWeeklyGoal()) continue;
+			if(dGoal == seller.getWeeklyGoal()) continue;
 			
 			seller.setWeeklyGoal(dGoal);
 			dao.updateSellerGoal(seller);
