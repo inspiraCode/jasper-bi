@@ -6,20 +6,21 @@ using WSAdminPaqWrapper.Miner;
 using Npgsql;
 using System.Configuration;
 using System.Diagnostics;
+using CommonAdminPaq;
 
 namespace WSAdminPaqWrapper.Process
 {
     public class Main
     {
-        public static void Execute(EventLog log)
+        public static void Execute(EventLog log, AdminPaqLib lib)
         {
             NpgsqlConnection conn = new NpgsqlConnection();
             string connectionString = ConfigurationManager.ConnectionStrings[Config.Common.JASPER].ConnectionString;
             conn = new NpgsqlConnection(connectionString);
             conn.Open();
 
-            List<CatEmpresa> empresas = CatEmpresa.GetEmpresas();
-            log.WriteEntry(empresas.Count + " found empresas in monfoll.");
+            List<CatEmpresa> empresas = CatEmpresa.GetEmpresas(lib);
+            log.WriteEntry(empresas.Count + " found empresas in AdminPaq.");
             List<FactCobranza> cobranzas = null;
             List<FactSales> sales = null;
 
@@ -31,7 +32,7 @@ namespace WSAdminPaqWrapper.Process
                 log.WriteEntry("Downloading from AdminPaq: " + empresa.RutaEmpresa);
                 // DIM ETLs
                 List<CatCliente> clientes = CatCliente.GetClientes(empresa.RutaEmpresa);
-                log.WriteEntry(clientes.Count + " clientes found for " + empresa.NombreEmpresa + " in monfoll");
+                log.WriteEntry(clientes.Count + " clientes found for " + empresa.NombreEmpresa + " in AdminPaq");
                 ETLClientes.Execute(empresa.IdEmpresa, empresa.NombreEmpresa, clientes, conn);
 
                 List<CatSeller> sellers = CatSeller.GetSellers(empresa.RutaEmpresa);
