@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using CommonAdminPaq;
+using System.IO;
 
 namespace WSAdminPaqWrapper.Miner
 {
@@ -19,6 +20,11 @@ namespace WSAdminPaqWrapper.Miner
         {
             // Generate connection from company route
             int connClientes = AdminPaqLib.dbLogIn("", rutaEmpresa);
+
+            if (!Directory.Exists(rutaEmpresa))
+            {
+                throw new Exception("Unable to validate existance of company directory for CLIENTES: " + rutaEmpresa);
+            }
 
             if (connClientes == 0)
             {

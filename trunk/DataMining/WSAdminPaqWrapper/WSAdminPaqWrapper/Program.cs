@@ -14,7 +14,7 @@ namespace WSAdminPaqWrapper
         /// </summary>
         static void Main()
         {
-            /*    System.Diagnostics.EventLog eventLogService = new System.Diagnostics.EventLog();
+                /*System.Diagnostics.EventLog eventLogService = new System.Diagnostics.EventLog();
 
                 if (!System.Diagnostics.EventLog.SourceExists("WSAdminPaqWrapperService"))
                 {
@@ -29,7 +29,7 @@ namespace WSAdminPaqWrapper
                 CommonAdminPaq.AdminPaqLib apl = new CommonAdminPaq.AdminPaqLib();
                 apl.SetDllFolder();
 
-                Process.Main.Execute(eventLogService);
+                Process.Main.Execute(eventLogService, apl);
                 eventLogService.WriteEntry("DEBUG ETL Process Execution END.");*/
 
             ServiceBase[] ServicesToRun;

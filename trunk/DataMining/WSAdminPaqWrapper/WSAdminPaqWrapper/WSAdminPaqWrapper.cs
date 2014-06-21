@@ -13,6 +13,7 @@ namespace WSAdminPaqWrapper
     public partial class WSAdminPaqWrapper : ServiceBase
     {
         private Timer tmrDelay;
+        CommonAdminPaq.AdminPaqLib apl;
 
         public WSAdminPaqWrapper()
         {
@@ -24,7 +25,7 @@ namespace WSAdminPaqWrapper
 
             eventLogService.Source = "WSAdminPaqWrapperService";
             eventLogService.Log = "WSAdminPaqWrapperLog";
-            CommonAdminPaq.AdminPaqLib apl = new CommonAdminPaq.AdminPaqLib();
+            apl = new CommonAdminPaq.AdminPaqLib();
             apl.SetDllFolder();
         }
 
@@ -49,7 +50,7 @@ namespace WSAdminPaqWrapper
             try {
                 tmrDelay.Interval = 1800000;
                 eventLogService.WriteEntry("PERIODICAL ETL Process Execution BEGIN.");
-                Process.Main.Execute(eventLogService);
+                Process.Main.Execute(eventLogService, apl);
                 eventLogService.WriteEntry("PERIODICAL ETL Process Execution END.");
             }catch(Exception ex){
                 eventLogService.WriteEntry("Exception while running process. " + ex.Message + "::" + ex.StackTrace, EventLogEntryType.Error);
