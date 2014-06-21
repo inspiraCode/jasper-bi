@@ -82,6 +82,7 @@ namespace CommonAdminPaq
             allowedDirectory = SetDllDirectory(adminPaqBaseDir);
 
             reportDir = rk.GetValue("DirectorioReportes").ToString();
+
             dataDir = rk.GetValue("DirectorioDatos").ToString();
         }
     }

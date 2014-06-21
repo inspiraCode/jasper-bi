@@ -21,12 +21,11 @@ namespace WSAdminPaqWrapper.Miner
             List<CatEmpresa> result = new List<CatEmpresa>();
             int connEmpresas, dbResponse, fieldResponse;
 
-            if (lib.DataDirectory.Contains(':'))
+            if (lib.DataDirectory.Contains("::"))
             {
-                lib.DataDirectory = lib.DataDirectory.Replace(':', ' ');
-                lib.DataDirectory = lib.DataDirectory.Trim();
+                lib.DataDirectory = lib.DataDirectory.Replace("::", "");
             }
-                
+
             if (!Directory.Exists(lib.DataDirectory))
             {
                 throw new Exception("Unable to validate existance of data directory: " + lib.DataDirectory);
