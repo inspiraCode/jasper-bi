@@ -26,7 +26,7 @@ namespace WSAdminPaqWrapper.Miner
                             "FROM ctrl_seguimiento " +
                             "INNER JOIN ctrl_cuenta " +
                             "ON ctrl_seguimiento.id_doco = ctrl_cuenta.id_doco " +
-                            "WHERE id_movimiento = 14 " +
+                            "WHERE id_movimiento = 7 " +
                             "AND EXTRACT(MONTH FROM ts_seguimiento) = @mes " +
                             "AND EXTRACT(YEAR FROM ts_seguimiento)=@yyyy;";
 

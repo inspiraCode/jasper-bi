@@ -10,34 +10,8 @@ namespace WSAdminPaqWrapper.Process
 {
     public class FactVencido : FactVencimiento
     {
-
-        internal override void Execute(int idEmpresa, string rutaEmpresa, NpgsqlConnection conn)
-        {
-            List<DimClientes> clientes = DimClientes.GetAll(idEmpresa, conn);
-            List<DimGrupoVencimiento> vencimientos = DimGrupoVencimiento.Vencimientos(conn);
-            List<FactVencimiento> facts = new List<FactVencimiento>();
-
-            foreach(DimClientes cliente in clientes)
-            {
-                foreach(DimGrupoVencimiento vencimiento in vencimientos)
-                {
-                    FactVencido fact = new FactVencido();
-                    fact.Cliente = cliente;
-                    fact.GrupoVencimiento = vencimiento;
-                    fact.Saldo = 0;
-
-                    facts.Add(fact);
-                }
-            }
-
-            DueBalances dues = new DueBalances();
-            dues.FillFacts(ref facts, rutaEmpresa, idEmpresa);
-            DeleteFacts(idEmpresa, conn);
-            foreach(FactVencido fact in facts)
-            {
-                AddFact(fact, conn);
-            }
-        }
+        private List<FactVencido> gruposVencimiento = new List<FactVencido>();
+        public List<FactVencido> GruposVencimiento { get { return gruposVencimiento; } }
 
         protected override void DeleteFacts(int idEmpresa, NpgsqlConnection conn)
         {
@@ -52,25 +26,26 @@ namespace WSAdminPaqWrapper.Process
             cmd.ExecuteNonQuery();
         }
 
-        protected override void AddFact(FactVencimiento fact, NpgsqlConnection conn)
+
+        public override void Prepare(int idEmpresa, string rutaEmpresa, NpgsqlConnection conn)
         {
-            NpgsqlCommand cmd;
+            DeleteFacts(idEmpresa, conn);
 
-            string sqlString = "INSERT INTO fact_vencido(id_cliente, id_grupo_vencimiento, saldo_vencido)" +
-                "VALUES(@cliente, @grupo, @saldo);";
+            List<DimClientes> clientes = DimClientes.GetAll(idEmpresa, conn);
+            List<DimGrupoVencimiento> vencimientos = DimGrupoVencimiento.Vencimientos(conn);
 
-            cmd = new NpgsqlCommand(sqlString, conn);
+            foreach (DimClientes cliente in clientes)
+            {
+                foreach (DimGrupoVencimiento vencimiento in vencimientos)
+                {
+                    FactVencido fact = new FactVencido();
+                    fact.Cliente = cliente;
+                    fact.GrupoVencimiento = vencimiento;
+                    fact.Saldo = 0;
 
-            cmd.Parameters.Add("@cliente", NpgsqlTypes.NpgsqlDbType.Integer);
-            cmd.Parameters.Add("@grupo", NpgsqlTypes.NpgsqlDbType.Integer);
-            cmd.Parameters.Add("@saldo", NpgsqlTypes.NpgsqlDbType.Numeric);
-
-
-            cmd.Parameters["@cliente"].Value = fact.Cliente.IdCliente;
-            cmd.Parameters["@grupo"].Value = fact.GrupoVencimiento.IdGrupo;
-            cmd.Parameters["@saldo"].Value = fact.Saldo;
-
-            cmd.ExecuteNonQuery();
+                    gruposVencimiento.Add(fact);
+                }
+            }
         }
     }
 }

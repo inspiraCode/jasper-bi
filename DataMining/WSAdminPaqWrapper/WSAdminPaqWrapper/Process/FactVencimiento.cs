@@ -7,17 +7,13 @@ using Npgsql;
 
 namespace WSAdminPaqWrapper.Process
 {
-    public abstract class FactVencimiento
+    public abstract class FactVencimiento : Factoreable
     {
         public DimClientes Cliente { get; set; }
         public DimGrupoVencimiento GrupoVencimiento { get; set; }
         public double Saldo { get; set; }
 
-        internal abstract void Execute(int idEmpresa, string rutaEmpresa, NpgsqlConnection conn);
-        
+        public abstract void Prepare(int idEmpresa, string rutaEmpresa, NpgsqlConnection conn);
         protected abstract void DeleteFacts(int idEmpresa, NpgsqlConnection conn);
-        protected abstract void AddFact(FactVencimiento fact, NpgsqlConnection conn);
-
-
     }
 }

@@ -31,7 +31,7 @@ namespace WSAdminPaqWrapper
 
         protected override void OnStart(string[] args)
         {
-            eventLogService.WriteEntry("WSAdminPaqWrapper Service started.");
+            eventLogService.WriteEntry("WSAdminPaqWrapper Service started.", EventLogEntryType.Information, 0, 0);
             // Timer start
             tmrDelay = new Timer(30000);
             tmrDelay.Elapsed += new ElapsedEventHandler(timerDelay_Tick);
@@ -42,18 +42,18 @@ namespace WSAdminPaqWrapper
         protected override void OnStop()
         {
             tmrDelay.Stop();
-            eventLogService.WriteEntry("WSAdminPaqWrapper Service stoped.");
+            eventLogService.WriteEntry("WSAdminPaqWrapper Service stoped.", EventLogEntryType.Information, 1, 0);
         }
 
         private void timerDelay_Tick(object sender, EventArgs e)
         {
             try {
                 tmrDelay.Interval = 1800000;
-                eventLogService.WriteEntry("PERIODICAL ETL Process Execution BEGIN.");
+                eventLogService.WriteEntry("PERIODICAL ETL Process Execution BEGIN.", EventLogEntryType.Information, 2, 1);
                 Process.Main.Execute(eventLogService, apl);
-                eventLogService.WriteEntry("PERIODICAL ETL Process Execution END.");
+                eventLogService.WriteEntry("PERIODICAL ETL Process Execution END.", EventLogEntryType.Information, 3, 1);
             }catch(Exception ex){
-                eventLogService.WriteEntry("Exception while running process. " + ex.Message + "::" + ex.StackTrace, EventLogEntryType.Error);
+                eventLogService.WriteEntry("Exception while running process. " + ex.Message + "::" + ex.StackTrace, EventLogEntryType.Error, 4, 1);
             }
         }
     }
