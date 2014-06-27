@@ -7,6 +7,7 @@ using Npgsql;
 using System.Configuration;
 using System.Diagnostics;
 using CommonAdminPaq;
+using WSAdminPaqWrapper.Loader;
 
 namespace WSAdminPaqWrapper.Process
 {
@@ -20,72 +21,64 @@ namespace WSAdminPaqWrapper.Process
             conn.Open();
 
             List<CatEmpresa> empresas = CatEmpresa.GetEmpresas(lib);
-            log.WriteEntry(empresas.Count + " found empresas in AdminPaq.");
-            List<FactCobranza> cobranzas = null;
-            List<FactSales> sales = null;
-
+            log.WriteEntry(empresas.Count + " found empresas in AdminPaq.", EventLogEntryType.Information, 5, 2);
+            
             DeleteCollection(conn);
+            log.WriteEntry("Cleaning of collection records succeed..", EventLogEntryType.Information, 6, 2);
             DeleteSales(conn);
+            log.WriteEntry("Cleaning of sale records succeed..", EventLogEntryType.Information, 7, 2);
 
             foreach (CatEmpresa empresa in empresas)
             {
-                log.WriteEntry("Downloading from AdminPaq: " + empresa.RutaEmpresa);
+                log.WriteEntry("Downloading from AdminPaq: " + empresa.RutaEmpresa, EventLogEntryType.Information, 8, 2);
                 // DIM ETLs
                 List<CatCliente> clientes = CatCliente.GetClientes(empresa.RutaEmpresa);
-                log.WriteEntry(clientes.Count + " clientes found for " + empresa.NombreEmpresa + " in AdminPaq");
+                log.WriteEntry(clientes.Count + " clientes found for " + empresa.NombreEmpresa + " in AdminPaq", EventLogEntryType.Information, 9, 2);
                 ETLClientes.Execute(empresa.IdEmpresa, empresa.NombreEmpresa, clientes, conn);
 
                 List<CatSeller> sellers = CatSeller.GetSellers(empresa.RutaEmpresa);
-                log.WriteEntry(sellers.Count + " agents found for " + empresa.NombreEmpresa + " in monfoll");
+                log.WriteEntry(sellers.Count + " agents found for " + empresa.NombreEmpresa + " in monfoll", EventLogEntryType.Information, 10, 2);
                 ETLSellers.Execute(empresa.IdEmpresa, empresa.NombreEmpresa, sellers, conn);
 
                 ETLMeses.Execute(conn);
 
-                // FACT ETLs.
+                // FACT Preparation
                 FactVencido vencido = new FactVencido();
-                vencido.Execute(empresa.IdEmpresa, empresa.RutaEmpresa, conn);
+                vencido.Prepare(empresa.IdEmpresa, empresa.RutaEmpresa, conn);
+                log.WriteEntry(string.Format("Prepared due documents for {0}", empresa.NombreEmpresa), EventLogEntryType.Information, 11, 2);
 
                 FactPorVencer porVencer = new FactPorVencer();
-                porVencer.Execute(empresa.IdEmpresa, empresa.RutaEmpresa, conn);
+                porVencer.Prepare(empresa.IdEmpresa, empresa.RutaEmpresa, conn);
+                log.WriteEntry(string.Format("Prepared documents about to due for {0}", empresa.NombreEmpresa), EventLogEntryType.Information, 12, 2);
 
-                FactCobranza entityCobranza = new FactCobranza();
+                FactCobranza cobranza = new FactCobranza();
+                cobranza.Prepare(empresa.IdEmpresa, empresa.RutaEmpresa, conn);
+                log.WriteEntry(string.Format("Prepared collection documents for {0}", empresa.NombreEmpresa), EventLogEntryType.Information, 13, 2);
 
-                if (cobranzas == null)
-                    cobranzas = FactCobranza.GetFactByEnterprise(empresa, conn, log);
-                else
-                    MergeCollection(ref cobranzas, FactCobranza.GetFactByEnterprise(empresa, conn, log));
+                FactSales factSale = new FactSales();
+                factSale.Prepare(empresa.IdEmpresa, empresa.RutaEmpresa, conn);
+                log.WriteEntry(string.Format("Prepared sale documents for {0}", empresa.NombreEmpresa), EventLogEntryType.Information, 14, 2);
 
-                if (sales == null)
-                    sales = FactSales.GetFactByEnterprise(empresa, conn, log);
-                else
-                    MergeSales(ref sales, FactSales.GetFactByEnterprise(empresa, conn, log));
+                // FILL FACTS
+                DocsMiner dMiner = new DocsMiner();
+                dMiner.Vencidos = vencido.GruposVencimiento;
+                dMiner.PorVencer = porVencer.GruposVencimiento;
+                dMiner.Cobranza = cobranza.GruposCobranza;
+                dMiner.Ventas = factSale.GruposVenta;
 
-            }
+                log.WriteEntry(string.Format("Mining documents for {0} started", empresa.NombreEmpresa), EventLogEntryType.Information, 15, 2);
+                dMiner.Execute(empresa, conn, log);
+                log.WriteEntry(string.Format("Mining documents for {0} completed", empresa.NombreEmpresa), EventLogEntryType.Information, 16, 2);
 
-            if (cobranzas != null)
-            {
-                foreach (FactCobranza fact in cobranzas)
-                {
-                    FactUncollectable incobrable = new FactUncollectable(fact.Month);
-                    fact.Uncollectable = incobrable.Uncollectable;
-                    AddCollection(fact, conn);
-                }
-            }
-            else 
-            {
-                log.WriteEntry("No information found in database.", EventLogEntryType.Warning);
-            }
+                MainLoader loader = new MainLoader();
+                loader.Vencidos = dMiner.Vencidos;
+                loader.PorVencer = dMiner.PorVencer;
+                loader.Cobranza = dMiner.Cobranza;
+                loader.Ventas = dMiner.Ventas;
 
-            if (sales != null)
-            {
-                foreach (FactSales sale in sales)
-                {
-                    AddSale(sale, conn);
-                }
-            }
-            else 
-            {
-                log.WriteEntry("No information found in database for sales chart", EventLogEntryType.Warning);
+                log.WriteEntry(string.Format("Loading documents for {0} started", empresa.NombreEmpresa), EventLogEntryType.Information, 17, 2);
+                loader.Load(empresa.IdEmpresa, conn);
+                log.WriteEntry(string.Format("Loading documents for {0} completed", empresa.NombreEmpresa), EventLogEntryType.Information, 18, 2);
             }
 
             conn.Close();
@@ -114,78 +107,5 @@ namespace WSAdminPaqWrapper.Process
             cmd = new NpgsqlCommand(sqlString, conn);
             cmd.ExecuteNonQuery();
         }
-
-        private static void AddSale(FactSales fact, NpgsqlConnection conn)
-        {
-            NpgsqlCommand cmd;
-
-            string sqlString = "INSERT INTO fact_sales(seller_id, sold_today, sold_week, sold_month) " +
-                "VALUES(@seller, @hoy, @semana, @mes);";
-
-            cmd = new NpgsqlCommand(sqlString, conn);
-
-            cmd.Parameters.Add("@seller", NpgsqlTypes.NpgsqlDbType.Integer);
-            cmd.Parameters.Add("@hoy", NpgsqlTypes.NpgsqlDbType.Numeric);
-            cmd.Parameters.Add("@semana", NpgsqlTypes.NpgsqlDbType.Numeric);
-            cmd.Parameters.Add("@mes", NpgsqlTypes.NpgsqlDbType.Numeric);
-
-            cmd.Parameters["@seller"].Value = fact.Seller.IdSeller;
-            cmd.Parameters["@hoy"].Value = fact.SoldToday;
-            cmd.Parameters["@semana"].Value = fact.SoldWeek;
-            cmd.Parameters["@mes"].Value = fact.SoldMonth;
-
-            cmd.ExecuteNonQuery();
-        }
-
-        private static void AddCollection(FactCobranza fact, NpgsqlConnection conn)
-        {
-            NpgsqlCommand cmd;
-
-            string sqlString = "INSERT INTO fact_collection(id_mes, vendido, cobrado, incobrable)" +
-                "VALUES(@mes, @vendido, @cobrado, @incobrable);";
-
-            cmd = new NpgsqlCommand(sqlString, conn);
-
-            cmd.Parameters.Add("@mes", NpgsqlTypes.NpgsqlDbType.Integer);
-            cmd.Parameters.Add("@vendido", NpgsqlTypes.NpgsqlDbType.Numeric);
-            cmd.Parameters.Add("@cobrado", NpgsqlTypes.NpgsqlDbType.Numeric);
-            cmd.Parameters.Add("@incobrable", NpgsqlTypes.NpgsqlDbType.Numeric);
-
-            cmd.Parameters["@mes"].Value = fact.Month.IdMes;
-            cmd.Parameters["@vendido"].Value = fact.Sold;
-            cmd.Parameters["@cobrado"].Value = fact.Collected;
-            cmd.Parameters["@incobrable"].Value = fact.Uncollectable;
-
-            cmd.ExecuteNonQuery();
-        }
-
-        private static void MergeSales(ref List<FactSales> destination, List<FactSales> source)
-        { 
-            foreach(FactSales fact in destination)
-            {
-                FactSales sourceFact = source.Find(x => (x.Seller.IdSeller == fact.Seller.IdSeller));
-                if (sourceFact != null)
-                {
-                    fact.SoldToday += sourceFact.SoldToday;
-                    fact.SoldWeek += sourceFact.SoldWeek;
-                    fact.SoldMonth += sourceFact.SoldMonth;
-                }
-            }
-        }
-
-        private static void MergeCollection(ref List<FactCobranza> destination, List<FactCobranza> source)
-        {
-            foreach (FactCobranza fact in destination)
-            {
-                FactCobranza sourceFact = source.Find(x => (x.Month.IdMes == fact.Month.IdMes));
-                if (sourceFact != null)
-                {
-                    fact.Collected = fact.Collected + sourceFact.Collected;
-                    fact.Sold = fact.Sold + sourceFact.Sold;
-                    fact.Uncollectable = fact.Uncollectable + sourceFact.Uncollectable;
-                }   
-            }
-        }
-
     }
 }

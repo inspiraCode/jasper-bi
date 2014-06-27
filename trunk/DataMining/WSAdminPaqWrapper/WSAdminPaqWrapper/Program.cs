@@ -38,7 +38,6 @@ namespace WSAdminPaqWrapper
 				    new WSAdminPaqWrapper() 
 			    };
             ServiceBase.Run(ServicesToRun);
-
         }
     }
 }

@@ -21,6 +21,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_5787BA312C3828000733333B6355D732"
+        "OwnerKey" = "8:_445E38A4458F48959F1D39C1E8100353"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_5A02D08012B5AF4A11A9F2BE519DE69C"
         "OwnerKey" = "8:_445E38A4458F48959F1D39C1E8100353"
         "MsmSig" = "8:_UNDEFINED"
@@ -39,12 +45,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_EF444E801363EF107C9C0CFA2EA40356"
-        "OwnerKey" = "8:_445E38A4458F48959F1D39C1E8100353"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_F3543B28EFAE468ABC241CB6F042BC8F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -58,7 +58,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_EF444E801363EF107C9C0CFA2EA40356"
+        "OwnerKey" = "8:_5787BA312C3828000733333B6355D732"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -206,6 +206,37 @@
         }
         "File"
         {
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_5787BA312C3828000733333B6355D732"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:CommonAdminPaq, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_5787BA312C3828000733333B6355D732"
+                    {
+                    "Name" = "8:CommonAdminPaq.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:CommonAdminPaq.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_5A8D58CD7F934AAAA37CE236A547C29D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_5A02D08012B5AF4A11A9F2BE519DE69C"
             {
             "AssemblyRegister" = "3:1"
@@ -251,37 +282,6 @@
                     }
                 }
             "SourcePath" = "8:Npgsql.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_5A8D58CD7F934AAAA37CE236A547C29D"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_EF444E801363EF107C9C0CFA2EA40356"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:CommonAdminPaq, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_EF444E801363EF107C9C0CFA2EA40356"
-                    {
-                    "Name" = "8:CommonAdminPaq.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:CommonAdminPaq.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_5A8D58CD7F934AAAA37CE236A547C29D"
@@ -375,15 +375,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:WSAPW_Setup"
-        "ProductCode" = "8:{3B63B2AA-8E3E-455D-99AE-D5CF62105DE4}"
-        "PackageCode" = "8:{588EF11F-90D9-4658-AE45-AE4B9F893F8C}"
+        "ProductCode" = "8:{8E485F82-1E81-4F01-AAB7-1B56713B47FC}"
+        "PackageCode" = "8:{49B87AFA-39FE-4647-B2A1-7540DA61AE27}"
         "UpgradeCode" = "8:{25CC035A-C8FD-41E3-B13C-0786C91F27F0}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:2.3.3"
+        "ProductVersion" = "8:3.0.0"
         "Manufacturer" = "8:Inspiracode"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"

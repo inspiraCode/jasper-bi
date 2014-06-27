@@ -9,19 +9,24 @@ using System.Diagnostics;
 
 namespace WSAdminPaqWrapper.Process
 {
-    public class FactSales
+    public class FactSales : Factoreable
     {
         public DimSellers Seller { get; set; }
         public double SoldToday { get; set; }
         public double SoldWeek { get; set; }
         public double SoldMonth { get; set; }
 
-        public static List<FactSales> GetFactByEnterprise(CatEmpresa empresa, NpgsqlConnection conn, EventLog log)
+        private List<FactSales> gruposVenta = new List<FactSales>();
+        public List<FactSales> GruposVenta { get { return gruposVenta; } }
+
+        public void Prepare(int idEmpresa, string rutaEmpresa, NpgsqlConnection conn)
         {
+            if (gruposVenta.Count > 0)
+                return;
+
             List<DimSellers> sellers = DimSellers.GetSellers(conn);
-            List<FactSales> sales = new List<FactSales>();
-            
-            foreach(DimSellers seller in sellers)
+
+            foreach (DimSellers seller in sellers)
             {
                 FactSales sale = new FactSales();
                 sale.Seller = seller;
@@ -29,15 +34,8 @@ namespace WSAdminPaqWrapper.Process
                 sale.SoldWeek = 0;
                 sale.SoldToday = 0;
 
-                sales.Add(sale);
+                gruposVenta.Add(sale);
             }
-
-            SalesPicker salesPicker = new SalesPicker();
-            salesPicker.Empresa = empresa;
-            salesPicker.Sales = sales;
-            salesPicker.FillSellers(log);
-
-            return salesPicker.Sales;
         }
     }
 }

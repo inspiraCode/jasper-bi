@@ -11,36 +11,35 @@ using System.Diagnostics;
 
 namespace WSAdminPaqWrapper.Process
 {
-    public class FactCobranza
+    public class FactCobranza : Factoreable
     {
         public DimMeses Month { get; set; }
         public double Sold { get; set; }
         public double Collected { get; set; }
         public double Uncollectable { get; set; }
 
+        private List<FactCobranza> gruposCobranza = new List<FactCobranza>();
+        public List<FactCobranza> GruposCobranza { get { return gruposCobranza; } }
 
-        internal static List<FactCobranza> GetFactByEnterprise(CatEmpresa empresa, NpgsqlConnection conn, EventLog log)
+        public void Prepare(int idEmpresa, string rutaEmpresa, NpgsqlConnection conn)
         {
-            List<DimMeses> meses = DimMeses.GetMeses(conn);
-            List<FactCobranza> cobranzas = new List<FactCobranza>();
+            if (gruposCobranza.Count > 0)
+                return;
 
-            foreach(DimMeses mes in meses)
+            List<DimMeses> meses = DimMeses.GetMeses(conn);
+
+            foreach (DimMeses mes in meses)
             {
                 FactCobranza cobranza = new FactCobranza();
                 cobranza.Month = mes;
                 cobranza.Sold = 0;
                 cobranza.Collected = 0;
-                cobranza.Uncollectable = 0;
 
-                cobranzas.Add(cobranza);
+                FactUncollectable uncollectable = new FactUncollectable(mes);
+                cobranza.Uncollectable = uncollectable.Uncollectable;
+
+                gruposCobranza.Add(cobranza);
             }
-
-            SalesPicker sales = new SalesPicker();
-            sales.Empresa = empresa;
-            sales.Facts = cobranzas;
-            sales.FillFacts(log);
-
-            return sales.Facts;
         }
     }
 }
