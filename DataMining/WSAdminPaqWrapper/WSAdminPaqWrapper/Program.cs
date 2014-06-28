@@ -14,23 +14,23 @@ namespace WSAdminPaqWrapper
         /// </summary>
         static void Main()
         {
-                /*System.Diagnostics.EventLog eventLogService = new System.Diagnostics.EventLog();
+            /*System.Diagnostics.EventLog eventLogService = new System.Diagnostics.EventLog();
 
-                if (!System.Diagnostics.EventLog.SourceExists("WSAdminPaqWrapperService"))
-                {
-                    System.Diagnostics.EventLog.CreateEventSource("WSAdminPaqWrapperService", "WSAdminPaqWrapperLog");
-                }
+            if (!System.Diagnostics.EventLog.SourceExists("WSAdminPaqWrapperService"))
+            {
+                System.Diagnostics.EventLog.CreateEventSource("WSAdminPaqWrapperService", "WSAdminPaqWrapperLog");
+            }
 
-                eventLogService.Source = "WSAdminPaqWrapperService";
-                eventLogService.Log = "WSAdminPaqWrapperLog";
+            eventLogService.Source = "WSAdminPaqWrapperService";
+            eventLogService.Log = "WSAdminPaqWrapperLog";
 
-                eventLogService.WriteEntry("DEBUG ETL Process Execution BEGIN.");
+            eventLogService.WriteEntry("DEBUG ETL Process Execution BEGIN.");
 
-                CommonAdminPaq.AdminPaqLib apl = new CommonAdminPaq.AdminPaqLib();
-                apl.SetDllFolder();
+            CommonAdminPaq.AdminPaqLib apl = new CommonAdminPaq.AdminPaqLib();
+            apl.SetDllFolder();
 
-                Process.Main.Execute(eventLogService, apl);
-                eventLogService.WriteEntry("DEBUG ETL Process Execution END.");*/
+            Process.Main.Execute(eventLogService, apl);
+            eventLogService.WriteEntry("DEBUG ETL Process Execution END.");*/
 
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[] 
