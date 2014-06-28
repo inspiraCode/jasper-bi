@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version last-->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="VentasDiariasPoragente" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b25c6999-e46c-4828-86ff-30d2d5b16246">
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="rhjasper"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter 1"/>
 	<queryString language="SQL">
 		<![CDATA[Select  dim_sellers.agent_name,dim_sellers.weekly_goal,
 fact_sales.sold_today / (dim_sellers.weekly_goal / 6) as porcentajediario, 
-fact_sales.sold_today - dim_sellers.weekly_goal / 6 as restantediario 
+(fact_sales.sold_today - dim_sellers.weekly_goal / 6)/1000 as restantediario
 FROM dim_sellers
 INNER JOIN fact_sales ON dim_sellers.seller_id = fact_sales.seller_id
-WHERE dim_sellers.weekly_goal > 0 AND dim_sellers.agent_code IN ( 'JS', 'OF', 'GI', 'AE' );]]>
+WHERE dim_sellers.weekly_goal > 0 AND dim_sellers.empresa = 'Ramos Hermanos Internacional SPR de RL de CV';]]>
 	</queryString>
 	<field name="agent_name" class="java.lang.String"/>
 	<field name="porcentajediario" class="java.math.BigDecimal"/>
 	<field name="restantediario" class="java.math.BigDecimal"/>
+	<field name="weekly_goal" class="java.math.BigDecimal"/>
+	<field name="goal" class="java.lang.Integer"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="411" splitType="Stretch">
+		<band height="520" splitType="Stretch">
 			<barChart>
-				<chart evaluationTime="Report">
-					<reportElement x="-1" y="0" width="753" height="411" uuid="29f882f7-dcc7-481b-9128-2e7876bd9b69"/>
+				<chart isShowLegend="false" evaluationTime="Report">
+					<reportElement x="-1" y="0" width="751" height="510" uuid="bd439746-aae7-4aa9-91e8-82b801ce63fd"/>
 					<chartTitle>
 						<font size="12" isBold="true"/>
 					</chartTitle>
@@ -36,23 +38,23 @@ WHERE dim_sellers.weekly_goal > 0 AND dim_sellers.agent_code IN ( 'JS', 'OF', 'G
 						<seriesExpression><![CDATA["Agentes"]]></seriesExpression>
 						<categoryExpression><![CDATA[$F{agent_name}]]></categoryExpression>
 						<valueExpression><![CDATA[$F{porcentajediario}]]></valueExpression>
-						<labelExpression><![CDATA[(new java.text.DecimalFormat("#0 %").format($F{porcentajediario}.doubleValue()))  + " ( "+ new java.text.DecimalFormat("$#,##0.00").format($F{restantediario}) + " ) "]]></labelExpression>
+						<labelExpression><![CDATA[(new java.text.DecimalFormat("#0 %").format($F{porcentajediario}.doubleValue()))  + "\n ( "+ new java.text.DecimalFormat("$#,##0.00").format($F{restantediario}) + " ) "]]></labelExpression>
 					</categorySeries>
 				</categoryDataset>
 				<barPlot isShowLabels="true" isShowTickLabels="true" isShowTickMarks="true">
-					<plot backgroundAlpha="1.0" foregroundAlpha="1.0">
-						<seriesColor seriesOrder="0" color="#46C738"/>
+					<plot backcolor="#FFFFFF" backgroundAlpha="1.0" foregroundAlpha="1.0">
+						<seriesColor seriesOrder="0" color="#09B800"/>
 					</plot>
 					<itemLabel>
-						<font size="14" isBold="true"/>
+						<font size="26" isBold="true" isItalic="false" isUnderline="false"/>
 					</itemLabel>
 					<categoryAxisFormat>
 						<axisFormat verticalTickLabels="true">
 							<labelFont>
-								<font size="14" isBold="true"/>
+								<font size="18" isBold="true"/>
 							</labelFont>
 							<tickLabelFont>
-								<font size="12" isBold="true"/>
+								<font size="16" isBold="true"/>
 							</tickLabelFont>
 						</axisFormat>
 					</categoryAxisFormat>
@@ -60,10 +62,10 @@ WHERE dim_sellers.weekly_goal > 0 AND dim_sellers.agent_code IN ( 'JS', 'OF', 'G
 					<valueAxisFormat>
 						<axisFormat tickLabelMask="#%">
 							<labelFont>
-								<font size="14" isBold="true"/>
+								<font size="16" isBold="true" isUnderline="false"/>
 							</labelFont>
 							<tickLabelFont>
-								<font size="12" isBold="true"/>
+								<font size="14" isBold="true" isUnderline="false"/>
 							</tickLabelFont>
 						</axisFormat>
 					</valueAxisFormat>
