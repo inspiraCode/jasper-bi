@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="VentasDiariasPoragente" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b25c6999-e46c-4828-86ff-30d2d5b16246">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="rhjasper"/>
+	<queryString language="SQL">
+		<![CDATA[Select  dim_sellers.agent_name, fact_sales.sold_month,
+fact_sales.sold_month / (dim_sellers.weekly_goal  * 4) as porcentajemensual, 
+fact_sales.sold_month - dim_sellers.weekly_goal *4 as restantemensual 
+from dim_sellers, fact_sales 
+WHERE dim_sellers.weekly_goal > 0 
+AND dim_sellers.agent_code IN ( 'JS', 'OF', 'GI', 'AE' ) 
+AND fact_sales.seller_id = dim_sellers.seller_id]]>
+	</queryString>
+	<field name="agent_name" class="java.lang.String"/>
+	<field name="porcentajemensual" class="java.math.BigDecimal"/>
+	<field name="restantemensual" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="411" splitType="Stretch">
+			<barChart>
+				<chart evaluationTime="Report">
+					<reportElement x="-1" y="0" width="752" height="411" uuid="0402e0ff-a009-4210-b150-e64e08c41c0a"/>
+					<chartTitle>
+						<font size="14" isBold="true"/>
+					</chartTitle>
+					<chartSubtitle>
+						<font size="12" isBold="true"/>
+					</chartSubtitle>
+					<chartLegend>
+						<font size="14" isBold="true"/>
+					</chartLegend>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA["Agentes"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{agent_name}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{porcentajemensual}]]></valueExpression>
+						<labelExpression><![CDATA[(new java.text.DecimalFormat("#0 %").format($F{porcentajemensual}.doubleValue()))  + " ( "+ new java.text.DecimalFormat("$#,#0.00").format($F{restantemensual}) + " ) "]]></labelExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot isShowLabels="true" isShowTickLabels="true" isShowTickMarks="true">
+					<plot>
+						<seriesColor seriesOrder="0" color="#19C21F"/>
+					</plot>
+					<itemLabel>
+						<font size="14" isBold="true"/>
+					</itemLabel>
+					<categoryAxisFormat>
+						<axisFormat>
+							<labelFont>
+								<font size="14" isBold="true"/>
+							</labelFont>
+							<tickLabelFont>
+								<font size="12" isBold="true"/>
+							</tickLabelFont>
+						</axisFormat>
+					</categoryAxisFormat>
+					<valueAxisLabelExpression><![CDATA["% Venta Mensual Por Agente"]]></valueAxisLabelExpression>
+					<valueAxisFormat>
+						<axisFormat tickLabelMask="#%">
+							<labelFont>
+								<font size="14" isBold="true"/>
+							</labelFont>
+							<tickLabelFont>
+								<font size="12" isBold="true"/>
+							</tickLabelFont>
+						</axisFormat>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+		</band>
+	</title>
+</jasperReport>
