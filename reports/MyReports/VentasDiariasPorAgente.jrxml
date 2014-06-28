@@ -4,17 +4,17 @@
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter 1"/>
 	<queryString language="SQL">
 		<![CDATA[Select  dim_sellers.agent_name,dim_sellers.weekly_goal,
-fact_sales.sold_today / (dim_sellers.weekly_goal / 6) as porcentajediario, 
-(fact_sales.sold_today - dim_sellers.weekly_goal / 6)/1000 as restantediario
+SUM(fact_sales.sold_today) / (dim_sellers.weekly_goal / 6) as porcentajediario, 
+(SUM(fact_sales.sold_today) - dim_sellers.weekly_goal / 6)/1000 as restantediario
 FROM dim_sellers
 INNER JOIN fact_sales ON dim_sellers.seller_id = fact_sales.seller_id
-WHERE dim_sellers.weekly_goal > 0 AND dim_sellers.empresa = 'Ramos Hermanos Internacional SPR de RL de CV';]]>
+WHERE dim_sellers.weekly_goal > 0 AND dim_sellers.empresa = 'Ramos Hermanos Internacional SPR de RL de CV'
+GROUP BY dim_sellers.agent_name, dim_sellers.weekly_goal;]]>
 	</queryString>
 	<field name="agent_name" class="java.lang.String"/>
 	<field name="porcentajediario" class="java.math.BigDecimal"/>
 	<field name="restantediario" class="java.math.BigDecimal"/>
 	<field name="weekly_goal" class="java.math.BigDecimal"/>
-	<field name="goal" class="java.lang.Integer"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
