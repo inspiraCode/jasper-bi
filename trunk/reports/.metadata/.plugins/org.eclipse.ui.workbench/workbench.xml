@@ -24,8 +24,7 @@
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
 <coolItem id="com.jaspersoft.studio.components.editor1" itemType="typePlaceholder" x="202" y="30"/>
 <coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="com.jaspersoft.studio.editor.JrxmlEditor" itemType="typeToolBarContribution" x="61" y="30"/>
-<coolItem id="com.jaspersoft.studio.graphic.size" itemType="typeToolBarContribution" x="153" y="30"/>
+<coolItem id="com.jaspersoft.studio.editor.JrxmlEditor" itemType="typePlaceholder" x="61" y="30"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
@@ -34,15 +33,10 @@
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
 <folder appearance="1" expanded="2">
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-</presentation>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="com.jaspersoft.studio.editor.JrxmlEditor" name="vencidos PCT Foraneos.jrxml" partName="vencidos PCT Foraneos.jrxml" path="C:/Users/jaime/Documents/svn_repos/jasper-bi/trunk/reports/MyReports/vencidos PCT Foraneos.jrxml" title="vencidos PCT Foraneos.jrxml" tooltip="MyReports/vencidos PCT Foraneos.jrxml" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MyReports/vencidos PCT Foraneos.jrxml"/>
-</editor>
 </editors>
 <views>
 <view id="org.eclipse.ui.navigator.ProjectExplorer" partName="Project Explorer">
@@ -106,7 +100,7 @@
 </view>
 <view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc"/>
 </views>
-<perspectives activePart="com.jaspersoft.studio.editor.JrxmlEditor" activePerspective="com.jaspersoft.studio.ReportDesignPerspective">
+<perspectives activePart="com.jaspersoft.studio.editor.preview.reportstate" activePerspective="com.jaspersoft.studio.ReportDesignPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="com.jaspersoft.studio.ReportDesignPerspective" id="com.jaspersoft.studio.ReportDesignPerspective" label="Report Design"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -150,8 +144,8 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.18228783" ratioLeft="247" ratioRight="1108" relationship="2" relative="org.eclipse.ui.internal.ViewStack@5b35fd64"/>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@7e6a5a2a" ratio="0.7475113" ratioLeft="826" ratioRight="279" relationship="2" relative="org.eclipse.ui.editorss">
+<info part="org.eclipse.ui.editorss" ratio="0.14169742" ratioLeft="192" ratioRight="1163" relationship="2" relative="org.eclipse.ui.internal.ViewStack@5b35fd64"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@7e6a5a2a" ratio="0.7784483" ratioLeft="903" ratioRight="257" relationship="2" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.gef.ui.palette_view" appearance="2" expanded="2">
 <page content="org.eclipse.gef.ui.palette_view" label="Palette"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
@@ -173,7 +167,7 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@7d85df46" ratio="0.9516908" ratioLeft="591" ratioRight="30" relationship="4" relative="org.eclipse.ui.editorss">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@7d85df46" ratio="0.7938808" ratioLeft="493" ratioRight="128" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="com.jaspersoft.studio.editor.preview.reportstate" appearance="2" expanded="2">
 <page content="com.jaspersoft.studio.editor.preview.reportstate" label="Report State"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
@@ -181,7 +175,7 @@
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@36d39b14" ratio="0.5056361" ratioLeft="314" ratioRight="307" relationship="4" relative="org.eclipse.ui.internal.ViewStack@5b35fd64">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@36d39b14" ratio="0.2815405" ratioLeft="212" ratioRight="541" relationship="4" relative="org.eclipse.ui.internal.ViewStack@5b35fd64">
 <folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
@@ -286,71 +280,7 @@
 </perspective>
 </perspectives>
 <workingSets/>
-<navigationHistory>
-<editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" path="/MyReports/Dashboard Local.jrxml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" path="/MyReports/Saldo por Vencer en Dias (Local).jrxml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" path="/MyReports/Locales.jrxml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" path="/MyReports/Saldos por vencer PCT.jrxml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" path="/MyReports/vencidos PCT Locales.jrxml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" path="/MyReports/vencidos PCT Foraneos.jrxml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" path="/MyReports/Saldos por vencerPCT Foraneo.jrxml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" path="/MyReports/Saldos  vencidos en dias.jrxml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" path="/MyReports/Cuentas por cobrar (Locales).jrxml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" path="/MyReports/Dashboard Local.jrxml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" path="/MyReports/Saldos por vencer en días (Foraneos).jrxml"/>
-</editors>
-<item historyLabel="Saldos por vencerPCT Foraneo.jrxml" index="6"/>
-<item historyLabel="Saldos por vencer PCT.jrxml" index="3"/>
-<item historyLabel="vencidos PCT Foraneos.jrxml" index="5"/>
-<item historyLabel="Saldos por vencerPCT Foraneo.jrxml" index="6"/>
-<item historyLabel="Saldo por Vencer en Dias (Local).jrxml" index="1"/>
-<item historyLabel="Saldos por vencerPCT Foraneo.jrxml" index="6"/>
-<item historyLabel="Saldo por Vencer en Dias (Local).jrxml" index="1"/>
-<item historyLabel="Saldos por vencerPCT Foraneo.jrxml" index="6"/>
-<item historyLabel="Locales.jrxml" index="2"/>
-<item historyLabel="vencidos PCT Foraneos.jrxml" index="5"/>
-<item historyLabel="Locales.jrxml" index="2"/>
-<item historyLabel="Saldos por vencerPCT Foraneo.jrxml" index="6"/>
-<item historyLabel="Locales.jrxml" index="2"/>
-<item historyLabel="Saldos por vencer PCT.jrxml" index="3"/>
-<item historyLabel="Locales.jrxml" index="2"/>
-<item historyLabel="vencidos PCT Locales.jrxml" index="4"/>
-<item historyLabel="vencidos PCT Foraneos.jrxml" index="5"/>
-<item historyLabel="Dashboard Local.jrxml" index="0"/>
-<item historyLabel="vencidos PCT Locales.jrxml" index="4"/>
-<item historyLabel="Dashboard Local.jrxml" index="0"/>
-<item historyLabel="vencidos PCT Locales.jrxml" index="4"/>
-<item historyLabel="vencidos PCT Foraneos.jrxml" index="5"/>
-<item historyLabel="Locales.jrxml" index="2"/>
-<item historyLabel="Saldos por vencerPCT Foraneo.jrxml" index="6"/>
-<item historyLabel="Locales.jrxml" index="2"/>
-<item historyLabel="vencidos PCT Foraneos.jrxml" index="5"/>
-<item historyLabel="Locales.jrxml" index="2"/>
-<item historyLabel="Saldos por vencer PCT.jrxml" index="3"/>
-<item historyLabel="Saldos  vencidos en dias.jrxml" index="7"/>
-<item historyLabel="Cuentas por cobrar (Locales).jrxml" index="8"/>
-<item historyLabel="Dashboard Local.jrxml" index="9"/>
-<item historyLabel="Saldos  vencidos en dias.jrxml" index="7"/>
-<item historyLabel="Dashboard Local.jrxml" index="9"/>
-<item historyLabel="Saldos  vencidos en dias.jrxml" index="7"/>
-<item historyLabel="Dashboard Local.jrxml" index="9"/>
-<item historyLabel="Saldos  vencidos en dias.jrxml" index="7"/>
-<item historyLabel="Dashboard Local.jrxml" index="9"/>
-<item historyLabel="Cuentas por cobrar (Locales).jrxml" index="8"/>
-<item historyLabel="Dashboard Local.jrxml" index="9"/>
-<item historyLabel="Saldos  vencidos en dias.jrxml" index="7"/>
-<item historyLabel="Cuentas por cobrar (Locales).jrxml" index="8"/>
-<item historyLabel="Saldos  vencidos en dias.jrxml" index="7"/>
-<item historyLabel="Saldos por vencer en días (Foraneos).jrxml" index="10"/>
-<item historyLabel="Saldos por vencerPCT Foraneo.jrxml" index="6"/>
-<item historyLabel="Saldos por vencer PCT.jrxml" index="3"/>
-<item historyLabel="Saldos por vencer en días (Foraneos).jrxml" index="10"/>
-<item historyLabel="Saldo por Vencer en Dias (Local).jrxml" index="1"/>
-<item historyLabel="vencidos PCT Locales.jrxml" index="4"/>
-<item historyLabel="Saldo por Vencer en Dias (Local).jrxml" index="1"/>
-<item active="true" historyLabel="vencidos PCT Foraneos.jrxml" index="5"/>
-</navigationHistory>
+<navigationHistory/>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
 <workbenchWindowAdvisor/>
@@ -367,50 +297,50 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="vencidos PCT Foraneos.jrxml" tooltip="MyReports/vencidos PCT Foraneos.jrxml">
-<persistable path="/MyReports/vencidos PCT Foraneos.jrxml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="VentasSemanalesPorAgente.jrxml" tooltip="MyReports/VentasSemanalesPorAgente.jrxml">
+<persistable path="/MyReports/VentasSemanalesPorAgente.jrxml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="vencidos PCT Locales.jrxml" tooltip="MyReports/vencidos PCT Locales.jrxml">
-<persistable path="/MyReports/vencidos PCT Locales.jrxml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="Saldo por Vencer en Dias (Local).jrxml" tooltip="MyReports/Saldo por Vencer en Dias (Local).jrxml">
-<persistable path="/MyReports/Saldo por Vencer en Dias (Local).jrxml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="Saldos por vencerPCT Foraneo.jrxml" tooltip="MyReports/Saldos por vencerPCT Foraneo.jrxml">
-<persistable path="/MyReports/Saldos por vencerPCT Foraneo.jrxml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="Saldos por vencer PCT.jrxml" tooltip="MyReports/Saldos por vencer PCT.jrxml">
-<persistable path="/MyReports/Saldos por vencer PCT.jrxml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="Saldos por vencer en días (Foraneos).jrxml" tooltip="MyReports/Saldos por vencer en días (Foraneos).jrxml">
-<persistable path="/MyReports/Saldos por vencer en días (Foraneos).jrxml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="Dashboard Local.jrxml" tooltip="MyReports/Dashboard Local.jrxml">
-<persistable path="/MyReports/Dashboard Local.jrxml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="Cuentas por cobrar (Locales).jrxml" tooltip="MyReports/Cuentas por cobrar (Locales).jrxml">
-<persistable path="/MyReports/Cuentas por cobrar (Locales).jrxml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="Saldos  vencidos en dias.jrxml" tooltip="MyReports/Saldos  vencidos en dias.jrxml">
-<persistable path="/MyReports/Saldos  vencidos en dias.jrxml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="Locales.jrxml" tooltip="MyReports/Locales.jrxml">
-<persistable path="/MyReports/Locales.jrxml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="Reporte de Ventas Mensual, Semanal y Diario..jrxml" tooltip="MyReports/Reporte de Ventas Mensual, Semanal y Diario..jrxml">
+<persistable path="/MyReports/Reporte de Ventas Mensual, Semanal y Diario..jrxml"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="saldos vencidos en días (Foraneos).jrxml" tooltip="MyReports/saldos vencidos en días (Foraneos).jrxml">
 <persistable path="/MyReports/saldos vencidos en días (Foraneos).jrxml"/>
 </file>
-<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="simpleCDS.jrxml" tooltip="C:\Jaspersoft\jasperreports-server-cp-5.5.0\samples\customDataSource\reports\simpleCDS.jrxml">
-<persistable uri="file:/C:/Jaspersoft/jasperreports-server-cp-5.5.0/samples/customDataSource/reports/simpleCDS.jrxml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="vencidos PCT Locales.jrxml" tooltip="MyReports/vencidos PCT Locales.jrxml">
+<persistable path="/MyReports/vencidos PCT Locales.jrxml"/>
 </file>
-<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="chartSamples.jrxml" tooltip="C:\Jaspersoft\jasperreports-server-cp-5.5.0\samples\reports\chartSamples.jrxml">
-<persistable uri="file:/C:/Jaspersoft/jasperreports-server-cp-5.5.0/samples/reports/chartSamples.jrxml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="Saldos vencidos %.jrxml" tooltip="MyReports/Saldos vencidos %.jrxml">
+<persistable path="/MyReports/Saldos vencidos %.jrxml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="Saldo vencido en días.jrxml" tooltip="MyReports/Saldo vencido en días.jrxml">
-<persistable path="/MyReports/Saldo vencido en días.jrxml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="Saldos Vencidos en Dias - Foraneos.jrxml" tooltip="MyReports/Saldos Vencidos en Dias - Foraneos.jrxml">
+<persistable path="/MyReports/Saldos Vencidos en Dias - Foraneos.jrxml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="Saldos vencidos en días.jrxml" tooltip="MyReports/Saldos vencidos en días.jrxml">
-<persistable path="/MyReports/Saldos vencidos en días.jrxml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="vencidos PCT Foraneos.jrxml" tooltip="MyReports/vencidos PCT Foraneos.jrxml">
+<persistable path="/MyReports/vencidos PCT Foraneos.jrxml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="vencidos % Locales.jrxml" tooltip="MyReports/vencidos % Locales.jrxml">
+<persistable path="/MyReports/vencidos % Locales.jrxml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="VentasMensualesPorAgente.jrxml" tooltip="MyReports/VentasMensualesPorAgente.jrxml">
+<persistable path="/MyReports/VentasMensualesPorAgente.jrxml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="VentasDiariasPorAgente.jrxml" tooltip="MyReports/VentasDiariasPorAgente.jrxml">
+<persistable path="/MyReports/VentasDiariasPorAgente.jrxml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="Cuentas por cobrar (Locales).jrxml" tooltip="MyReports/Cuentas por cobrar (Locales).jrxml">
+<persistable path="/MyReports/Cuentas por cobrar (Locales).jrxml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="Antiguedad de saldos locales.jrxml" tooltip="MyReports/Antiguedad de saldos locales.jrxml">
+<persistable path="/MyReports/Antiguedad de saldos locales.jrxml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="Antiguedad de saldos foraneos.jrxml" tooltip="MyReports/Antiguedad de saldos foraneos.jrxml">
+<persistable path="/MyReports/Antiguedad de saldos foraneos.jrxml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="Saldos por vencer en días (Foraneos).jrxml" tooltip="MyReports/Saldos por vencer en días (Foraneos).jrxml">
+<persistable path="/MyReports/Saldos por vencer en días (Foraneos).jrxml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="Saldos  vencidos en dias.jrxml" tooltip="MyReports/Saldos  vencidos en dias.jrxml">
+<persistable path="/MyReports/Saldos  vencidos en dias.jrxml"/>
 </file>
 </mruList>
 </workbench>
