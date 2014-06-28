@@ -8,6 +8,8 @@ using System.Configuration;
 using System.Diagnostics;
 using CommonAdminPaq;
 using WSAdminPaqWrapper.Loader;
+using System.Collections.Specialized;
+using WSAdminPaqWrapper.Config;
 
 namespace WSAdminPaqWrapper.Process
 {
@@ -30,6 +32,8 @@ namespace WSAdminPaqWrapper.Process
 
             foreach (CatEmpresa empresa in empresas)
             {
+                if (!IsEnterpriseConfigured(log, empresa.NombreEmpresa)) continue;
+
                 log.WriteEntry("Downloading from AdminPaq: " + empresa.RutaEmpresa, EventLogEntryType.Information, 8, 2);
                 // DIM ETLs
                 List<CatCliente> clientes = CatCliente.GetClientes(empresa.RutaEmpresa);
@@ -82,6 +86,41 @@ namespace WSAdminPaqWrapper.Process
             }
 
             conn.Close();
+        }
+
+        private static bool IsEnterpriseConfigured(EventLog log, string enterpriseName)
+        {
+            var configuredClients = ConfigurationManager.AppSettings as NameValueCollection;
+            if (configuredClients == null)
+            {
+                log.WriteEntry("Unable to load the configuration file.", EventLogEntryType.Warning, 19, 3);
+                return false;
+            }
+
+            if (configuredClients.Count == 0)
+            {
+                log.WriteEntry("No keys detected in configuration file.", EventLogEntryType.Warning, 20, 3);
+                return false;
+            }
+
+            foreach (var key in configuredClients.AllKeys)
+            {
+                string configuredClient = configuredClients.GetValues(key).FirstOrDefault();
+                EnterpriseSection clientConfig = (EnterpriseSection)System.Configuration.ConfigurationManager.GetSection("Empresas/" + configuredClient);
+
+                if (clientConfig == null)
+                {
+                    log.WriteEntry("Client configuration not found for Empresas/" + configuredClient + ".", EventLogEntryType.Warning, 21, 3);
+                    continue;
+                }
+
+                if (clientConfig.NombreEmpresa.Equals(enterpriseName))
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         private static void DeleteSales(NpgsqlConnection conn)
