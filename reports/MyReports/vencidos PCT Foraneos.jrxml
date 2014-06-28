@@ -24,10 +24,10 @@ ORDER BY dim_grupo_vencimiento.id_grupo_vencimiento]]>
 	<field name="grupo" class="java.lang.String"/>
 	<field name="porcentaje" class="java.lang.Number"/>
 	<summary>
-		<band height="358" splitType="Stretch">
+		<band height="405" splitType="Stretch">
 			<barChart>
 				<chart evaluationTime="Report">
-					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="380" height="350" uuid="17b86153-b0cd-4085-b9c2-516377123d24">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="751" height="405" uuid="17b86153-b0cd-4085-b9c2-516377123d24">
 						<property name="local_mesure_unitheight" value="pixel"/>
 					</reportElement>
 					<chartTitle>
@@ -58,16 +58,16 @@ ORDER BY dim_grupo_vencimiento.id_grupo_vencimiento]]>
 						<seriesColor seriesOrder="3" color="#FF0000"/>
 					</plot>
 					<itemLabel color="#000000" backgroundColor="#000000">
-						<font size="10" isBold="true"/>
+						<font size="14" isBold="true"/>
 					</itemLabel>
 					<categoryAxisLabelExpression><![CDATA["Días de saldos vencidos"]]></categoryAxisLabelExpression>
 					<categoryAxisFormat>
 						<axisFormat verticalTickLabels="true">
 							<labelFont>
-								<font size="10" isBold="true"/>
+								<font size="14" isBold="true"/>
 							</labelFont>
 							<tickLabelFont>
-								<font size="8" isBold="true"/>
+								<font size="10" isBold="true"/>
 							</tickLabelFont>
 						</axisFormat>
 					</categoryAxisFormat>
@@ -75,10 +75,10 @@ ORDER BY dim_grupo_vencimiento.id_grupo_vencimiento]]>
 					<valueAxisFormat>
 						<axisFormat tickLabelMask="#%">
 							<labelFont>
-								<font size="8" isBold="true"/>
+								<font size="10" isBold="true"/>
 							</labelFont>
 							<tickLabelFont>
-								<font size="8" isBold="true" isItalic="false"/>
+								<font size="10" isBold="true" isItalic="false"/>
 							</tickLabelFont>
 						</axisFormat>
 					</valueAxisFormat>

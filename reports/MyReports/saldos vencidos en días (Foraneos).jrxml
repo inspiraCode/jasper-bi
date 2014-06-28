@@ -23,17 +23,17 @@ ORDER BY dim_grupo_vencimiento.id_grupo_vencimiento]]>
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 			<barChart>
 				<chart isShowLegend="true" evaluationTime="Report">
-					<reportElement x="0" y="0" width="380" height="348" uuid="8b73750e-8132-49e1-bd14-41e5804bfd14"/>
+					<reportElement x="0" y="0" width="751" height="348" uuid="8b73750e-8132-49e1-bd14-41e5804bfd14"/>
 					<chartTitle position="Top">
-						<font isBold="true"/>
+						<font size="12" isBold="true"/>
 						<titleExpression><![CDATA["Foraneo"]]></titleExpression>
 					</chartTitle>
 					<chartSubtitle>
-						<font size="14" isBold="true"/>
+						<font size="12" isBold="true"/>
 						<subtitleExpression><![CDATA["Saldos vencidos en dias"]]></subtitleExpression>
 					</chartSubtitle>
 					<chartLegend position="Bottom">
-						<font size="10" isBold="true"/>
+						<font size="12" isBold="true"/>
 					</chartLegend>
 				</chart>
 				<categoryDataset>
@@ -52,16 +52,16 @@ ORDER BY dim_grupo_vencimiento.id_grupo_vencimiento]]>
 						<seriesColor seriesOrder="3" color="#FF0400"/>
 					</plot>
 					<itemLabel color="#030000" backgroundColor="#000000">
-						<font size="10" isBold="true"/>
+						<font size="14" isBold="true"/>
 					</itemLabel>
 					<categoryAxisLabelExpression><![CDATA["Días de saldos vencidos"]]></categoryAxisLabelExpression>
 					<categoryAxisFormat>
 						<axisFormat labelColor="#030303" axisLineColor="#030303">
 							<labelFont>
-								<font size="10" isBold="true"/>
+								<font size="14" isBold="true"/>
 							</labelFont>
 							<tickLabelFont>
-								<font size="8" isBold="true"/>
+								<font size="10" isBold="true"/>
 							</tickLabelFont>
 						</axisFormat>
 					</categoryAxisFormat>
@@ -69,10 +69,10 @@ ORDER BY dim_grupo_vencimiento.id_grupo_vencimiento]]>
 					<valueAxisFormat>
 						<axisFormat tickLabelMask="$ #,##0.00">
 							<labelFont>
-								<font size="8" isBold="true"/>
+								<font size="10" isBold="true"/>
 							</labelFont>
 							<tickLabelFont>
-								<font size="8"/>
+								<font size="10"/>
 							</tickLabelFont>
 						</axisFormat>
 					</valueAxisFormat>

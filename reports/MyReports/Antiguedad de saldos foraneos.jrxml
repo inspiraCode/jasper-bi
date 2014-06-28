@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Antiguedad de saldos foraneos" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cbf19db7-f26a-425a-b911-70047bf84088">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="rhjasper"/>
+	<queryString>
+		<![CDATA[SELECT * FROM  vw_saldos_foraneos]]>
+	</queryString>
+	<field name="codigo_cliente" class="java.lang.String"/>
+	<field name="nombre_cliente" class="java.lang.String"/>
+	<field name="0-15 Días" class="java.math.BigDecimal"/>
+	<field name="16-30 Días" class="java.math.BigDecimal"/>
+	<field name="31-45 Días" class="java.math.BigDecimal"/>
+	<field name="46 Días o más" class="java.math.BigDecimal"/>
+	<field name="0-15 Días." class="java.math.BigDecimal"/>
+	<field name="16-30 Días." class="java.math.BigDecimal"/>
+	<field name="31-45 Días." class="java.math.BigDecimal"/>
+	<field name="46 Días o más." class="java.math.BigDecimal"/>
+	<title>
+		<band height="86" splitType="Stretch">
+			<rectangle>
+				<reportElement x="250" y="68" width="175" height="16" backcolor="#FF0400" uuid="178495fd-4d65-4c46-962a-af80f1b6026f"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="495" y="68" width="175" height="16" backcolor="#FF0400" uuid="e88cc389-22b1-4f98-87c6-9d07cca02e49"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="180" y="0" width="400" height="30" uuid="c3f35206-9acc-4341-a01f-e017ebf741ba"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ramos Hermanos Internacional  SPR de RL de CV.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="180" y="30" width="400" height="20" uuid="eaddd257-bb2f-45ee-9069-1af4614f476d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[ANTIGÜEDAD DE SALDOS Y PRONÓSTICO DE COBRANZA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="180" y="50" width="400" height="20" uuid="2e3e3cf8-931e-444b-bfac-4674cc9266d9"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[CLASIFICACIÓN No.1: FORANEO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="495" y="66" width="175" height="20" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="0b720c97-cab3-4274-8214-39f26d158d9e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[SALDOS POR VENCER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="250" y="66" width="175" height="20" forecolor="#FFFFFF" backcolor="#FF001E" uuid="03ea3d90-2c14-4ea9-b627-a06eeadd3716"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[SALDOS VENCIDOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="62" width="152" height="20" uuid="a0c824bc-dd73-4042-845b-097beb53148b"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Moneda: Peso Mexicano]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="80" y="40" width="100" height="20" uuid="673f6684-c470-46b4-8d14-85014e23e11e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="40" width="80" height="20" uuid="8621554d-3b27-44fb-8820-bbc61ea7c7dd"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha de Corte: ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="32">
+			<rectangle>
+				<reportElement x="0" y="0" width="752" height="30" backcolor="#4C39DB" uuid="a794af41-0d0a-4ee6-85c7-4da597474638"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="3" width="60" height="27" forecolor="#FFFFFF" uuid="68a80d4e-fabe-420c-8f5f-4e67ca04a0a5"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Codigo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="3" width="120" height="27" forecolor="#FFFFFF" uuid="802278a8-9bef-4b2f-8633-65138f2a0086"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre (cliente)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="250" y="3" width="40" height="27" forecolor="#FFFFFF" uuid="2835093c-4309-4831-9694-57a62904f786">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[0-15 
+Días]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="3" width="40" height="27" forecolor="#FFFFFF" uuid="c879ecf5-0517-4a78-ab85-56ef38bf58fe">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[16-30 Días]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="3" width="40" height="27" forecolor="#FFFFFF" uuid="f0872f09-d685-4623-929f-22cf7b37a0ff">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[31-45 Días]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="370" y="3" width="55" height="27" forecolor="#FFFFFF" uuid="eb462388-be53-4510-89fb-e37165bba161">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[46 Días o más]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="495" y="3" width="40" height="27" forecolor="#FFFFFF" uuid="6462413f-dd76-4bf6-b406-7e0d39605b32">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[0-15 Días]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="535" y="3" width="40" height="27" forecolor="#FFFFFF" uuid="f42c8a00-4a96-4cf6-836a-807fbcf7ebc6">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[16-30 Días]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="575" y="3" width="40" height="27" forecolor="#FFFFFF" uuid="a54b5af4-a78b-4d2c-a49e-2df0114c4f98">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[31-45 Días]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="615" y="3" width="55" height="27" forecolor="#FFFFFF" uuid="4eac2729-eeee-43e9-9185-77e857e60279">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[46 Días o más]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="425" y="3" width="70" height="27" forecolor="#FFFFFF" uuid="dbf51868-36d0-41f6-86bb-975e4c89bfd4">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total por vencer]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="180" y="3" width="70" height="27" forecolor="#FFFFFF" uuid="55283c62-b313-4d40-ab34-b25fe25dea95">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total vencido]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="670" y="3" width="81" height="27" forecolor="#FFFFFF" uuid="7f159c77-5a69-4c3e-b440-386c2e54bd65">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="28">
+			<rectangle>
+				<reportElement x="670" y="3" width="81" height="20" backcolor="#C0B8FC" uuid="fbb5264d-63da-4a6e-99ed-d0b3679b7961"/>
+				<graphicElement>
+					<pen lineColor="#FFFFFF"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="180" y="3" width="70" height="20" backcolor="#C0B8FC" uuid="827b6388-1011-4b39-bd49-9d90ba25606b"/>
+				<graphicElement>
+					<pen lineColor="#FFFFFF"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="425" y="3" width="70" height="20" backcolor="#C0B8FC" uuid="58f153b0-c543-4d13-9612-632c8718d52f"/>
+				<graphicElement>
+					<pen lineStyle="Solid" lineColor="#FFFFFF"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="0" y="3" width="60" height="20" uuid="71fa978f-2d12-45e0-af0d-f8efdabc24ff"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{codigo_cliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="60" y="3" width="120" height="20" uuid="e4c37287-4216-48b0-b26e-a8e0e7060d97"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{nombre_cliente}]]></textFieldExpression>
+			</textField>
+			<textField pattern="$#,##0.###;(#,##0.###-)" isBlankWhenNull="true">
+				<reportElement x="250" y="3" width="40" height="20" uuid="8c69f151-c574-44ea-b37a-582af5cb651d">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{0-15 Días}]]></textFieldExpression>
+			</textField>
+			<textField pattern="$#,##0.###;(#,##0.###-)" isBlankWhenNull="true">
+				<reportElement x="290" y="3" width="40" height="20" uuid="c17140ac-f694-4df2-84da-c75eb7c28fce">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{16-30 Días}]]></textFieldExpression>
+			</textField>
+			<textField pattern="$#,##0.###;(#,##0.###-)" isBlankWhenNull="true">
+				<reportElement x="330" y="3" width="40" height="20" uuid="b87f581c-590e-4311-a772-1136a7942eee">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{31-45 Días}]]></textFieldExpression>
+			</textField>
+			<textField pattern="$#,##0.###;(#,##0.###-)" isBlankWhenNull="true">
+				<reportElement x="370" y="3" width="55" height="20" uuid="5a622bbb-1b0a-409f-b428-972a3ea5915b">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{46 Días o más}]]></textFieldExpression>
+			</textField>
+			<textField pattern="$#,##0.###;(#,##0.###-)" isBlankWhenNull="true">
+				<reportElement x="495" y="3" width="40" height="20" uuid="c3ec9d93-fd72-4387-abbb-02eceda26d0b">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{0-15 Días.}]]></textFieldExpression>
+			</textField>
+			<textField pattern="$#,##0.###;(#,##0.###-)" isBlankWhenNull="true">
+				<reportElement x="535" y="3" width="40" height="20" uuid="43274942-a366-4a28-8925-26274e11ff5e">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{16-30 Días.}]]></textFieldExpression>
+			</textField>
+			<textField pattern="$#,##0.###;(#,##0.###-)" isBlankWhenNull="true">
+				<reportElement x="575" y="3" width="40" height="20" uuid="6bbde198-d514-46e6-abd7-f09c6c8a3e8e">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{31-45 Días.}]]></textFieldExpression>
+			</textField>
+			<textField pattern="$#,##0.###;(#,##0.###-)" isBlankWhenNull="true">
+				<reportElement x="615" y="3" width="55" height="20" uuid="1cf3d950-2326-4d69-ba67-7b2118089164">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{46 Días o más.}]]></textFieldExpression>
+			</textField>
+			<textField pattern="$#,##0.###;(#,##0.###-)" isBlankWhenNull="true">
+				<reportElement x="425" y="3" width="70" height="20" forecolor="#000000" uuid="3cf7b55c-b816-414c-ae67-fe72f01b72d6"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[SUM($F{0-15 Días.},$F{16-30 Días.},$F{31-45 Días.},$F{46 Días o más.})]]></textFieldExpression>
+			</textField>
+			<textField pattern="$#,##0.###;(#,##0.###-)" isBlankWhenNull="true">
+				<reportElement x="180" y="3" width="70" height="20" forecolor="#000000" uuid="2e357fb4-4b0f-4c56-8374-75e43b144457"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[SUM($F{0-15 Días},$F{16-30 Días},$F{31-45 Días},$F{46 Días o más})]]></textFieldExpression>
+			</textField>
+			<textField pattern="$#,##0.###;(#,##0.###-)" isBlankWhenNull="true">
+				<reportElement x="670" y="3" width="81" height="20" uuid="92af59ec-17f2-4715-977f-6801bf0e89ea"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[SUM($F{0-15 Días.},$F{16-30 Días.},$F{31-45 Días.},$F{46 Días o más.},$F{0-15 Días},$F{16-30 Días},$F{31-45 Días},$F{46 Días o más})]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="25">
+			<textField>
+				<reportElement x="300" y="0" width="100" height="20" uuid="a4878f14-3374-454e-8115-1a870b05db31"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="400" y="0" width="100" height="20" uuid="6d3913cd-f4e2-48ac-b29a-36630a6f7f0c"/>
+				<textElement textAlignment="Left">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" of " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>
