@@ -55,10 +55,22 @@ CREATE TABLE dim_sellers(
 	agent_code VARCHAR(10),
 	agent_name VARCHAR(150),
 	email VARCHAR(150),
+	cellphone character varying (150),
 	weekly_goal NUMERIC DEFAULT 0,
 	empresa VARCHAR(150),
 	id_empresa INTEGER
 );
+
+DROP TABLE IF EXISTS dim_directors CASCADE;
+CREATE TABLE dim_directors
+(
+  director_id serial NOT NULL,
+  director_name character varying(150),
+  email character varying(150),
+  cellphone character varying (150),
+  id_empresa integer,
+  CONSTRAINT dim_directors_pkey PRIMARY KEY (director_id)
+  );
 
 DROP TABLE IF EXISTS fact_sales CASCADE;
 CREATE TABLE fact_sales(
