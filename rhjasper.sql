@@ -51,6 +51,7 @@ CREATE TABLE fact_collection (
 DROP TABLE IF EXISTS dim_sellers CASCADE;
 CREATE TABLE dim_sellers(
 	seller_id SERIAL PRIMARY KEY,
+	sms BOOLEAN DEFAULT false,
 	ap_id INTEGER NOT NULL,
 	agent_code VARCHAR(10),
 	agent_name VARCHAR(150),
@@ -68,6 +69,7 @@ CREATE TABLE dim_directors
   director_name character varying(150),
   email character varying(150),
   cellphone character varying (150),
+  sms BOOLEAN DEFAULT false,
   id_empresa integer,
   CONSTRAINT dim_directors_pkey PRIMARY KEY (director_id)
   );
