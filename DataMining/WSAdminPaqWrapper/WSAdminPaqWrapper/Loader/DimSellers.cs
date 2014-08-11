@@ -14,7 +14,7 @@ namespace WSAdminPaqWrapper.Loader
         public int ApId { get; set; }
         public string Code { get; set; }
         public string AgentName { get; set; }
-        public string Email { get; set; }
+        public string Phone { get; set; }
         public double WeeklyGoal { get; set; }
         public string Empresa { get; set; }
         public int IdEmpresa { get; set; }
@@ -26,7 +26,7 @@ namespace WSAdminPaqWrapper.Loader
             NpgsqlCommand cmd;
             DimSellers result = null;
 
-            string sqlString = "SELECT seller_id, ap_id, agent_code, agent_name, email, weekly_goal, empresa, id_empresa " +
+            string sqlString = "SELECT seller_id, ap_id, agent_code, agent_name, phone, weekly_goal, empresa, id_empresa " +
                 "FROM dim_sellers " +
                 "WHERE ap_id=@id AND id_empresa = @enterpriseId;";
 
@@ -53,7 +53,7 @@ namespace WSAdminPaqWrapper.Loader
                 result.ApId = int.Parse(dr["ap_id"].ToString());
                 result.Code = dr["agent_code"].ToString();
                 result.AgentName = dr["agent_code"].ToString();
-                result.Email = dr["email"].ToString();
+                result.Phone = dr["phone"].ToString();
                 result.WeeklyGoal = double.Parse(dr["weekly_goal"].ToString());
                 result.Empresa = dr["empresa"].ToString();
                 result.IdEmpresa = int.Parse(dr["id_empresa"].ToString());
@@ -74,7 +74,7 @@ namespace WSAdminPaqWrapper.Loader
             NpgsqlCommand cmd;
             DimSellers result = null;
 
-            string sqlString = "SELECT seller_id, ap_id, agent_code, agent_name, email, weekly_goal, empresa, id_empresa " +
+            string sqlString = "SELECT seller_id, ap_id, agent_code, agent_name, phone, weekly_goal, empresa, id_empresa " +
                 "FROM dim_sellers " +
                 "WHERE seller_id=@id;";
 
@@ -99,7 +99,7 @@ namespace WSAdminPaqWrapper.Loader
                 result.ApId = int.Parse(dr["ap_id"].ToString());
                 result.Code = dr["agent_code"].ToString();
                 result.AgentName = dr["agent_name"].ToString();
-                result.Email = dr["email"].ToString();
+                result.Phone = dr["phone"].ToString();
                 result.WeeklyGoal = double.Parse(dr["weekly_goal"].ToString());
                 result.Empresa = dr["empresa"].ToString();
                 result.IdEmpresa = int.Parse(dr["id_empresa"].ToString());
@@ -120,7 +120,7 @@ namespace WSAdminPaqWrapper.Loader
             NpgsqlCommand cmd;
             List<DimSellers> result = new List<DimSellers>();
 
-            string sqlString = "SELECT seller_id, ap_id, agent_code, email, weekly_goal, empresa, id_empresa " +
+            string sqlString = "SELECT seller_id, ap_id, agent_code, phone, weekly_goal, empresa, id_empresa " +
                 "FROM dim_sellers;";
 
             if (conn == null || !(conn.State == ConnectionState.Open))
@@ -141,7 +141,7 @@ namespace WSAdminPaqWrapper.Loader
                 dm.IdSeller = int.Parse(dr["seller_id"].ToString());
                 dm.ApId = int.Parse(dr["ap_id"].ToString());
                 dm.Code = dr["agent_code"].ToString();
-                dm.Email = dr["email"].ToString();
+                dm.Phone = dr["phone"].ToString();
                 dm.WeeklyGoal = double.Parse(dr["weekly_goal"].ToString());
                 dm.Empresa = dr["empresa"].ToString();
                 dm.IdEmpresa = int.Parse(dr["id_empresa"].ToString());

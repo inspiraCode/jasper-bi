@@ -35,7 +35,6 @@ namespace WSAdminPaqWrapper.Miner
             DateTime toDate = today;
             DateTime dueDate = today;
             string sFromDate = fromDate.ToString("yyyyMMdd");
-            string sToDate = toDate.ToString("yyyyMMdd");
 
             Dictionary<int, string> currencies = new Dictionary<int, string>();
             Dictionary<int, string> concepts = new Dictionary<int, string>();
@@ -61,6 +60,21 @@ namespace WSAdminPaqWrapper.Miner
             string[] codigosDevolucion = GetCodigosDevolucion(empresa, log);
 
             dbResponse = AdminPaqLib.dbGetNoLock(connDocos, TABLE_NAME, INDEX, sFromDate);
+
+            while (dbResponse != 0 && fromDate.CompareTo(DateTime.Today) < 0)
+            {
+                fromDate = fromDate.AddDays(1);
+                sFromDate = fromDate.ToString("yyyyMMdd");
+                dbResponse = AdminPaqLib.dbGetNoLock(connDocos, TABLE_NAME, INDEX, sFromDate);
+            }
+
+            log.WriteEntry("GENERANDO DATOS DE VENTAS A PARTIR DE LA FECHA: " + sFromDate);
+
+            if(dbResponse != 0)
+                log.WriteEntry("NO FUE POSIBLE ENCONTRAR NINGúN REGISTRO, LA BASE DE DATOS ANUNCIó EL ERROR: " 
+                    + dbResponse.ToString(), EventLogEntryType.Warning);
+
+            int cancelados = 0, devueltos = 0, otros = 0, no_impresos = 0, no_co = 0, no_cliente = 0, valido = 0;
             while (dbResponse == 0)
             {
                 esVenta = false;
@@ -72,6 +86,7 @@ namespace WSAdminPaqWrapper.Miner
                 if (cancelado != 0)
                 {
                     dbResponse = AdminPaqLib.dbSkip(connDocos, TABLE_NAME, INDEX, 1);
+                    cancelados++;
                     continue;
                 }
 
@@ -79,6 +94,7 @@ namespace WSAdminPaqWrapper.Miner
                 if (devuelto != 0)
                 {
                     dbResponse = AdminPaqLib.dbSkip(connDocos, TABLE_NAME, INDEX, 1);
+                    devueltos++;
                     continue;
                 }
 
@@ -94,6 +110,7 @@ namespace WSAdminPaqWrapper.Miner
                 if (concept == null)
                 {
                     dbResponse = AdminPaqLib.dbSkip(connDocos, TABLE_NAME, INDEX, 1);
+                    otros++;
                     continue;
                 }
 
@@ -105,6 +122,7 @@ namespace WSAdminPaqWrapper.Miner
                 if (!esVenta && !esDevolucion && !esCredito && !esPago)
                 {
                     dbResponse = AdminPaqLib.dbSkip(connDocos, TABLE_NAME, INDEX, 1);
+                    otros++;
                     continue;
                 }
 
@@ -114,6 +132,7 @@ namespace WSAdminPaqWrapper.Miner
                     if (impreso == 0)
                     {
                         dbResponse = AdminPaqLib.dbSkip(connDocos, TABLE_NAME, INDEX, 1);
+                        no_impresos++;
                         continue;
                     }
                 }
@@ -173,12 +192,14 @@ namespace WSAdminPaqWrapper.Miner
                         if (companyCode == null)
                         {
                             dbResponse = AdminPaqLib.dbSkip(connDocos, TABLE_NAME, INDEX, 1);
+                            no_co++;
                             continue;
                         }
                         DimClientes cliente = DimClientes.GetCliente(empresa.IdEmpresa, companyCode, null);
                         if (cliente == null)
                         {
                             dbResponse = AdminPaqLib.dbSkip(connDocos, TABLE_NAME, INDEX, 1);
+                            no_cliente++;
                             continue;
                         }
                         customers.Add(companyId, cliente);
@@ -188,14 +209,17 @@ namespace WSAdminPaqWrapper.Miner
                     doco.Client = customer;
                 }
 
-                OrganizeDoco(doco);
+                OrganizeDoco(doco, log);
+                valido++;
 
                 dbResponse = AdminPaqLib.dbSkip(connDocos, TABLE_NAME, INDEX, 1);
             }
+
+            log.WriteEntry("Resumen de colección de datos: cancelados=" + cancelados + ";devueltos=" + devueltos + ";otros=" + otros + ";no_impresos=" + no_impresos + ";no_co=" + no_co + ";no_cliente=" + no_cliente + ";valido=" + valido);
             AdminPaqLib.dbLogOut(connDocos);
         }
 
-        private void OrganizeDoco(AdminPaqDocument document)
+        private void OrganizeDoco(AdminPaqDocument document, EventLog log)
         {
             if (document.IsCredit)
             {
@@ -213,19 +237,20 @@ namespace WSAdminPaqWrapper.Miner
 
             if (document.IsSale)
             {
-                MergeSale(document);
+                MergeSale(document, log);
             }
 
         }
 
-        private void MergeSale(AdminPaqDocument document)
+        private void MergeSale(AdminPaqDocument document, EventLog log)
         {
-            MergeAgentSale(document);
+            MergeAgentSale(document, log);
             MergeCollectedSale(document);
         }
 
-        private void MergeAgentSale(AdminPaqDocument document)
+        private void MergeAgentSale(AdminPaqDocument document, EventLog log)
         {
+            bool found = false;
             int monthDeltaDays = (DateTime.Today.Day - 1)*-1;
             DateTime BOM = DateTime.Today.AddDays(monthDeltaDays);
 
@@ -248,9 +273,12 @@ namespace WSAdminPaqWrapper.Miner
                     if (document.DocumentDate.CompareTo(DateTime.Today) == 0)
                         sale.SoldToday += document.Amount;
 
+                    found = true;
                     break;
                 }
             }
+            if (!found)
+                log.WriteEntry("No se encontró el agente de venta al cual pertenece uno de los registros: " + document.SellerId, EventLogEntryType.Warning);
         }
 
         public void MergeCollectedSale(AdminPaqDocument document)
