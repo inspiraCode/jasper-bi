@@ -5,7 +5,7 @@ public class Seller {
 	private int adminPaqId;
 	private String agentCode;
 	private String agentName;
-	private String email;
+	private String phone;
 	private double weeklyGoal;
 	private String company;
 	private int companyId;
@@ -22,8 +22,8 @@ public class Seller {
 	public String getAgentName() { return agentName; }
 	public void setAgentName(String value){ agentName = value; }
 	
-	public String getEmail() { return email; }
-	public void setEmail(String value){ email = value; }
+	public String getPhone() { return phone; }
+	public void setPhone(String value){ phone = value; }
 	
 	public double getWeeklyGoal(){ return weeklyGoal; }
 	public void setWeeklyGoal(double value){ weeklyGoal = value; }
@@ -37,7 +37,7 @@ public class Seller {
 	@Override
 	public String toString(){
 		return String.format("sellerId:{0};adminPaqId:{1};agentCode:{2};agentName:{3};email:{4};weeklyGoal:{5};" +
-		"company:{6};companyId:{7}", sellerId, adminPaqId, agentCode, email, weeklyGoal, company, companyId);
+		"company:{6};companyId:{7}", sellerId, adminPaqId, agentCode, phone, weeklyGoal, company, companyId);
 	}
 	
 }

@@ -40,7 +40,7 @@ public class SellerDao {
 		try{
 			Statement statement = connection.createStatement();
 			String sqlString = "SELECT " +
-					"seller_id, ap_id, agent_code, agent_name, email, weekly_goal, empresa, id_empresa " +
+					"seller_id, ap_id, agent_code, agent_name, weekly_goal, empresa, id_empresa " +
 					"FROM dim_sellers " +
 					"ORDER BY seller_id";
 			ResultSet rs = statement.executeQuery(sqlString);
@@ -52,7 +52,6 @@ public class SellerDao {
 				seller.setAdminPaqId(rs.getInt("ap_id"));
 				seller.setAgentCode(rs.getString("agent_code"));
 				seller.setAgentName(rs.getString("agent_name"));
-				seller.setEmail(rs.getString("email"));
 				seller.setWeeklyGoal(rs.getDouble("weekly_goal"));
 				seller.setCompany(rs.getString("empresa"));
 				seller.setCompanyId(rs.getInt("id_empresa"));
@@ -72,7 +71,7 @@ public class SellerDao {
 		
 		try{
 			String sqlString = "SELECT " +
-					"ap_id, agent_code, agent_name, email, weekly_goal, empresa, id_empresa " +
+					"ap_id, agent_code, agent_name, phone, weekly_goal, empresa, id_empresa, is_local " +
 					"FROM dim_sellers " +
 					"WHERE seller_id = ?";
 			PreparedStatement ps = connection.prepareStatement(sqlString);
@@ -86,7 +85,7 @@ public class SellerDao {
 				seller.setAdminPaqId(rs.getInt("ap_id"));
 				seller.setAgentCode(rs.getString("agent_code"));
 				seller.setAgentName(rs.getString("agent_name"));
-				seller.setEmail(rs.getString("email"));
+				seller.setPhone(rs.getString("phone"));
 				seller.setWeeklyGoal(rs.getDouble("weekly_goal"));
 				seller.setCompany(rs.getString("empresa"));
 				seller.setCompanyId(rs.getInt("id_empresa"));

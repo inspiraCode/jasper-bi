@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="collectable_amount" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="26156e4e-6169-4645-a477-2bf88a0fdfce">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter 1"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Dataset1" uuid="072c883d-1653-486b-97c5-0701995f163d">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter 1"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT SUM(saldo_vencido) AS saldo,
+'VENCIDOS' AS grupo
+FROM fact_vencido
+INNER JOIN dim_clientes 
+ON fact_vencido.id_cliente = dim_clientes.id_cliente
+WHERE dim_clientes.es_local = false
+UNION ALL
+SELECT SUM(saldo_por_vencer) AS saldo,
+'POR VENCER' AS grupo
+FROM fact_por_vencer
+INNER JOIN dim_clientes 
+ON fact_por_vencer.id_cliente = dim_clientes.id_cliente
+WHERE dim_clientes.es_local = false]]>
+		</queryString>
+		<field name="grupo" class="java.lang.String"/>
+		<field name="saldo" class="java.math.BigDecimal"/>
+		<group name="grupo">
+			<groupExpression><![CDATA[$F{grupo}]]></groupExpression>
+		</group>
+		<group name="saldo">
+			<groupExpression><![CDATA[$F{saldo}]]></groupExpression>
+		</group>
+	</subDataset>
+	<queryString language="SQL">
+		<![CDATA[SELECT SUM(saldo_vencido) AS saldo,
+'VENCIDOS' AS grupo
+FROM fact_vencido
+INNER JOIN dim_clientes 
+ON fact_vencido.id_cliente = dim_clientes.id_cliente
+WHERE dim_clientes.es_local = false
+UNION ALL
+SELECT SUM(saldo_por_vencer) AS saldo,
+'POR VENCER' AS grupo
+FROM fact_por_vencer
+INNER JOIN dim_clientes 
+ON fact_por_vencer.id_cliente = dim_clientes.id_cliente
+WHERE dim_clientes.es_local = false]]>
+	</queryString>
+	<field name="saldo" class="java.math.BigDecimal"/>
+	<field name="grupo" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<summary>
+		<band height="278">
+			<pieChart>
+				<chart evaluationTime="Report">
+					<reportElement stretchType="RelativeToTallestObject" x="-1" y="50" width="280" height="228" uuid="96720953-a13c-41d8-bea2-981efbe9c674"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<keyExpression><![CDATA[$F{grupo}]]></keyExpression>
+					<valueExpression><![CDATA[$F{saldo}]]></valueExpression>
+					<labelExpression><![CDATA[TEXT($F{saldo}, "$#,##0")]]></labelExpression>
+				</pieDataset>
+				<piePlot isShowLabels="false" labelFormat="{2}" legendLabelFormat="{0} ({2})">
+					<plot/>
+					<itemLabel/>
+				</piePlot>
+			</pieChart>
+			<componentElement>
+				<reportElement x="0" y="0" width="200" height="20" uuid="a1542e2f-199b-4c0c-a661-69b26f8385b0"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Dataset1" uuid="a701e52b-8a27-4ef1-a7d6-505170618949">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="100" uuid="170055d0-422b-4ab0-91c9-a19a88107a4c">
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="100" height="30" uuid="d9418dc1-6696-4e5e-a504-334a5986b684"/>
+								<textElement verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{grupo}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="100" uuid="95913864-f412-4fb0-9841-27c748359f24">
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="100" height="30" uuid="fcb500f0-2406-4406-a863-2ac4d1a34a5c"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[TEXT($F{saldo}, "$#,##0.00" )]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</summary>
+	<noData>
+		<band height="33">
+			<staticText>
+				<reportElement x="0" y="10" width="280" height="20" uuid="3d3d8083-8561-480a-b314-351a1bfe969c"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[NO SE ENCONTRARON DATOS]]></text>
+			</staticText>
+		</band>
+	</noData>
+</jasperReport>

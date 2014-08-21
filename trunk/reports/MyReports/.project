@@ -26,21 +26,4 @@
 		<nature>net.sf.jasperreports.nature</nature>
 		<nature>com.jaspersoft.studio.babel.editor.rbeNature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>JasperReportsServer-1401219199808</name>
-			<type>2</type>
-			<location>C:/Users/jaime/AppData/Local/Temp/JasperReportsServer-1401219199808</location>
-		</link>
-		<link>
-			<name>VentasSemanalesPorAgente.jasper</name>
-			<type>1</type>
-			<location>C:/Users/jaime/Desktop/Proyectos/Praxmagroup/VentasSemanalesPorAgente.jasper</location>
-		</link>
-		<link>
-			<name>VentasSemanalesPorAgente.jrxml</name>
-			<type>1</type>
-			<location>C:/Users/jaime/Desktop/Proyectos/Praxmagroup/VentasSemanalesPorAgente.jrxml</location>
-		</link>
-	</linkedResources>
 </projectDescription>

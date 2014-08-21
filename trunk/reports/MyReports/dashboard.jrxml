@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="dashboard" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5b99331e-1d24-40e4-8efc-bee97fad28c6">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter 1"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["repo:"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_EXT" class="java.lang.String">
+		<defaultValueExpression><![CDATA["jrxml"]]></defaultValueExpression>
+	</parameter>
+	<queryString language="SQL">
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<summary>
+		<band height="659" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="20" forecolor="#030202" backcolor="#BAAFAF" uuid="1ade87b1-2967-4acd-aa27-b6e402d079f0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CUENTAS POR COBRAR]]></text>
+			</staticText>
+			<subreport runToBottom="true">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="30" width="270" height="250" uuid="b4f3a7f1-db8c-460d-a2e3-ace0b733446a"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "collectable_for_loc." + $P{SUBREPORT_EXT}]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement stretchType="RelativeToTallestObject" x="280" y="30" width="275" height="250" uuid="bcb2084b-89f4-43ff-89c5-e65926d95657"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "collectable_due_to_due." + $P{SUBREPORT_EXT}]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="380" width="270" height="20" forecolor="#030202" backcolor="#BAAFAF" uuid="0408955f-69f2-4015-b4e9-a041fa3c2e3e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FORANEOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="280" y="380" width="270" height="20" forecolor="#030202" backcolor="#BAAFAF" uuid="271918ac-f56e-4d37-8240-cc96df056199"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LOCALES]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="0" y="410" width="270" height="228" uuid="d54a7bd6-5407-453c-b717-e8c122cb0379"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "collectable_for." + $P{SUBREPORT_EXT}]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="286" y="415" width="264" height="223" uuid="bb450a6e-d355-4dac-a065-de9536256c4c"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "collectable_loc." + $P{SUBREPORT_EXT}]]></subreportExpression>
+			</subreport>
+		</band>
+	</summary>
+</jasperReport>
