@@ -1,0 +1,30 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>MetasVenta</display-name>
+  <servlet>
+  	<servlet-name>ChartsController</servlet-name>
+  	<display-name>ChartsController</display-name>
+  	<description></description>
+    <servlet-class>com.inspiracode.praxma.rhi.web.monitor.controller.ChartsController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>SalesController</servlet-name>
+  	<display-name>SalesController</display-name>
+  	<description></description>
+    <servlet-class>com.inspiracode.praxma.rhi.web.monitor.controller.SalesController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ChartsController</servlet-name>
+  	<url-pattern>/ChartsController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>SalesController</servlet-name>
+  	<url-pattern>/SalesController</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+  	<welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

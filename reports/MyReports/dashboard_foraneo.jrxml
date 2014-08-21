@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Metricos Locales" pageWidth="612" pageHeight="792" whenNoDataType="AllSectionsNoDetail" columnWidth="450" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="beb11353-7f2b-42cc-b2bf-0cf38a292260">
+	<property name="com.jaspersoft.studio.data.sql.tables" value="ZGltX2NsaWVudGVzIEFTICw0NCwyOTs="/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter 1"/>
+	<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["repo:"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_EXT" class="java.lang.String">
+		<defaultValueExpression><![CDATA["jrxml"]]></defaultValueExpression>
+	</parameter>
+	<queryString language="SQL">
+		<![CDATA[SELECT dim_clientes.id_cliente
+FROM dim_clientes]]>
+	</queryString>
+	<field name="id_cliente" class="java.lang.Integer"/>
+	<summary>
+		<band height="430">
+			<subreport>
+				<reportElement x="0" y="250" width="280" height="180" uuid="1a07b2d9-dbba-403e-8dc3-157d4f205bc5">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "due_pct_for." + $P{SUBREPORT_EXT}]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="290" y="0" width="280" height="180" uuid="65a408a9-abd7-400b-8cb5-ccef22ff9285">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "current_amount_days_for." + $P{SUBREPORT_EXT}]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="290" y="250" width="280" height="180" uuid="da7acaab-bffa-46d2-9b46-6897bd37473e">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "current_pct_for." + $P{SUBREPORT_EXT}]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="0" y="0" width="280" height="180" uuid="dbe53ca1-7212-474e-82b5-010a621d8199"/>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "due_amount_days_for." + $P{SUBREPORT_EXT}]]></subreportExpression>
+			</subreport>
+		</band>
+	</summary>
+</jasperReport>

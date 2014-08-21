@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="vencidos PCT Locales" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="60fa82d5-9db7-43c7-8f97-5dc7350fac85">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter 1"/>
+	<queryString language="SQL">
+		<![CDATA[SElECT SUM(saldo_vencido) / Total.total_vencido AS Porcentaje,
+CASE WHEN dim_grupo_vencimiento.maximo_dias = 0 THEN dim_grupo_vencimiento.minimo_dias || ' Días o más' 
+ELSE dim_grupo_vencimiento.minimo_dias || '-' || dim_grupo_vencimiento.maximo_dias || ' Días' END AS Grupo
+FROM fact_vencido  
+INNER JOIN dim_grupo_vencimiento 
+ON fact_vencido.id_grupo_vencimiento = dim_grupo_vencimiento.id_grupo_vencimiento
+INNER JOIN dim_clientes
+ON fact_vencido.id_cliente = dim_clientes.id_cliente
+INNER JOIN (SElECT SUM(saldo_vencido) AS total_vencido, es_local
+FROM fact_vencido  
+INNER JOIN dim_clientes
+ON fact_vencido.id_cliente = dim_clientes.id_cliente
+GROUP BY es_local) AS Total
+ON dim_clientes.es_local = Total.es_local
+WHERE dim_clientes.es_local = false
+GROUP BY Grupo, dim_grupo_vencimiento.id_grupo_vencimiento, Total.total_vencido
+ORDER BY dim_grupo_vencimiento.id_grupo_vencimiento]]>
+	</queryString>
+	<field name="grupo" class="java.lang.String"/>
+	<field name="porcentaje" class="java.lang.Number"/>
+	<summary>
+		<band height="402" splitType="Stretch">
+			<barChart>
+				<chart isShowLegend="false" evaluationTime="Report">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="280" height="180" uuid="17b86153-b0cd-4085-b9c2-516377123d24">
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<chartTitle>
+						<font isBold="true"/>
+					</chartTitle>
+					<chartSubtitle>
+						<font size="14" isBold="true"/>
+						<subtitleExpression><![CDATA["Saldos vencidos %"]]></subtitleExpression>
+					</chartSubtitle>
+					<chartLegend>
+						<font isBold="true"/>
+					</chartLegend>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA["Porcentaje de vencimiento"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{grupo}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{porcentaje}]]></valueExpression>
+						<labelExpression><![CDATA[new java.text.DecimalFormat("#0 %").format($F{porcentaje}.doubleValue())]]></labelExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot isShowLabels="true" isShowTickLabels="true" isShowTickMarks="true">
+					<plot>
+						<seriesColor seriesOrder="0" color="#FF0000"/>
+						<seriesColor seriesOrder="1" color="#FF0000"/>
+						<seriesColor seriesOrder="2" color="#FF0000"/>
+						<seriesColor seriesOrder="3" color="#FF0000"/>
+					</plot>
+					<itemLabel color="#000000" backgroundColor="#000000">
+						<font size="10" isBold="true"/>
+					</itemLabel>
+					<categoryAxisLabelExpression><![CDATA["Días de saldos vencidos"]]></categoryAxisLabelExpression>
+					<categoryAxisFormat>
+						<axisFormat verticalTickLabels="true">
+							<labelFont>
+								<font size="10" isBold="true"/>
+							</labelFont>
+							<tickLabelFont>
+								<font size="8" isBold="true"/>
+							</tickLabelFont>
+						</axisFormat>
+					</categoryAxisFormat>
+					<valueAxisLabelExpression><![CDATA["%"]]></valueAxisLabelExpression>
+					<valueAxisFormat>
+						<axisFormat tickLabelMask="#%">
+							<labelFont>
+								<font size="8" isBold="true"/>
+							</labelFont>
+							<tickLabelFont>
+								<font size="8" isBold="true" isItalic="false"/>
+							</tickLabelFont>
+						</axisFormat>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+		</band>
+	</summary>
+</jasperReport>

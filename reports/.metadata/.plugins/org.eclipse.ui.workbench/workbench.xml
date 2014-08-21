@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="22" version="2.0">
+<workbench progressCount="12" version="2.0">
 <workbenchAdvisor/>
 <window height="738" maximized="true" width="683" x="683" y="0">
 <fastViewData fastViewLocation="1024"/>
@@ -18,13 +18,15 @@
 <coolItem id="com.jaspersoft.studio.community.toolbar" itemType="typeToolBarContribution" x="38" y="30"/>
 <coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="76" y="30"/>
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="53" y="30"/>
-<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="107" y="30"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="61" y="30"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="91" y="30"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="com.jaspersoft.studio.components.editor1" itemType="typePlaceholder" x="202" y="30"/>
 <coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="com.jaspersoft.studio.editor.JrxmlEditor" itemType="typePlaceholder" x="61" y="30"/>
+<coolItem id="com.jaspersoft.studio.editor.JrxmlEditor" itemType="typeToolBarContribution" x="61" y="30"/>
+<coolItem id="com.jaspersoft.studio.graphic.image" itemType="typeToolBarContribution" x="38" y="30"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
@@ -33,10 +35,15 @@
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
 <folder appearance="1" expanded="2">
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
 </folder>
 </info>
 </editorArea>
+<editor activePart="true" focus="true" id="com.jaspersoft.studio.editor.JrxmlEditor" name="chilisa_VentasMensualesPorAgente.jrxml" partName="chilisa_VentasMensualesPorAgente.jrxml" path="C:/Temp/svn_repos/jasper-bi/reports/MyReports/chilisa_VentasMensualesPorAgente.jrxml" title="chilisa_VentasMensualesPorAgente.jrxml" tooltip="MyReports/chilisa_VentasMensualesPorAgente.jrxml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MyReports/chilisa_VentasMensualesPorAgente.jrxml"/>
+</editor>
 </editors>
 <views>
 <view id="org.eclipse.ui.navigator.ProjectExplorer" partName="Project Explorer">
@@ -100,7 +107,7 @@
 </view>
 <view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc"/>
 </views>
-<perspectives activePart="com.jaspersoft.studio.editor.preview.reportstate" activePerspective="com.jaspersoft.studio.ReportDesignPerspective">
+<perspectives activePart="com.jaspersoft.studio.editor.JrxmlEditor" activePerspective="com.jaspersoft.studio.ReportDesignPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="com.jaspersoft.studio.ReportDesignPerspective" id="com.jaspersoft.studio.ReportDesignPerspective" label="Report Design"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -144,8 +151,8 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.14169742" ratioLeft="192" ratioRight="1163" relationship="2" relative="org.eclipse.ui.internal.ViewStack@5b35fd64"/>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@7e6a5a2a" ratio="0.7784483" ratioLeft="903" ratioRight="257" relationship="2" relative="org.eclipse.ui.editorss">
+<info part="org.eclipse.ui.editorss" ratio="0.28968045" ratioLeft="553" ratioRight="1356" relationship="2" relative="org.eclipse.ui.internal.ViewStack@5b35fd64"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@7e6a5a2a" ratio="0.65789473" ratioLeft="1025" ratioRight="533" relationship="2" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.gef.ui.palette_view" appearance="2" expanded="2">
 <page content="org.eclipse.gef.ui.palette_view" label="Palette"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
@@ -153,7 +160,7 @@
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@7845bc3c" ratio="0.39291465" ratioLeft="244" ratioRight="377" relationship="4" relative="org.eclipse.ui.internal.ViewStack@7e6a5a2a">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@7845bc3c" ratio="0.53571427" ratioLeft="495" ratioRight="429" relationship="4" relative="org.eclipse.ui.internal.ViewStack@7e6a5a2a">
 <folder activePageID="org.eclipse.ui.views.PropertySheet" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.PropertySheet" label="Properties"/>
 <page content="org.eclipse.ui.views.ProblemView" label="LabelNotFound"/>
@@ -167,7 +174,7 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@7d85df46" ratio="0.7938808" ratioLeft="493" ratioRight="128" relationship="4" relative="org.eclipse.ui.editorss">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@7d85df46" ratio="0.72943723" ratioLeft="674" ratioRight="250" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="com.jaspersoft.studio.editor.preview.reportstate" appearance="2" expanded="2">
 <page content="com.jaspersoft.studio.editor.preview.reportstate" label="Report State"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
@@ -175,7 +182,7 @@
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@36d39b14" ratio="0.2815405" ratioLeft="212" ratioRight="541" relationship="4" relative="org.eclipse.ui.internal.ViewStack@5b35fd64">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@36d39b14" ratio="0.521645" ratioLeft="482" ratioRight="442" relationship="4" relative="org.eclipse.ui.internal.ViewStack@5b35fd64">
 <folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
@@ -280,7 +287,12 @@
 </perspective>
 </perspectives>
 <workingSets/>
-<navigationHistory/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" path="/MyReports/chilisa_VentasMensualesPorAgente.jrxml"/>
+</editors>
+<item active="true" historyLabel="chilisa_VentasMensualesPorAgente.jrxml" index="0"/>
+</navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
 <workbenchWindowAdvisor/>
@@ -297,50 +309,50 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="VentasSemanalesPorAgente.jrxml" tooltip="MyReports/VentasSemanalesPorAgente.jrxml">
-<persistable path="/MyReports/VentasSemanalesPorAgente.jrxml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="chilisa_VentasMensualesPorAgente.jrxml" tooltip="MyReports/chilisa_VentasMensualesPorAgente.jrxml">
+<persistable path="/MyReports/chilisa_VentasMensualesPorAgente.jrxml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="Reporte de Ventas Mensual, Semanal y Diario..jrxml" tooltip="MyReports/Reporte de Ventas Mensual, Semanal y Diario..jrxml">
-<persistable path="/MyReports/Reporte de Ventas Mensual, Semanal y Diario..jrxml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="MonitorMensual.jrxml" tooltip="MyReports/MonitorMensual.jrxml">
+<persistable path="/MyReports/MonitorMensual.jrxml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="saldos vencidos en días (Foraneos).jrxml" tooltip="MyReports/saldos vencidos en días (Foraneos).jrxml">
-<persistable path="/MyReports/saldos vencidos en días (Foraneos).jrxml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="MonitorSemanal.jrxml" tooltip="MyReports/MonitorSemanal.jrxml">
+<persistable path="/MyReports/MonitorSemanal.jrxml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="vencidos PCT Locales.jrxml" tooltip="MyReports/vencidos PCT Locales.jrxml">
-<persistable path="/MyReports/vencidos PCT Locales.jrxml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="MonitorDiario.jrxml" tooltip="MyReports/MonitorDiario.jrxml">
+<persistable path="/MyReports/MonitorDiario.jrxml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="Saldos vencidos %.jrxml" tooltip="MyReports/Saldos vencidos %.jrxml">
-<persistable path="/MyReports/Saldos vencidos %.jrxml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="Saldos Vencidos en Dias - Foraneos.jrxml" tooltip="MyReports/Saldos Vencidos en Dias - Foraneos.jrxml">
-<persistable path="/MyReports/Saldos Vencidos en Dias - Foraneos.jrxml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="vencidos PCT Foraneos.jrxml" tooltip="MyReports/vencidos PCT Foraneos.jrxml">
-<persistable path="/MyReports/vencidos PCT Foraneos.jrxml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="vencidos % Locales.jrxml" tooltip="MyReports/vencidos % Locales.jrxml">
-<persistable path="/MyReports/vencidos % Locales.jrxml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="VentasMensualesPorAgente.jrxml" tooltip="MyReports/VentasMensualesPorAgente.jrxml">
-<persistable path="/MyReports/VentasMensualesPorAgente.jrxml"/>
+<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="BetterBarLabels.class" tooltip="com.jaspersoft.bizdev.BetterBarLabels">
+<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=MyReports/ChartCustomizers2.jar&lt;com.jaspersoft.bizdev(BetterBarLabels.class"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="VentasDiariasPorAgente.jrxml" tooltip="MyReports/VentasDiariasPorAgente.jrxml">
 <persistable path="/MyReports/VentasDiariasPorAgente.jrxml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="Cuentas por cobrar (Locales).jrxml" tooltip="MyReports/Cuentas por cobrar (Locales).jrxml">
-<persistable path="/MyReports/Cuentas por cobrar (Locales).jrxml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="VentasSemanalesPorAgente.jrxml" tooltip="MyReports/VentasSemanalesPorAgente.jrxml">
+<persistable path="/MyReports/VentasSemanalesPorAgente.jrxml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="Antiguedad de saldos locales.jrxml" tooltip="MyReports/Antiguedad de saldos locales.jrxml">
-<persistable path="/MyReports/Antiguedad de saldos locales.jrxml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="VentasMensualesPorAgente.jrxml" tooltip="MyReports/VentasMensualesPorAgente.jrxml">
+<persistable path="/MyReports/VentasMensualesPorAgente.jrxml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="chilisa_VentasSemanalesPorAgente.jrxml" tooltip="MyReports/chilisa_VentasSemanalesPorAgente.jrxml">
+<persistable path="/MyReports/chilisa_VentasSemanalesPorAgente.jrxml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="chilisa_VentasDiariasPorAgente.jrxml" tooltip="MyReports/chilisa_VentasDiariasPorAgente.jrxml">
+<persistable path="/MyReports/chilisa_VentasDiariasPorAgente.jrxml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="invest_pct.jrxml" tooltip="MyReports/invest_pct.jrxml">
+<persistable path="/MyReports/invest_pct.jrxml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="VendidoCobrado.jrxml" tooltip="MyReports/VendidoCobrado.jrxml">
+<persistable path="/MyReports/VendidoCobrado.jrxml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="Locales.jrxml" tooltip="MyReports/Locales.jrxml">
+<persistable path="/MyReports/Locales.jrxml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="Metricos Locales.jrxml" tooltip="MyReports/Metricos Locales.jrxml">
+<persistable path="/MyReports/Metricos Locales.jrxml"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="Antiguedad de saldos foraneos.jrxml" tooltip="MyReports/Antiguedad de saldos foraneos.jrxml">
 <persistable path="/MyReports/Antiguedad de saldos foraneos.jrxml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="Saldos por vencer en días (Foraneos).jrxml" tooltip="MyReports/Saldos por vencer en días (Foraneos).jrxml">
-<persistable path="/MyReports/Saldos por vencer en días (Foraneos).jrxml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="Saldos  vencidos en dias.jrxml" tooltip="MyReports/Saldos  vencidos en dias.jrxml">
-<persistable path="/MyReports/Saldos  vencidos en dias.jrxml"/>
 </file>
 </mruList>
 </workbench>

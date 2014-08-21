@@ -55,11 +55,12 @@ CREATE TABLE dim_sellers(
 	ap_id INTEGER NOT NULL,
 	agent_code VARCHAR(10),
 	agent_name VARCHAR(150),
-	email VARCHAR(150),
+	phone VARCHAR(10),
 	cellphone character varying (150),
 	weekly_goal NUMERIC DEFAULT 0,
 	empresa VARCHAR(150),
-	id_empresa INTEGER
+	id_empresa INTEGER,
+	is_local BOOLEAN
 );
 
 DROP TABLE IF EXISTS dim_directors CASCADE;
@@ -236,8 +237,3 @@ CREATE OR REPLACE VIEW vw_saldos_foraneos AS
   ORDER BY dim_clientes.nombre_cliente;
 
 GRANT ALL ON TABLE vw_saldos_foraneos TO rhjasper;
-
-
-
-
-
