@@ -21,13 +21,15 @@ public class SellerDao {
 	public void updateSellerGoal(Seller seller) {
 		try{
 			String updateString = "UPDATE dim_sellers " +
-			"SET weekly_goal = ? " +
+			"SET weekly_goal = ?, " +
+			"is_local = ? " + 
 			"WHERE seller_id = ?";
 			
 			PreparedStatement ps = connection.prepareStatement(updateString);
 			
 			ps.setDouble(1, seller.getWeeklyGoal());
-			ps.setInt(2, seller.getSellerId());
+			ps.setBoolean(2, seller.getLocal());
+			ps.setInt(3, seller.getSellerId());
 			
 			ps.executeUpdate();
 		}catch(Exception e){
@@ -40,7 +42,7 @@ public class SellerDao {
 		try{
 			Statement statement = connection.createStatement();
 			String sqlString = "SELECT " +
-					"seller_id, ap_id, agent_code, agent_name, weekly_goal, empresa, id_empresa " +
+					"seller_id, ap_id, agent_code, agent_name, weekly_goal, empresa, id_empresa, is_local " +
 					"FROM dim_sellers " +
 					"ORDER BY seller_id";
 			ResultSet rs = statement.executeQuery(sqlString);
@@ -55,6 +57,7 @@ public class SellerDao {
 				seller.setWeeklyGoal(rs.getDouble("weekly_goal"));
 				seller.setCompany(rs.getString("empresa"));
 				seller.setCompanyId(rs.getInt("id_empresa"));
+				seller.setLocal(rs.getBoolean("is_local"));
 				
 				sellers.add(seller);
 			}
@@ -89,6 +92,7 @@ public class SellerDao {
 				seller.setWeeklyGoal(rs.getDouble("weekly_goal"));
 				seller.setCompany(rs.getString("empresa"));
 				seller.setCompanyId(rs.getInt("id_empresa"));
+				seller.setLocal(rs.getBoolean("is_local"));
 			}
 			
 		}catch(SQLException e){

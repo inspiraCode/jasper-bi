@@ -33,15 +33,20 @@
 		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter 1"/>
 		<queryString language="SQL">
 			<![CDATA[Select  dim_sellers.agent_name,dim_sellers.weekly_goal,
+SUM(fact_sales.sold_week)/1000 as sold,
 SUM(fact_sales.sold_week) / (dim_sellers.weekly_goal) as porcentajediario, 
 (SUM(fact_sales.sold_week) - dim_sellers.weekly_goal)/1000 as restantediario
 FROM dim_sellers
 INNER JOIN fact_sales ON dim_sellers.seller_id = fact_sales.seller_id
 WHERE dim_sellers.weekly_goal > 0 AND dim_sellers.empresa = 'Ramos Hermanos Internacional SPR de RL de CV'
-GROUP BY dim_sellers.agent_name, dim_sellers.weekly_goal;]]>
+GROUP BY dim_sellers.agent_name, dim_sellers.weekly_goal
+ORDER BY dim_sellers.agent_name;]]>
 		</queryString>
 		<field name="agent_name" class="java.lang.String"/>
 		<field name="restantediario" class="java.math.BigDecimal"/>
+		<field name="weekly_goal" class="java.math.BigDecimal"/>
+		<field name="sold" class="java.math.BigDecimal"/>
+		<field name="porcentajediario" class="java.math.BigDecimal"/>
 	</subDataset>
 	<queryString language="SQL">
 		<![CDATA[Select  dim_sellers.agent_name,
@@ -49,7 +54,8 @@ SUM(fact_sales.sold_week) / (dim_sellers.weekly_goal) as porcentajediario
 FROM dim_sellers
 INNER JOIN fact_sales ON dim_sellers.seller_id = fact_sales.seller_id
 WHERE dim_sellers.weekly_goal > 0 AND dim_sellers.empresa = 'Ramos Hermanos Internacional SPR de RL de CV'
-GROUP BY dim_sellers.agent_name, dim_sellers.weekly_goal;]]>
+GROUP BY dim_sellers.agent_name, dim_sellers.weekly_goal
+ORDER BY dim_sellers.agent_name;]]>
 	</queryString>
 	<field name="agent_name" class="java.lang.String"/>
 	<field name="porcentajediario" class="java.math.BigDecimal"/>
@@ -57,10 +63,12 @@ GROUP BY dim_sellers.agent_name, dim_sellers.weekly_goal;]]>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="453" splitType="Stretch">
+		<band height="503" splitType="Stretch">
 			<barChart>
-				<chart isShowLegend="false" evaluationTime="Report">
-					<reportElement x="-1" y="0" width="741" height="380" uuid="da026198-33a7-45ab-991c-9f07a00cb747"/>
+				<chart isShowLegend="false" evaluationTime="Report" customizerClass="com.jaspersoft.bizdev.BetterBarLabels">
+					<reportElement x="-1" y="53" width="741" height="380" uuid="da026198-33a7-45ab-991c-9f07a00cb747">
+						<property name="MaximumCategoryLabelLines" value="2"/>
+					</reportElement>
 					<chartTitle>
 						<font size="12" isBold="true"/>
 					</chartTitle>
@@ -110,7 +118,7 @@ GROUP BY dim_sellers.agent_name, dim_sellers.weekly_goal;]]>
 				</barPlot>
 			</barChart>
 			<componentElement>
-				<reportElement x="10" y="410" width="260" height="40" uuid="17307931-3cc8-4215-a043-46ff519c92fe"/>
+				<reportElement x="10" y="463" width="370" height="40" uuid="17307931-3cc8-4215-a043-46ff519c92fe"/>
 				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
 					<datasetRun subDataset="Dataset1" uuid="a44ea782-1aa7-41de-817b-4b0aa0478b05">
 						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
@@ -143,14 +151,50 @@ GROUP BY dim_sellers.agent_name, dim_sellers.weekly_goal;]]>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
+					<jr:column width="100" uuid="27d84381-1262-47fa-a30c-b32a97eef5a2">
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<jr:columnHeader style="Table_CH" height="20">
+							<staticText>
+								<reportElement x="0" y="0" width="100" height="20" uuid="7483c2fd-32a5-4393-ae4b-7731b32ff575"/>
+								<text><![CDATA[Venta]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="20">
+							<textField pattern="$#,##0.00">
+								<reportElement x="0" y="0" width="100" height="20" uuid="90b06934-fa97-455e-af27-15097a15e0bf"/>
+								<textFieldExpression><![CDATA[$F{sold}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
 				</jr:table>
 			</componentElement>
 			<staticText>
-				<reportElement x="30" y="390" width="201" height="20" uuid="919884a7-4ed0-4adb-82ad-000125a50c91"/>
+				<reportElement x="10" y="443" width="201" height="20" uuid="919884a7-4ed0-4adb-82ad-000125a50c91"/>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Detalle de faltante por agente]]></text>
+				<text><![CDATA[Detalle de venta por agente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="440" y="0" width="300" height="30" uuid="fb0e4ee8-c4c9-4136-9802-1ef216e6f266"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ramos Hermanos Internacional]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="200" y="0" width="240" height="30" uuid="8915b5c4-f692-44e3-9d14-dfe1d1ee4a5a"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new Date(DATEVALUE(TODAY( ))-((WEEKDAY( TODAY( ), false ) - 1)*24*60*60*1000))]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="180" height="30" uuid="e776b8d9-76e8-4d34-b4be-451c8ecee032"/>
+				<textElement textAlignment="Right">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Semana del]]></text>
 			</staticText>
 		</band>
 	</title>

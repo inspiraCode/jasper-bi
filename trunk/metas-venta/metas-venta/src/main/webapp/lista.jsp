@@ -76,6 +76,7 @@ table.altrowstable td {
                 <th>Codigo Agente</th>
                 <th>Nombre</th>
                 <th>Meta Semanal de Venta</th>
+                <th>Visible en Monitor</th>
             </tr>
         </thead>
         <tbody>
@@ -83,11 +84,47 @@ table.altrowstable td {
                 <tr><td><c:out value="${seller.company}" /></td>
                     <td><c:out value="${seller.agentCode}" /></td>
                     <td><c:out value="${seller.agentName}" /></td>
-                    <td>$<input type="text" value='<c:out value="${seller.weeklyGoal}" />' 
-                    name='txtGoal<c:out value="${seller.sellerId}"/>' 
-                    id='txtGoal<c:out value="${seller.sellerId}"/>'
-                    onkeypress="return isNumberKey(event)"
-                    pattern="[0-9]+(\.[0-9]?)?" /></td>
+                    <td>
+                    <c:choose>
+                    <c:when test="${seller.agentName eq '(Ninguno)'}">
+       							-
+    				</c:when>
+    				<c:otherwise>
+        				$<input type="text" value='<c:out value="${seller.weeklyGoal}" />' 
+	                    name='txtGoal<c:out value="${seller.sellerId}"/>' 
+	                    id='txtGoal<c:out value="${seller.sellerId}"/>'
+	                    onkeypress="return isNumberKey(event)"
+	                    pattern="[0-9]+(\.[0-9]?)?" />
+    				</c:otherwise>
+    				</c:choose>
+                    </td>
+                    <td>
+                    	
+                    	<c:choose>
+                    		<c:when test="${seller.agentName eq '(Ninguno)'}">
+       							-
+    						</c:when>
+    						<c:when test="${seller.company eq 'Ramos Hermanos Internacional SPR de RL de CV'}">
+       							<select name='selLocal<c:out value="${seller.sellerId}"/>' 
+		                    	id='selLocal<c:out value="${seller.sellerId}"/>'>
+		                    		<option value="SI" 
+		                    		<c:if test="${seller.local}">
+			        					selected
+			        				</c:if>
+		                    		
+		                    		>SI</option>
+		                    		<option value="NO"
+		                    		<c:if test="${not seller.local}">
+			        					selected
+			        				</c:if>
+		                    		>NO</option>
+		                    	</select>
+    						</c:when>
+    						<c:otherwise>
+        						NO
+    						</c:otherwise>
+						</c:choose>
+                    </td>
                 </tr>
             </c:forEach>
         </tbody>
