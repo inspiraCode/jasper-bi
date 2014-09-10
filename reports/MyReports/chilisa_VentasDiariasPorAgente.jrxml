@@ -33,6 +33,7 @@
 		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter 1"/>
 		<queryString language="SQL">
 			<![CDATA[Select  dim_sellers.agent_name,dim_sellers.weekly_goal,
+SUM(fact_sales.sold_today)/1000 as Sold,
 SUM(fact_sales.sold_today) / (dim_sellers.weekly_goal/6) as porcentajediario, 
 (SUM(fact_sales.sold_today) - dim_sellers.weekly_goal/6)/1000 as restantediario,
 dim_sellers.empresa
@@ -43,29 +44,39 @@ GROUP BY dim_sellers.agent_name, dim_sellers.weekly_goal, dim_sellers.empresa;]]
 		</queryString>
 		<field name="agent_name" class="java.lang.String"/>
 		<field name="restantediario" class="java.math.BigDecimal"/>
+		<field name="weekly_goal" class="java.math.BigDecimal"/>
+		<field name="sold" class="java.math.BigDecimal"/>
+		<field name="porcentajediario" class="java.math.BigDecimal"/>
+		<field name="empresa" class="java.lang.String"/>
 	</subDataset>
 	<queryString language="SQL">
 		<![CDATA[Select  dim_sellers.agent_name,dim_sellers.weekly_goal,
+SUM(fact_sales.sold_today) as sold,
 SUM(fact_sales.sold_today) / (dim_sellers.weekly_goal/6) as porcentajediario, 
 (SUM(fact_sales.sold_today) - dim_sellers.weekly_goal/6)/1000 as restantediario,
 dim_sellers.empresa
 FROM dim_sellers
 INNER JOIN fact_sales ON dim_sellers.seller_id = fact_sales.seller_id
 WHERE dim_sellers.weekly_goal > 0 AND dim_sellers.empresa = 'Distribuidora Chilisa S de RL de CV 2014'
-GROUP BY dim_sellers.agent_name, dim_sellers.weekly_goal, dim_sellers.empresa;]]>
+GROUP BY dim_sellers.agent_name, dim_sellers.weekly_goal, dim_sellers.empresa
+ORDER BY agent_name;]]>
 	</queryString>
 	<field name="agent_name" class="java.lang.String"/>
 	<field name="porcentajediario" class="java.math.BigDecimal"/>
 	<field name="restantediario" class="java.math.BigDecimal"/>
 	<field name="weekly_goal" class="java.math.BigDecimal"/>
+	<field name="sold" class="java.math.BigDecimal"/>
+	<field name="empresa" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="458" splitType="Stretch">
+		<band height="500" splitType="Stretch">
 			<barChart>
-				<chart isShowLegend="false" evaluationTime="Report">
-					<reportElement x="-1" y="0" width="741" height="380" uuid="da026198-33a7-45ab-991c-9f07a00cb747"/>
+				<chart isShowLegend="false" evaluationTime="Report" customizerClass="com.jaspersoft.bizdev.BetterBarLabels">
+					<reportElement x="0" y="40" width="741" height="380" uuid="da026198-33a7-45ab-991c-9f07a00cb747">
+						<property name="MaximumCategoryLabelLines" value="2"/>
+					</reportElement>
 					<chartTitle>
 						<font size="12" isBold="true"/>
 					</chartTitle>
@@ -103,7 +114,7 @@ GROUP BY dim_sellers.agent_name, dim_sellers.weekly_goal, dim_sellers.empresa;]]
 					</categoryAxisFormat>
 					<valueAxisLabelExpression><![CDATA["% Venta Diaria Por Agente"]]></valueAxisLabelExpression>
 					<valueAxisFormat>
-						<axisFormat tickLabelMask="#%">
+						<axisFormat tickLabelMask="#.00%">
 							<labelFont>
 								<font size="16" isBold="true" isUnderline="false"/>
 							</labelFont>
@@ -115,7 +126,7 @@ GROUP BY dim_sellers.agent_name, dim_sellers.weekly_goal, dim_sellers.empresa;]]
 				</barPlot>
 			</barChart>
 			<componentElement>
-				<reportElement x="10" y="410" width="260" height="40" uuid="17307931-3cc8-4215-a043-46ff519c92fe"/>
+				<reportElement x="11" y="450" width="359" height="40" uuid="17307931-3cc8-4215-a043-46ff519c92fe"/>
 				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
 					<datasetRun subDataset="Dataset1" uuid="a44ea782-1aa7-41de-817b-4b0aa0478b05">
 						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
@@ -148,14 +159,42 @@ GROUP BY dim_sellers.agent_name, dim_sellers.weekly_goal, dim_sellers.empresa;]]
 							</textField>
 						</jr:detailCell>
 					</jr:column>
+					<jr:column width="120" uuid="87f01936-ee5f-4f62-bd2b-0795a2485cd3">
+						<jr:columnHeader style="Table_CH" height="20">
+							<staticText>
+								<reportElement x="0" y="0" width="120" height="20" uuid="a9f78015-df39-4806-8267-a8df289e94d2"/>
+								<text><![CDATA[Vendido]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="20">
+							<textField pattern="$#,##0.00">
+								<reportElement x="0" y="0" width="120" height="20" uuid="305f6c8c-7bb6-4784-a328-3ac2607ffaa7"/>
+								<textFieldExpression><![CDATA[$F{sold}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
 				</jr:table>
 			</componentElement>
 			<staticText>
-				<reportElement x="30" y="390" width="201" height="20" uuid="919884a7-4ed0-4adb-82ad-000125a50c91"/>
+				<reportElement x="10" y="430" width="201" height="20" uuid="919884a7-4ed0-4adb-82ad-000125a50c91"/>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Detalle de faltante por agente]]></text>
+				<text><![CDATA[Detalle de venta por agente]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="0" y="0" width="340" height="30" uuid="514b93eb-227b-4044-8d79-8e54abe53cd2"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="350" y="0" width="310" height="30" uuid="438b9531-291b-46d9-9baf-945df3d7461c"/>
+				<textElement textAlignment="Left">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Distribuidora Chilisa]]></text>
 			</staticText>
 		</band>
 	</title>

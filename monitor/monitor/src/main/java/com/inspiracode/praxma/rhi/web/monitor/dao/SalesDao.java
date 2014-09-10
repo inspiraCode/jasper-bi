@@ -28,7 +28,8 @@ public class SalesDao {
 					+ "INNER JOIN fact_sales "
 					+ "ON fact_sales.seller_id = dim_sellers.seller_id "
 					+ "WHERE weekly_goal>0 AND is_local=true "
-					+ "GROUP BY agent_name, weekly_goal;";
+					+ "GROUP BY agent_name, weekly_goal "
+					+ "ORDER BY agent_name;";
 			ResultSet rs = statement.executeQuery(sqlString);
 
 			while (rs.next()) {
@@ -58,7 +59,8 @@ public class SalesDao {
 					+ "INNER JOIN fact_sales "
 					+ "ON fact_sales.seller_id = dim_sellers.seller_id "
 					+ "WHERE weekly_goal>0 AND is_local=true "
-					+ "GROUP BY agent_name, weekly_goal;";
+					+ "GROUP BY agent_name, weekly_goal "
+					+ "ORDER BY agent_name;";
 			ResultSet rs = statement.executeQuery(sqlString);
 
 			while (rs.next()) {
@@ -88,7 +90,8 @@ public class SalesDao {
 					+ "INNER JOIN fact_sales "
 					+ "ON fact_sales.seller_id = dim_sellers.seller_id "
 					+ "WHERE weekly_goal>0 AND is_local=true "
-					+ "GROUP BY agent_name, weekly_goal;";
+					+ "GROUP BY agent_name, weekly_goal "
+					+ "ORDER BY agent_name;";
 			ResultSet rs = statement.executeQuery(sqlString);
 
 			while (rs.next()) {

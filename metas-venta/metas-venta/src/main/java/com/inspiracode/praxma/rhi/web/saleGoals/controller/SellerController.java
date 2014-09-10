@@ -40,10 +40,17 @@ public class SellerController extends HttpServlet {
 			String goal = request
 					.getParameter("txtGoal" + seller.getSellerId());
 
-			double dGoal = "".equals(goal.trim()) ? 0 : Double.parseDouble(goal);
-			if (dGoal == seller.getWeeklyGoal())
+			if(goal == null)
 				continue;
+			
+			double dGoal = "".equals(goal) ? 0 : Double.parseDouble(goal);
 
+			String local = request.getParameter("selLocal" + seller.getSellerId());
+			if("SI".equalsIgnoreCase(local))
+				seller.setLocal(true);
+			else
+				seller.setLocal(false);
+			
 			seller.setWeeklyGoal(dGoal);
 			dao.updateSellerGoal(seller);
 		}

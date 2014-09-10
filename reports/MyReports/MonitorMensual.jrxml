@@ -49,7 +49,8 @@ SUM(fact_sales.sold_month) / (dim_sellers.weekly_goal * 4) as porcentaje
 FROM dim_sellers
 INNER JOIN fact_sales ON dim_sellers.seller_id = fact_sales.seller_id
 WHERE dim_sellers.weekly_goal > 0 AND is_local=true
-GROUP BY dim_sellers.agent_name, dim_sellers.weekly_goal;]]>
+GROUP BY dim_sellers.agent_name, dim_sellers.weekly_goal
+ORDER BY dim_sellers.agent_name;]]>
 	</queryString>
 	<field name="agent_name" class="java.lang.String"/>
 	<field name="porcentaje" class="java.math.BigDecimal"/>
@@ -59,8 +60,10 @@ GROUP BY dim_sellers.agent_name, dim_sellers.weekly_goal;]]>
 	<title>
 		<band height="460" splitType="Stretch">
 			<barChart>
-				<chart isShowLegend="false" evaluationTime="Report">
-					<reportElement x="-10" y="0" width="760" height="460" uuid="7d399fbf-2744-43d2-a5d9-40723f67d04f"/>
+				<chart isShowLegend="false" evaluationTime="Report" customizerClass="com.jaspersoft.bizdev.BetterBarLabels">
+					<reportElement x="-10" y="0" width="760" height="460" uuid="7d399fbf-2744-43d2-a5d9-40723f67d04f">
+						<property name="MaximumCategoryLabelLines" value="2"/>
+					</reportElement>
 					<chartTitle>
 						<font size="12" isBold="true"/>
 					</chartTitle>
