@@ -33,6 +33,7 @@
             // 
             // apwServiceProcessInstaller
             // 
+            this.apwServiceProcessInstaller.Account = System.ServiceProcess.ServiceAccount.LocalSystem;
             this.apwServiceProcessInstaller.Password = null;
             this.apwServiceProcessInstaller.Username = null;
             this.apwServiceProcessInstaller.BeforeInstall += new System.Configuration.Install.InstallEventHandler(this.apwServiceProcessInstaller_BeforeInstall);

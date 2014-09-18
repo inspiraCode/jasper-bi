@@ -34,11 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Npgsql">
-      <HintPath>..\..\pgsql_driver\Npgsql.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.configuration" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
@@ -51,28 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Config\Common.cs" />
-    <Compile Include="Config\EnterpriseSection.cs" />
-    <Compile Include="Loader\DimClientes.cs" />
-    <Compile Include="Loader\DimGrupoVencimiento.cs" />
-    <Compile Include="Loader\DimMeses.cs" />
-    <Compile Include="Loader\DimSellers.cs" />
-    <Compile Include="Loader\MainLoader.cs" />
-    <Compile Include="Miner\CatCliente.cs" />
-    <Compile Include="Miner\CatEmpresa.cs" />
-    <Compile Include="Miner\CatSeller.cs" />
-    <Compile Include="Miner\DocsMiner.cs" />
-    <Compile Include="Miner\FactUncollectable.cs" />
-    <Compile Include="Process\ETLClientes.cs" />
-    <Compile Include="Process\ETLMeses.cs" />
-    <Compile Include="Process\ETLSellers.cs" />
-    <Compile Include="Process\FactCobranza.cs" />
-    <Compile Include="Process\Factoreable.cs" />
-    <Compile Include="Process\FactPorVencer.cs" />
-    <Compile Include="Process\FactSales.cs" />
-    <Compile Include="Process\FactVencido.cs" />
-    <Compile Include="Process\FactVencimiento.cs" />
-    <Compile Include="Process\Main.cs" />
     <Compile Include="ProjectInstaller.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -95,18 +69,6 @@
     <EmbeddedResource Include="WSAdminPaqWrapper.resx">
       <DependentUpon>WSAdminPaqWrapper.cs</DependentUpon>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CommonAdminPaq\CommonAdminPaq.csproj">
-      <Project>{FBFE32B7-F433-430E-9DBC-60CAC18725D2}</Project>
-      <Name>CommonAdminPaq</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Config\App.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,3 +1,17 @@
+DROP TABLE IF EXISTS fact_documents CASCADE;
+CREATE TABLE fact_documents
+{
+	sale			BOOLEAN DEFAULT FALSE,
+	credit			BOOLEAN DEFAULT FALSE,
+	payment			BOOLEAN DEFAULT FALSE,
+	amount			NUMERIC NOT NULL DEFAULT 0,
+	seller			INTEGER NOT NULL DEFAULT 0,
+	doco_date		DATE,
+	due_date		DATE,
+	company_cd		INTEGER,
+	enterprise_id	INTEGER
+};
+
 DROP TABLE IF EXISTS dim_clientes CASCADE;
 CREATE TABLE dim_clientes
 (
