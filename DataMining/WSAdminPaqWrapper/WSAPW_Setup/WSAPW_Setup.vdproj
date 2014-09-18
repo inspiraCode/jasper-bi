@@ -15,32 +15,8 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_445E38A4458F48959F1D39C1E8100353"
+        "MsmKey" = "8:_E025F1F572E949178623E132C573327A"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_5A02D08012B5AF4A11A9F2BE519DE69C"
-        "OwnerKey" = "8:_445E38A4458F48959F1D39C1E8100353"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_5A02D08012B5AF4A11A9F2BE519DE69C"
-        "OwnerKey" = "8:_A3E24820EE01299CFEB1C5C2CE073F24"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_A3E24820EE01299CFEB1C5C2CE073F24"
-        "OwnerKey" = "8:_445E38A4458F48959F1D39C1E8100353"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_EF444E801363EF107C9C0CFA2EA40356"
-        "OwnerKey" = "8:_445E38A4458F48959F1D39C1E8100353"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -52,25 +28,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_445E38A4458F48959F1D39C1E8100353"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_5A02D08012B5AF4A11A9F2BE519DE69C"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_A3E24820EE01299CFEB1C5C2CE073F24"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_EF444E801363EF107C9C0CFA2EA40356"
+        "OwnerKey" = "8:_E025F1F572E949178623E132C573327A"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -155,31 +113,31 @@
     {
         "CustomAction"
         {
-            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_5D9148C9546D49969D3E9B557E3E7058"
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_0DDD5220015E435BA5521A7AB91DFF15"
             {
             "Name" = "8:WSAdminPaqWrapper"
             "Condition" = "8:"
-            "Object" = "8:_445E38A4458F48959F1D39C1E8100353"
-            "FileType" = "3:2"
-            "InstallAction" = "3:4"
-            "Arguments" = "8:"
-            "EntryPoint" = "8:"
-            "Sequence" = "3:1"
-            "Identifier" = "8:_3793DDAE_F0BD_4338_8D93_5B036B74EC7E"
-            "InstallerClass" = "11:TRUE"
-            "CustomActionData" = "8:"
-            }
-            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_F7871D0EC17A4F889699386763D71D80"
-            {
-            "Name" = "8:WSAdminPaqWrapper"
-            "Condition" = "8:"
-            "Object" = "8:_445E38A4458F48959F1D39C1E8100353"
+            "Object" = "8:_E025F1F572E949178623E132C573327A"
             "FileType" = "3:2"
             "InstallAction" = "3:1"
             "Arguments" = "8:"
             "EntryPoint" = "8:"
             "Sequence" = "3:1"
-            "Identifier" = "8:_4508A368_1073_4049_97C8_AD27B743BFFC"
+            "Identifier" = "8:_5D5F087C_F93E_40DF_A34F_B23AB9BC5FA9"
+            "InstallerClass" = "11:TRUE"
+            "CustomActionData" = "8:"
+            }
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_FA1B35811C5C46EA97CE59F2E68D440D"
+            {
+            "Name" = "8:WSAdminPaqWrapper"
+            "Condition" = "8:"
+            "Object" = "8:_E025F1F572E949178623E132C573327A"
+            "FileType" = "3:2"
+            "InstallAction" = "3:4"
+            "Arguments" = "8:"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_BEC5DA5F_E762_4FF7_AD29_E0AA62C805C9"
             "InstallerClass" = "11:TRUE"
             "CustomActionData" = "8:"
             }
@@ -206,84 +164,6 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_5A02D08012B5AF4A11A9F2BE519DE69C"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Mono.Security, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                }
-            "SourcePath" = "8:Mono.Security.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_5A8D58CD7F934AAAA37CE236A547C29D"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A3E24820EE01299CFEB1C5C2CE073F24"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Npgsql, Version=2.1.1.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                }
-            "SourcePath" = "8:Npgsql.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_5A8D58CD7F934AAAA37CE236A547C29D"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_EF444E801363EF107C9C0CFA2EA40356"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:CommonAdminPaq, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                }
-            "SourcePath" = "8:CommonAdminPaq.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_5A8D58CD7F934AAAA37CE236A547C29D"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F3543B28EFAE468ABC241CB6F042BC8F"
             {
             "SourcePath" = "8:Everaldo-Kids-Icons-Package-system.ico"
@@ -359,16 +239,16 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:WSAPW_Setup"
-        "ProductCode" = "8:{860030AD-E3DE-4982-95E9-96C58B5D93E5}"
-        "PackageCode" = "8:{4E6551F3-2448-471E-A115-ADC0C5E4277E}"
+        "ProductName" = "8:WSAPW Service"
+        "ProductCode" = "8:{C8FCF9B6-57A1-471E-BAA3-9F5D7CA63616}"
+        "PackageCode" = "8:{BBD556F8-CC4B-4D14-B992-B82D8F0244D2}"
         "UpgradeCode" = "8:{25CC035A-C8FD-41E3-B13C-0786C91F27F0}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:3.2.5"
+        "ProductVersion" = "8:4.1.0"
         "Manufacturer" = "8:Inspiracode"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -880,7 +760,7 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_445E38A4458F48959F1D39C1E8100353"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_E025F1F572E949178623E132C573327A"
             {
             "SourcePath" = "8:..\\WSAdminPaqWrapper\\obj\\x86\\Release\\WSAdminPaqWrapper.exe"
             "TargetName" = "8:"
@@ -900,7 +780,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             "ProjectOutputGroupRegister" = "3:1"
-            "OutputConfiguration" = "8:"
+            "OutputConfiguration" = "8:Release|x86"
             "OutputGroupCanonicalName" = "8:Built"
             "OutputProjectGuid" = "8:{A9238E69-C1C5-4AE0-BE2C-10678E399607}"
             "ShowKeyOutput" = "11:TRUE"
