@@ -48,7 +48,7 @@ namespace WSAdminPaqWrapper
                 if (tmrDelay.Interval == 30000)
                 {
                     tmrDelay.Stop();
-                    tmrDelay.Interval = 1800000;
+                    tmrDelay.Interval = 300000; // 5 minutos
                     tmrDelay.Start();
                 }
 
