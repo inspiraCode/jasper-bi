@@ -114,7 +114,7 @@ ORDER BY agent_name;]]>
 					</categoryAxisFormat>
 					<valueAxisLabelExpression><![CDATA["% Venta Diaria Por Agente"]]></valueAxisLabelExpression>
 					<valueAxisFormat>
-						<axisFormat tickLabelMask="#.00%">
+						<axisFormat tickLabelMask="#%">
 							<labelFont>
 								<font size="16" isBold="true" isUnderline="false"/>
 							</labelFont>

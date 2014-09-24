@@ -109,7 +109,7 @@ ORDER BY dim_sellers.agent_name;]]>
 					</categoryAxisFormat>
 					<valueAxisLabelExpression><![CDATA["% Venta Mensual Por Agente"]]></valueAxisLabelExpression>
 					<valueAxisFormat>
-						<axisFormat tickLabelMask="#,##0.00%">
+						<axisFormat tickLabelMask="##%">
 							<labelFont>
 								<font size="16" isBold="true" isUnderline="false"/>
 							</labelFont>

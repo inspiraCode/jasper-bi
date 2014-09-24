@@ -109,7 +109,7 @@ ORDER BY dim_sellers.agent_name;]]>
 					</categoryAxisFormat>
 					<valueAxisLabelExpression><![CDATA["% Venta Semanal Por Agente"]]></valueAxisLabelExpression>
 					<valueAxisFormat>
-						<axisFormat tickLabelMask="#.00%">
+						<axisFormat tickLabelMask="#%">
 							<labelFont>
 								<font size="16" isBold="true" isUnderline="false"/>
 							</labelFont>
@@ -185,8 +185,8 @@ ORDER BY dim_sellers.agent_name;]]>
 				</textElement>
 				<text><![CDATA[Ventas de la semana del]]></text>
 			</staticText>
-			<textField pattern="MMMM d, yyyy">
-				<reportElement x="200" y="10" width="270" height="30" uuid="42035357-63f3-4531-aa92-9072800744f0"/>
+			<textField pattern="d">
+				<reportElement x="190" y="10" width="30" height="30" uuid="42035357-63f3-4531-aa92-9072800744f0"/>
 				<textElement>
 					<font size="16" isBold="true"/>
 				</textElement>
@@ -199,6 +199,20 @@ ORDER BY dim_sellers.agent_name;]]>
 				</textElement>
 				<text><![CDATA[Distribuidora Chilisa]]></text>
 			</staticText>
+			<staticText>
+				<reportElement x="220" y="10" width="20" height="30" uuid="0428315f-b2d9-40e9-96eb-5586cdd59479"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[al]]></text>
+			</staticText>
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement x="240" y="10" width="220" height="30" uuid="437566ca-2db0-4f30-ba0c-03204a26a193"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new Date(DATEVALUE(TODAY( ))+((6-WEEKDAY( TODAY( ), false ))*24*60*60*1000))]]></textFieldExpression>
+			</textField>
 		</band>
 	</title>
 </jasperReport>
