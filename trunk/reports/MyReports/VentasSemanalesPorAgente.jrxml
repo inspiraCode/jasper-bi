@@ -176,26 +176,40 @@ ORDER BY dim_sellers.agent_name;]]>
 				<text><![CDATA[Detalle de venta por agente]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="440" y="0" width="300" height="30" uuid="fb0e4ee8-c4c9-4136-9802-1ef216e6f266"/>
+				<reportElement x="460" y="0" width="300" height="30" uuid="fb0e4ee8-c4c9-4136-9802-1ef216e6f266"/>
 				<textElement>
 					<font size="18" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Ramos Hermanos Internacional]]></text>
 			</staticText>
-			<textField pattern="MMMMM dd, yyyy">
-				<reportElement x="200" y="0" width="240" height="30" uuid="8915b5c4-f692-44e3-9d14-dfe1d1ee4a5a"/>
+			<staticText>
+				<reportElement x="-11" y="0" width="191" height="30" uuid="ebf305d5-c8be-426a-98cc-e55cf8ba4453"/>
 				<textElement>
-					<font size="18" isBold="true"/>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ventas de la semana del]]></text>
+			</staticText>
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement x="230" y="0" width="220" height="30" uuid="45be6a8a-ece7-4e55-9213-cf3793d093d5"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new Date(DATEVALUE(TODAY( ))+((6-WEEKDAY( TODAY( ), false ))*24*60*60*1000))]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="210" y="0" width="20" height="30" uuid="91a34fd2-67fc-494f-87ec-06573701f400"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[al]]></text>
+			</staticText>
+			<textField pattern="d">
+				<reportElement x="180" y="0" width="30" height="30" uuid="94288ae9-7b67-41ed-846f-ce4141dffde1"/>
+				<textElement>
+					<font size="16" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[new Date(DATEVALUE(TODAY( ))-((WEEKDAY( TODAY( ), false ) - 1)*24*60*60*1000))]]></textFieldExpression>
 			</textField>
-			<staticText>
-				<reportElement x="0" y="0" width="180" height="30" uuid="e776b8d9-76e8-4d34-b4be-451c8ecee032"/>
-				<textElement textAlignment="Right">
-					<font size="18" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Semana del]]></text>
-			</staticText>
 		</band>
 	</title>
 </jasperReport>
