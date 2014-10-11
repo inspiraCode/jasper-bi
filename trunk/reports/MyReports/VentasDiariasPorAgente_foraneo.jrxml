@@ -38,7 +38,9 @@ SUM(fact_sales.sold_today) / (dim_sellers.weekly_goal/6) as porcentajediario,
 (SUM(fact_sales.sold_today) - dim_sellers.weekly_goal/6)/1000 as restantediario
 FROM dim_sellers
 INNER JOIN fact_sales ON dim_sellers.seller_id = fact_sales.seller_id
-WHERE dim_sellers.weekly_goal > 0 AND dim_sellers.empresa = 'Ramos Hermanos Internacional SPR de RL de CV'
+WHERE dim_sellers.weekly_goal > 0 
+AND dim_sellers.empresa = 'Ramos Hermanos Internacional SPR de RL de CV'
+AND is_local = false
 GROUP BY dim_sellers.agent_name, dim_sellers.weekly_goal
 ORDER BY dim_sellers.agent_name;]]>
 		</queryString>
@@ -54,7 +56,9 @@ SUM(fact_sales.sold_today) as sold,
 SUM(fact_sales.sold_today) / (dim_sellers.weekly_goal/6) as porcentajediario
 FROM dim_sellers
 INNER JOIN fact_sales ON dim_sellers.seller_id = fact_sales.seller_id
-WHERE dim_sellers.weekly_goal > 0 AND dim_sellers.empresa = 'Ramos Hermanos Internacional SPR de RL de CV'
+WHERE dim_sellers.weekly_goal > 0 
+AND dim_sellers.empresa = 'Ramos Hermanos Internacional SPR de RL de CV'
+AND is_local = false
 GROUP BY dim_sellers.agent_name, dim_sellers.weekly_goal
 ORDER BY dim_sellers.agent_name;]]>
 	</queryString>
