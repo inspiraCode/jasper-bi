@@ -12,10 +12,12 @@ public class DbUtil {
 		if(connection != null)
 			return connection;
 		
+		InputStream is = null;
 		try {
 			Properties prop = new Properties();
-			InputStream is = DbUtil.class.getClassLoader().getResourceAsStream("/db.properties");
+			is = DbUtil.class.getClassLoader().getResourceAsStream("/db.properties");
 			prop.load(is);
+			
             String driver = prop.getProperty("driver");
             String url = prop.getProperty("url");
             String user = prop.getProperty("user");
@@ -25,6 +27,18 @@ public class DbUtil {
 		}
 		catch(Exception e) {
 			e.printStackTrace();
+		}
+		finally
+		{
+			if(is!=null)
+			{
+				try{
+					is.close();
+				}catch(Exception e){
+					e.printStackTrace();
+				}
+			}
+			
 		}
 		
 		return connection;

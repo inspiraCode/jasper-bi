@@ -10,22 +10,26 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.inspiracode.praxma.rhi.web.saleGoals.dao.SellerDao;
+import com.inspiracode.praxma.rhi.web.saleGoals.dao.StoreDao;
 import com.inspiracode.praxma.rhi.web.saleGoals.dto.Seller;
 
 public class SellerController extends HttpServlet {
 	private static final long serialVersionUID = -1612444270330131996L;
 	private static String LIST_GOALS = "/lista.jsp";
 	private SellerDao dao;
+	private StoreDao storeDao;
 
 	public SellerController() {
 		super();
 		dao = new SellerDao();
+		storeDao = new StoreDao();
 	}
 
 	@Override
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("sellers", dao.getAllSellers());
+		request.setAttribute("stores", storeDao.getAllStores());
 		RequestDispatcher view = request.getRequestDispatcher(LIST_GOALS);
 		view.forward(request, response);
 	}
@@ -45,11 +49,8 @@ public class SellerController extends HttpServlet {
 			
 			double dGoal = "".equals(goal) ? 0 : Double.parseDouble(goal);
 
-			String local = request.getParameter("selLocal" + seller.getSellerId());
-			if("SI".equalsIgnoreCase(local))
-				seller.setLocal(true);
-			else
-				seller.setLocal(false);
+			String local = request.getParameter("selBodega" + seller.getSellerId());
+			seller.setBodega( Integer.parseInt(local) );
 			
 			seller.setWeeklyGoal(dGoal);
 			dao.updateSellerGoal(seller);
@@ -57,6 +58,7 @@ public class SellerController extends HttpServlet {
 
 		RequestDispatcher view = request.getRequestDispatcher(LIST_GOALS);
 		request.setAttribute("sellers", dao.getAllSellers());
+		request.setAttribute("stores", storeDao.getAllStores());
 		view.forward(request, response);
 	}
 

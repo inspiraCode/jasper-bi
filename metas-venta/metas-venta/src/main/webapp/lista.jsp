@@ -62,13 +62,34 @@ table.altrowstable td {
 .evenrowcolor{
 	background-color:#c3dde0;
 }
+a {
+text-decoration:none;
+color:white;
+font-size:16px;
+font-family: Tahoma, Geneva, sans-serif;
+}
+#header {
+border-bottom: thin solid black;
+}
+#menu {
+background-color:#006;
+border-bottom: thin solid black;
+padding-left:25px;
+color:white;
+}
 </style>
 
 </head>
 <body>
+	<div id="header">
 	<H1>METAS DE VENTAS POR AGENTE</H1>
-	<h2>Empresas de Ramos Hermanos Internacional en AdminPaq</h2><br/>
-	<form method="POST" action="SellerController" id="frmEdit" />
+	<h2>Empresas de Ramos Hermanos Internacional en AdminPaq</h2>
+	<div id="menu">
+		<a href="SellerController">Metas</a>&nbsp;|&nbsp;<a href="StoreController">Bodegas</a>
+	</div>
+	</div>
+	<br/>
+	<form method="POST" action="SellerController" id="frmEdit">
     <table class="altrowstable" id="alternatecolor">
         <thead>
             <tr>
@@ -76,7 +97,7 @@ table.altrowstable td {
                 <th>Codigo Agente</th>
                 <th>Nombre</th>
                 <th>Meta Semanal de Venta</th>
-                <th>Visible en Monitor</th>
+                <th>Bodega</th>
             </tr>
         </thead>
         <tbody>
@@ -99,29 +120,33 @@ table.altrowstable td {
     				</c:choose>
                     </td>
                     <td>
-                    	
                     	<c:choose>
                     		<c:when test="${seller.agentName eq '(Ninguno)'}">
        							-
     						</c:when>
-    						<c:when test="${seller.company eq 'Ramos Hermanos Internacional SPR de RL de CV'}">
-       							<select name='selLocal<c:out value="${seller.sellerId}"/>' 
-		                    	id='selLocal<c:out value="${seller.sellerId}"/>'>
-		                    		<option value="SI" 
-		                    		<c:if test="${seller.local}">
-			        					selected
-			        				</c:if>
-		                    		
-		                    		>SI</option>
-		                    		<option value="NO"
-		                    		<c:if test="${not seller.local}">
-			        					selected
-			        				</c:if>
-		                    		>NO</option>
-		                    	</select>
-    						</c:when>
     						<c:otherwise>
-        						NO
+        						<select name='selBodega<c:out value="${seller.sellerId}"/>' 
+		                    	id='selBodega<c:out value="${seller.sellerId}"/>'>
+		                    	<option value=0 
+		                    	<c:if test="${seller.bodega eq 0}">
+			        					selected
+			        			</c:if>
+		                    	>NO ASIGNADO</option>
+		                    	
+		                    	<c:forEach items="${stores}" var="store">
+		                    		<c:if test="${store.enterpriseId eq seller.companyId}">
+										<option value=<c:out value="${store.storeId}" /> 
+										<c:if test="${seller.bodega eq store.storeId}">
+			        						selected
+			        					</c:if>
+										
+										>
+			                    			<c:out value="${store.storeName}" />
+		                    			</option>
+									</c:if>
+		                    	</c:forEach>
+		                    	
+		                    	</select>
     						</c:otherwise>
 						</c:choose>
                     </td>
