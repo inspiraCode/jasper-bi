@@ -9,10 +9,10 @@ public class Seller {
 	private double weeklyGoal;
 	private String company;
 	private int companyId;
-	private boolean local;
+	private int bodega;
 	
-	public boolean getLocal(){return local;}
-	public void setLocal(boolean value){local = value;}
+	public int getBodega(){return bodega;}
+	public void setBodega(int value){bodega=value;}
 	
 	public int getSellerId() { return sellerId; }
 	public void setSellerId(int value){ sellerId = value; }

@@ -62,6 +62,13 @@ CREATE TABLE fact_collection (
 	incobrable NUMERIC DEFAULT 0
 );
 
+DROP TABLE IF EXISTS dim_store CASCADE;
+CREATE TABLE dim_store(
+	store_id SERIAL PRIMARY KEY,
+	id_empresa INTEGER,
+	store_name VARCHAR(150)
+);
+
 DROP TABLE IF EXISTS dim_sellers CASCADE;
 CREATE TABLE dim_sellers(
 	seller_id SERIAL PRIMARY KEY,
@@ -74,7 +81,8 @@ CREATE TABLE dim_sellers(
 	weekly_goal NUMERIC DEFAULT 0,
 	empresa VARCHAR(150),
 	id_empresa INTEGER,
-	is_local BOOLEAN
+	is_local BOOLEAN,
+	store_id INTEGER
 );
 
 DROP TABLE IF EXISTS dim_directors CASCADE;
