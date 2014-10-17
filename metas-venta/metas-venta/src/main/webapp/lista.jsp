@@ -98,6 +98,7 @@ color:white;
                 <th>Nombre</th>
                 <th>Meta Semanal de Venta</th>
                 <th>Bodega</th>
+                <th>Visible en Monitor</th>
             </tr>
         </thead>
         <tbody>
@@ -145,6 +146,30 @@ color:white;
 		                    			</option>
 									</c:if>
 		                    	</c:forEach>
+		                    	
+		                    	</select>
+    						</c:otherwise>
+						</c:choose>
+                    </td>
+                    <td>
+                    	<c:choose>
+                    		<c:when test="${seller.agentName eq '(Ninguno)'}">
+       							-
+    						</c:when>
+    						<c:otherwise>
+        						<select name='selShow<c:out value="${seller.sellerId}"/>' 
+		                    	id='selShow<c:out value="${seller.sellerId}"/>'>
+		                    	<option value="SI" 
+		                    	<c:if test="${seller.local}">
+			        					selected
+			        			</c:if>
+		                    	>SI</option>
+		                    	
+		                    	<option value="NO" 
+		                    	<c:if test="${not seller.local}">
+			        					selected
+			        			</c:if>
+		                    	>NO</option>
 		                    	
 		                    	</select>
     						</c:otherwise>
