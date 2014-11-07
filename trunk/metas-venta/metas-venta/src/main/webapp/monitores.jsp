@@ -98,7 +98,7 @@ display:
 </head>
 <body>
 	<div id="header">
-	<H1>BODEGAS DE CLASIFICACION DE REPORTES</H1>
+	<H1>MONITORES</H1>
 	<h2>Empresas de Ramos Hermanos Internacional en AdminPaq</h2>
 	<div id="menu">
 		<a href="SellerController">Metas</a>&nbsp;|&nbsp;<a href="StoreController">Bodegas</a>
@@ -107,15 +107,9 @@ display:
 	</div>
 	<br/>
 	<div id="input-form">
-	<form method="POST" action="StoreController" id="frmEdit">
-		Empresa: <select name="selEmpresa"><option value=0>Seleccione Empresa</option>
-		
-		<c:forEach items="${enterprises}" var="enterprise">
-			<option value=<c:out value="${enterprise.id}" /> > <c:out value="${enterprise.name}" /> </option>
-		</c:forEach>
-		
-		</select><br/>
-		Bodega: <input name="txtStoreName" type="text" size=30 /> <input type="submit" value="Agregar" />
+	<form method="POST" action="MonitorController" id="frmEdit">
+		<br/>
+		Monitor: <input name="txtMonitorName" type="text" size=30 /> <input type="submit" value="Agregar" />
 	</form>
 	</div>
 	<div id="errorDescription">
@@ -125,16 +119,15 @@ display:
     <table class="altrowstable" id="alternatecolor">
         <thead>
             <tr>
-                <th>Empresa</th>
-                <th>Bodega</th>
+                <th>Monitor</th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
-            <c:forEach items="${stores}" var="store">
-                <tr><td><c:out value="${store.enterpriseName}" /></td>
-                    <td><c:out value="${store.storeName}" /></td>
-                    <td><a href="StoreController?remove=<c:out value="${store.storeId}"/>">Borrar</a></td>
+            <c:forEach items="${monitors}" var="monitor">
+                <tr>
+                    <td><c:out value="${monitor.monitorName}" /></td>
+                    <td><a href="MonitorController?remove=<c:out value="${monitor.monitorId}"/>">Borrar</a></td>
                 </tr>
             </c:forEach>
         </tbody>

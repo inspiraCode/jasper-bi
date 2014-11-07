@@ -23,14 +23,14 @@ public class SellerDao {
 			String updateString = "UPDATE dim_sellers " +
 			"SET weekly_goal = ?, " +
 			"store_id = ?, " +
-			"is_local = ? " + 
+			"monitor_id = ? " + 
 			"WHERE seller_id = ?";
 			
 			PreparedStatement ps = connection.prepareStatement(updateString);
 			
 			ps.setDouble(1, seller.getWeeklyGoal());
 			ps.setInt(2, seller.getBodega());
-			ps.setBoolean(3, seller.getLocal());
+			ps.setInt(3, seller.getMonitor());
 			ps.setInt(4, seller.getSellerId());
 			
 			ps.executeUpdate();
@@ -44,7 +44,7 @@ public class SellerDao {
 		try{
 			Statement statement = connection.createStatement();
 			String sqlString = "SELECT " +
-					"seller_id, ap_id, agent_code, agent_name, weekly_goal, empresa, id_empresa, store_id, is_local " +
+					"seller_id, ap_id, agent_code, agent_name, weekly_goal, empresa, id_empresa, store_id, monitor_id " +
 					"FROM dim_sellers " +
 					"ORDER BY seller_id";
 			ResultSet rs = statement.executeQuery(sqlString);
@@ -60,7 +60,7 @@ public class SellerDao {
 				seller.setCompany(rs.getString("empresa"));
 				seller.setCompanyId(rs.getInt("id_empresa"));
 				seller.setBodega(rs.getInt("store_id"));
-				seller.setLocal(rs.getBoolean("is_local"));
+				seller.setMonitor(rs.getInt("monitor_id"));
 				
 				sellers.add(seller);
 			}
@@ -77,7 +77,7 @@ public class SellerDao {
 		
 		try{
 			String sqlString = "SELECT " +
-					"ap_id, agent_code, agent_name, phone, weekly_goal, empresa, id_empresa, store_id, is_local " +
+					"ap_id, agent_code, agent_name, phone, weekly_goal, empresa, id_empresa, store_id, monitor_id " +
 					"FROM dim_sellers " +
 					"WHERE seller_id = ?";
 			PreparedStatement ps = connection.prepareStatement(sqlString);
@@ -96,7 +96,7 @@ public class SellerDao {
 				seller.setCompany(rs.getString("empresa"));
 				seller.setCompanyId(rs.getInt("id_empresa"));
 				seller.setBodega(rs.getInt("store_id"));
-				seller.setLocal(rs.getBoolean("is_local"));
+				seller.setMonitor(rs.getInt("monitor_id"));
 			}
 			
 		}catch(SQLException e){
