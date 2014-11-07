@@ -11,6 +11,7 @@ public class Seller {
 	private int companyId;
 	private boolean local;
 	private int bodega;
+	private int monitor;
 	
 	public int getBodega(){return bodega;}
 	public void setBodega(int value){bodega=value;}
@@ -46,6 +47,12 @@ public class Seller {
 	public String toString(){
 		return String.format("sellerId:{0};adminPaqId:{1};agentCode:{2};agentName:{3};email:{4};weeklyGoal:{5};" +
 		"company:{6};companyId:{7}", sellerId, adminPaqId, agentCode, phone, weeklyGoal, company, companyId);
+	}
+	public int getMonitor() {
+		return monitor;
+	}
+	public void setMonitor(int monitor) {
+		this.monitor = monitor;
 	}
 	
 }

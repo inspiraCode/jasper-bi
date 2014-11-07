@@ -69,6 +69,14 @@ CREATE TABLE dim_store(
 	store_name VARCHAR(150)
 );
 
+DROP TABLE IF EXISTS dim_monitor CASCADE;
+CREATE TABLE dim_monitor(
+	monitor_id SERIAL PRIMARY KEY,
+	monitor_name VARCHAR(150)
+);
+
+
+
 DROP TABLE IF EXISTS dim_sellers CASCADE;
 CREATE TABLE dim_sellers(
 	seller_id SERIAL PRIMARY KEY,
@@ -84,6 +92,9 @@ CREATE TABLE dim_sellers(
 	is_local BOOLEAN,
 	store_id INTEGER
 );
+
+ALTER TABLE dim_sellers
+   ADD COLUMN monitor_id integer;
 
 DROP TABLE IF EXISTS dim_directors CASCADE;
 CREATE TABLE dim_directors

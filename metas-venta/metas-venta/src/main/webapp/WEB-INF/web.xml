@@ -16,6 +16,12 @@
   	<description></description>
   	<servlet-class>com.inspiracode.praxma.rhi.web.saleGoals.controller.StoreController</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>MonitorController</servlet-name>
+  	<display-name>MonitorController</display-name>
+  	<description></description>
+  	<servlet-class>com.inspiracode.praxma.rhi.web.saleGoals.controller.MonitorController</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>SellerController</servlet-name>
   	<url-pattern>/SellerController</url-pattern>
@@ -23,6 +29,10 @@
   <servlet-mapping>
   	<servlet-name>StoreController</servlet-name>
   	<url-pattern>/StoreController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>MonitorController</servlet-name>
+  	<url-pattern>/MonitorController</url-pattern>
   </servlet-mapping>
   <welcome-file-list>
   	<welcome-file>index.jsp</welcome-file>
