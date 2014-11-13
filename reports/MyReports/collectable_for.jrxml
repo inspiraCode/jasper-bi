@@ -78,8 +78,11 @@ WHERE dim_clientes.es_local = false]]>
 	<summary>
 		<band height="278">
 			<pieChart>
-				<chart evaluationTime="Report">
-					<reportElement stretchType="RelativeToTallestObject" x="-1" y="50" width="280" height="228" uuid="96720953-a13c-41d8-bea2-981efbe9c674"/>
+				<chart evaluationTime="Report" customizerClass="com.inspiracode.praxma.rhi.jasper.customizer.PieLabels">
+					<reportElement stretchType="RelativeToTallestObject" x="-1" y="50" width="280" height="228" uuid="96720953-a13c-41d8-bea2-981efbe9c674">
+						<property name="UseLabels" value="false"/>
+						<property name="PredefinedColors" value="VENCIDOS:#FF0000;POR VENCER:#006600;"/>
+					</reportElement>
 					<chartTitle/>
 					<chartSubtitle/>
 					<chartLegend/>

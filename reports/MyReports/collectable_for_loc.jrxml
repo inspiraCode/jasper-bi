@@ -66,8 +66,11 @@ GROUP BY es_local;]]>
 	<summary>
 		<band height="278">
 			<pieChart>
-				<chart evaluationTime="Report">
-					<reportElement stretchType="RelativeToTallestObject" x="-1" y="50" width="280" height="228" uuid="96720953-a13c-41d8-bea2-981efbe9c674"/>
+				<chart evaluationTime="Report" customizerClass="com.inspiracode.praxma.rhi.jasper.customizer.PieLabels">
+					<reportElement stretchType="RelativeToTallestObject" x="-1" y="50" width="280" height="228" uuid="96720953-a13c-41d8-bea2-981efbe9c674">
+						<property name="UseLabels" value="false"/>
+						<property name="PredefinedColors" value="FORANEOS:#000066;LOCALES:#93A9CF;"/>
+					</reportElement>
 					<chartTitle/>
 					<chartSubtitle/>
 					<chartLegend/>
@@ -77,7 +80,7 @@ GROUP BY es_local;]]>
 					<valueExpression><![CDATA[$F{saldo}]]></valueExpression>
 					<labelExpression><![CDATA[TEXT($F{saldo}, "$#,##0")]]></labelExpression>
 				</pieDataset>
-				<piePlot isShowLabels="false" labelFormat="{2}" legendLabelFormat="{0} ({2})">
+				<piePlot isShowLabels="false" labelFormat="{0} ({2})" legendLabelFormat="{0} ({2})">
 					<plot/>
 					<itemLabel/>
 				</piePlot>
