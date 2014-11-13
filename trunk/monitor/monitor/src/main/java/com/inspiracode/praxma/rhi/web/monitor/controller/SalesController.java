@@ -20,14 +20,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.inspiracode.praxma.rhi.web.monitor.dao.MonitorDao;
 import com.inspiracode.praxma.rhi.web.monitor.dao.SalesDao;
 import com.inspiracode.praxma.rhi.web.monitor.db.DbUtil;
+import com.inspiracode.praxma.rhi.web.monitor.dto.Monitor;
 import com.inspiracode.praxma.rhi.web.monitor.dto.SaleSummary;
 
 public class SalesController extends HttpServlet {
 	private static final long serialVersionUID = 7549089572991914962L;
 	private static String CHART_CARROUSEL = "/charts.jsp";
+	private static String ERROR_PAGE = "/error.jsp";
 	private SalesDao salesDao;
+	private MonitorDao monitorDao;
 
 	private List<SaleSummary> daySales = new ArrayList<SaleSummary>();
 	private List<SaleSummary> weekSales = new ArrayList<SaleSummary>();
@@ -36,42 +40,76 @@ public class SalesController extends HttpServlet {
 	public SalesController() {
 		super();
 		salesDao = new SalesDao();
+		monitorDao = new MonitorDao();
 	}
 
 	@Override
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-
-		if (!salesDao.getDailySales().isEmpty()) {
-			daySales = salesDao.getDailySales();
+		
+		String sMonitor = request.getParameter("monitor");
+		Monitor oMonitor = null;
+		if(sMonitor == null || sMonitor.trim() == ""){
+			request.setAttribute("sErrorMessage", "Error: Monitor no especificado.");
+			RequestDispatcher view = request.getRequestDispatcher(ERROR_PAGE);
+			view.forward(request, response);
+			return;
 		}
 		
-		if (!salesDao.getWeeklySales().isEmpty()) {
-			weekSales = salesDao.getWeeklySales();
+		
+		sMonitor = sMonitor.replace("%20", " ");
+		
+		List<Monitor> allMonitors = monitorDao.getAllMonitors();
+		for(Monitor monitor : allMonitors){
+			if(monitor.getMonitorName().equals(sMonitor)){
+				oMonitor = monitor;
+				break;
+			}
 		}
 		
-		if (!salesDao.getMonthlySales().isEmpty()) {
-			monthSales = salesDao.getMonthlySales();
+		if(oMonitor == null){
+			request.setAttribute("sErrorMessage", "Error: Monitor no existente.");
+			RequestDispatcher view = request.getRequestDispatcher(ERROR_PAGE);
+			view.forward(request, response);
+			return;
+		}
+		
+		List<SaleSummary> validateDaySales =salesDao.getDailySales(oMonitor.getMonitorId());
+		List<SaleSummary> validateWeekSales =salesDao.getWeeklySales(oMonitor.getMonitorId());
+		List<SaleSummary> validateMonthSales =salesDao.getMonthlySales(oMonitor.getMonitorId());
+		
+		if (!validateDaySales.isEmpty()) {
+			daySales = validateDaySales;
+		}
+		
+		if (!validateWeekSales.isEmpty()) {
+			weekSales =validateWeekSales;
+		}
+		
+		if (!validateMonthSales.isEmpty()) {
+			monthSales = validateMonthSales;
 		}
 
 		request.setAttribute("daySales", daySales);
 		request.setAttribute("weekSales", weekSales);
 		request.setAttribute("monthSales", monthSales);
 		
-		request.setAttribute("cFileDates", getLastUpdated());
+		request.getSession().setAttribute("oMonitor", oMonitor);
+		
+		request.setAttribute("cFileDates", getLastUpdated(oMonitor));
 		
 		RequestDispatcher view = request.getRequestDispatcher(CHART_CARROUSEL);
 		view.forward(request, response);
 	}
 	
-	private String getLastUpdated() throws IOException
+	private String getLastUpdated(Monitor monitor) throws IOException
 	{
 		Properties prop = new Properties();
 		InputStream is = DbUtil.class.getClassLoader().getResourceAsStream(
 				"/images.properties");
 		prop.load(is);
 		
-		Path p = Paths.get(prop.getProperty("base_dir") + "/" + prop.getProperty("monthly_zip") + ".html.zip");
+		Path p = Paths.get(prop.getProperty("base_dir") + "/" + prop.getProperty("monthly_zip") + "_" + monitor.getMonitorName().replace(" ", "_") + ".html.zip");
 	    BasicFileAttributes view
 	       = Files.getFileAttributeView(p, BasicFileAttributeView.class)
 	              .readAttributes();

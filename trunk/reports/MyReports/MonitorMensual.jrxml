@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version last-->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="VentasDiariasPoragente" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b25c6999-e46c-4828-86ff-30d2d5b16246">
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter 1"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="rhjasperDataAdapter"/>
 	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
 		<box>
 			<pen lineWidth="0.5" lineColor="#000000"/>
@@ -43,17 +43,23 @@ GROUP BY dim_sellers.agent_name, dim_sellers.weekly_goal;]]>
 		<field name="agent_name" class="java.lang.String"/>
 		<field name="restantediario" class="java.math.BigDecimal"/>
 	</subDataset>
+	<parameter name="monitor" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
 	<queryString language="SQL">
-		<![CDATA[Select  dim_sellers.agent_name,
+		<![CDATA[Select  dim_monitor.monitor_id, dim_sellers.agent_name,
 SUM(fact_sales.sold_month) / (dim_sellers.weekly_goal * 4) as porcentaje
 FROM dim_sellers
 INNER JOIN fact_sales ON dim_sellers.seller_id = fact_sales.seller_id
+INNER JOIN dim_monitor ON dim_monitor.monitor_id = dim_sellers.monitor_id
 WHERE dim_sellers.weekly_goal > 0 AND is_local=true
-GROUP BY dim_sellers.agent_name, dim_sellers.weekly_goal
-ORDER BY dim_sellers.agent_name;]]>
+GROUP BY dim_monitor.monitor_id, dim_sellers.agent_name, dim_sellers.weekly_goal
+ORDER BY dim_sellers.agent_name]]>
 	</queryString>
 	<field name="agent_name" class="java.lang.String"/>
 	<field name="porcentaje" class="java.math.BigDecimal"/>
+	<field name="monitor_id" class="java.lang.Integer"/>
+	<filterExpression><![CDATA[$P{monitor}.intValue() == $F{monitor_id}.intValue()]]></filterExpression>
 	<background>
 		<band splitType="Stretch"/>
 	</background>

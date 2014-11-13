@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.inspiracode.praxma.rhi.web.monitor.ZipFileHandler;
 import com.inspiracode.praxma.rhi.web.monitor.db.DbUtil;
+import com.inspiracode.praxma.rhi.web.monitor.dto.Monitor;
 
 public class ChartsController extends HttpServlet {
 	private static final long serialVersionUID = 3747050811360653171L;
@@ -34,24 +35,28 @@ public class ChartsController extends HttpServlet {
 		
 		loadConfig();
 		String requestedChart = req.getParameter("chart");
+		String requestedMonitor = req.getParameter("monitor");
 		ZipFileHandler zfh = null;
+		
+		Monitor theMonitor = (Monitor) req.getSession().getAttribute("oMonitor");
+		
 		if("day".equalsIgnoreCase(requestedChart)){
-			zipFilePath = baseDir + "/" + dailyZip + ".html.zip";
-			tempFilePath = baseDir + "/temp_" + dailyZip + ".html.zip";
-			entryPath = dailyZip + ".html_files/img_0_0_0";
+			zipFilePath = baseDir + "/" + dailyZip + "_" + theMonitor.getMonitorName().replace(" ", "_") + ".html.zip";
+			tempFilePath = baseDir + "/temp_" + dailyZip + "_" + theMonitor.getMonitorName().replace(" ", "_") + ".html.zip";
+			entryPath = dailyZip + "_" + theMonitor.getMonitorName().replace(" ", "_") + ".html_files/img_0_0_0";
 			
 		}
 		
 		if("week".equalsIgnoreCase(requestedChart)){
-			zipFilePath = baseDir + "/" + weeklyZip + ".html.zip";
-			tempFilePath = baseDir + "/temp_" + weeklyZip + ".html.zip";
-			entryPath = weeklyZip + ".html_files/img_0_0_0";
+			zipFilePath = baseDir + "/" + weeklyZip + "_" + theMonitor.getMonitorName().replace(" ", "_") + ".html.zip";
+			tempFilePath = baseDir + "/temp_" + weeklyZip + "_" + theMonitor.getMonitorName().replace(" ", "_") + ".html.zip";
+			entryPath = weeklyZip + "_" + theMonitor.getMonitorName().replace(" ", "_") + ".html_files/img_0_0_0";
 		}
 		
 		if("month".equalsIgnoreCase(requestedChart)){
-			zipFilePath = baseDir + "/" + monthlyZip + ".html.zip";
-			tempFilePath = baseDir + "/temp_" + monthlyZip + ".html.zip";
-			entryPath = monthlyZip + ".html_files/img_0_0_0";
+			zipFilePath = baseDir + "/" + monthlyZip + "_" + theMonitor.getMonitorName().replace(" ", "_") + ".html.zip";
+			tempFilePath = baseDir + "/temp_" + monthlyZip + "_" + theMonitor.getMonitorName().replace(" ", "_") + ".html.zip";
+			entryPath = monthlyZip + "_" + theMonitor.getMonitorName().replace(" ", "_") + ".html_files/img_0_0_0";
 		}
 		tempFilePath+= UUID.randomUUID().toString();
 		
