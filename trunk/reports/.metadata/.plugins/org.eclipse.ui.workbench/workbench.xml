@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="12" version="2.0">
+<workbench progressCount="23" version="2.0">
 <workbenchAdvisor/>
 <window height="1040" maximized="true" width="960" x="960" y="0">
 <fastViewData fastViewLocation="1024"/>
@@ -37,12 +37,20 @@
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
+<part id="1"/>
+<part id="2"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="com.jaspersoft.studio.editor.JrxmlEditor" name="invest_pct.jrxml" partName="invest_pct.jrxml" path="C:/Temp/svn_repos/jasper-bi/reports/MyReports/invest_pct.jrxml" title="invest_pct.jrxml" tooltip="MyReports/invest_pct.jrxml" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MyReports/invest_pct.jrxml"/>
+<editor id="com.jaspersoft.studio.editor.JrxmlEditor" name="MonitorDiario.jrxml" partName="MonitorDiario.jrxml" path="C:/Temp/svn_repos/jasper-bi/reports/MyReports/MonitorDiario.jrxml" title="MonitorDiario.jrxml" tooltip="MyReports/MonitorDiario.jrxml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MyReports/MonitorDiario.jrxml"/>
+</editor>
+<editor id="com.jaspersoft.studio.editor.JrxmlEditor" name="MonitorMensual.jrxml" partName="MonitorMensual.jrxml" path="C:/Temp/svn_repos/jasper-bi/reports/MyReports/MonitorMensual.jrxml" title="MonitorMensual.jrxml" tooltip="MyReports/MonitorMensual.jrxml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MyReports/MonitorMensual.jrxml"/>
+</editor>
+<editor activePart="true" focus="true" id="com.jaspersoft.studio.editor.JrxmlEditor" name="MonitorSemanal.jrxml" partName="MonitorSemanal.jrxml" path="C:/Temp/svn_repos/jasper-bi/reports/MyReports/MonitorSemanal.jrxml" title="MonitorSemanal.jrxml" tooltip="MyReports/MonitorSemanal.jrxml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MyReports/MonitorSemanal.jrxml"/>
 </editor>
 </editors>
 <views>
@@ -120,8 +128,8 @@
 <alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
 <hide_menu_item_id id="org.eclipse.ui.run"/>
 <hide_menu_item_id id="org.eclipse.search.menu"/>
-<hide_toolbar_item_id id="org.eclipse.debug.ui.commands.RunToLine"/>
 <hide_toolbar_item_id id="org.eclipse.ui.workbench.navigate"/>
+<hide_toolbar_item_id id="org.eclipse.debug.ui.commands.RunToLine"/>
 <hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <view id="com.jaspersoft.studio.editor.preview.reportstate"/>
@@ -301,6 +309,9 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" path="/MyReports/collectable_loc.jrxml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" path="/MyReports/dashboard.jrxml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" path="/MyReports/invest_pct.jrxml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" path="/MyReports/MonitorDiario.jrxml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" path="/MyReports/MonitorMensual.jrxml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" path="/MyReports/MonitorSemanal.jrxml"/>
 </editors>
 <item historyLabel="PieLabels.class" index="0">
 <position info="not_deleted" x="5439" y="0"/>
@@ -339,7 +350,11 @@
 <item historyLabel="collectable_for_loc.jrxml" index="3"/>
 <item historyLabel="collectable_for.jrxml" index="5"/>
 <item historyLabel="dashboard.jrxml" index="7"/>
-<item active="true" historyLabel="invest_pct.jrxml" index="8"/>
+<item historyLabel="invest_pct.jrxml" index="8"/>
+<item historyLabel="MonitorDiario.jrxml" index="9"/>
+<item historyLabel="MonitorDiario.jrxml" index="9"/>
+<item historyLabel="MonitorMensual.jrxml" index="10"/>
+<item active="true" historyLabel="MonitorSemanal.jrxml" index="11"/>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
@@ -360,6 +375,15 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="MonitorSemanal.jrxml" tooltip="MyReports/MonitorSemanal.jrxml">
+<persistable path="/MyReports/MonitorSemanal.jrxml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="MonitorMensual.jrxml" tooltip="MyReports/MonitorMensual.jrxml">
+<persistable path="/MyReports/MonitorMensual.jrxml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="MonitorDiario.jrxml" tooltip="MyReports/MonitorDiario.jrxml">
+<persistable path="/MyReports/MonitorDiario.jrxml"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="invest_pct.jrxml" tooltip="MyReports/invest_pct.jrxml">
 <persistable path="/MyReports/invest_pct.jrxml"/>
 </file>
@@ -387,9 +411,6 @@
 <file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="PieLabels.class" tooltip="com.jaspersoft.bizdev.PieLabels">
 <persistable org.eclipse.jdt.ui.ClassFileIdentifier="=MyReports/ChartCustomizers2.jar&lt;com.jaspersoft.bizdev(PieLabels.class"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="MonitorDiario.jrxml" tooltip="MyReports/MonitorDiario.jrxml">
-<persistable path="/MyReports/MonitorDiario.jrxml"/>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="bodega_VentasSemanalesPorAgente.jrxml" tooltip="MyReports/bodega_VentasSemanalesPorAgente.jrxml">
 <persistable path="/MyReports/bodega_VentasSemanalesPorAgente.jrxml"/>
 </file>
@@ -398,12 +419,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="bodega_VentasDiariasPorAgente.jrxml" tooltip="MyReports/bodega_VentasDiariasPorAgente.jrxml">
 <persistable path="/MyReports/bodega_VentasDiariasPorAgente.jrxml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="chilisa_VentasSemanalesPorAgente.jrxml" tooltip="MyReports/chilisa_VentasSemanalesPorAgente.jrxml">
-<persistable path="/MyReports/chilisa_VentasSemanalesPorAgente.jrxml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.jaspersoft.studio.editor.JrxmlEditor" name="chilisa_VentasMensualesPorAgente.jrxml" tooltip="MyReports/chilisa_VentasMensualesPorAgente.jrxml">
-<persistable path="/MyReports/chilisa_VentasMensualesPorAgente.jrxml"/>
 </file>
 </mruList>
 </workbench>

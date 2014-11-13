@@ -52,7 +52,7 @@ SUM(fact_sales.sold_week) / (dim_sellers.weekly_goal) as porcentajediario
 FROM dim_sellers
 INNER JOIN fact_sales ON dim_sellers.seller_id = fact_sales.seller_id
 INNER JOIN dim_monitor ON dim_monitor.monitor_id = dim_sellers.monitor_id
-WHERE dim_sellers.weekly_goal > 0 AND is_local=true
+WHERE dim_sellers.weekly_goal > 0
 GROUP BY dim_monitor.monitor_id, dim_sellers.agent_name, dim_sellers.weekly_goal
 ORDER BY dim_sellers.agent_name]]>
 	</queryString>

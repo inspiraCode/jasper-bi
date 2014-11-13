@@ -10466,3 +10466,43 @@ Java Model Exception: Java Model Status [Unknown javadoc format for Map {key=Lja
 	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
 !SUBENTRY 1 org.eclipse.jdt.core 4 1009 2014-11-11 13:24:57.536
 !MESSAGE Unknown javadoc format for Map {key=Ljava/util/Map<Ljava/lang/String;Ljava/awt/Color;>;} [in Map.class [in java.util [in C:\Program Files\Jaspersoft\Jaspersoft Studio-5.5.2.final\features\jre.win32.win32.x86_64.feature_1.7.0.u25\jre\lib\rt.jar]]]
+!SESSION 2014-11-12 20:55:00.708 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data @noDefault
+
+!ENTRY com.jaspersoft.studio 1 0 2014-11-12 20:55:05.366
+!MESSAGE Starting JaspersoftStudio bundle - Version: 5.5.2.final
+
+!ENTRY org.eclipse.core.resources 2 10035 2014-11-12 20:55:05.503
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.osgi 2 1 2014-11-12 20:55:06.745
+!MESSAGE NLS unused message: ImageCreationDialog_bytes in: com.jaspersoft.studio.messages.messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-11-12 20:55:06.748
+!MESSAGE NLS missing message: DataAdapterEditorPage_6 in: com.jaspersoft.studio.messages.messages
+
+!ENTRY org.eclipse.osgi 2 1 2014-11-12 20:55:06.749
+!MESSAGE NLS missing message: ImageSectionDialog_bytes in: com.jaspersoft.studio.messages.messages
+
+!ENTRY org.eclipse.core.net 4 0 2014-11-12 20:55:14.229
+!MESSAGE WinHttp.GetProxyForUrl for pac failed with error 'The proxy auto-configuration script could not be downloaded
+' #12167.
+
+!ENTRY org.eclipse.egit.ui 2 0 2014-11-12 20:55:15.522
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2014-11-12 20:55:15.523
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\torredie'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
