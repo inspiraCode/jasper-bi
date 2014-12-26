@@ -35,7 +35,6 @@ public class ChartsController extends HttpServlet {
 		
 		loadConfig();
 		String requestedChart = req.getParameter("chart");
-		String requestedMonitor = req.getParameter("monitor");
 		ZipFileHandler zfh = null;
 		
 		Monitor theMonitor = (Monitor) req.getSession().getAttribute("oMonitor");

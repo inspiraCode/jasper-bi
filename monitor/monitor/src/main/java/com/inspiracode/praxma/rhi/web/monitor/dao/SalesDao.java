@@ -26,7 +26,7 @@ public class SalesDao {
 					+ "FROM dim_sellers "
 					+ "INNER JOIN fact_sales "
 					+ "ON fact_sales.seller_id = dim_sellers.seller_id "
-					+ "WHERE weekly_goal>0 AND is_local=true AND dim_sellers.monitor_id = ?"
+					+ "WHERE weekly_goal>0 AND dim_sellers.monitor_id = ?"
 					+ "GROUP BY agent_name, weekly_goal "
 					+ "ORDER BY agent_name;";
 			
@@ -60,7 +60,7 @@ public class SalesDao {
 					+ "FROM dim_sellers "
 					+ "INNER JOIN fact_sales "
 					+ "ON fact_sales.seller_id = dim_sellers.seller_id "
-					+ "WHERE weekly_goal>0 AND is_local=true AND dim_sellers.monitor_id = ?"
+					+ "WHERE weekly_goal>0 AND dim_sellers.monitor_id = ?"
 					+ "GROUP BY agent_name, weekly_goal "
 					+ "ORDER BY agent_name;";
 			PreparedStatement ps = connection.prepareStatement(sqlString);
@@ -93,7 +93,7 @@ public class SalesDao {
 					+ "FROM dim_sellers "
 					+ "INNER JOIN fact_sales "
 					+ "ON fact_sales.seller_id = dim_sellers.seller_id "
-					+ "WHERE weekly_goal>0 AND is_local=true AND dim_sellers.monitor_id = ?"
+					+ "WHERE weekly_goal>0 AND dim_sellers.monitor_id = ?"
 					+ "GROUP BY agent_name, weekly_goal "
 					+ "ORDER BY agent_name;";
 			PreparedStatement ps = connection.prepareStatement(sqlString);

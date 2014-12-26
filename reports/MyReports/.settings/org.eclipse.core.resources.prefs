@@ -33,3 +33,5 @@ encoding/due_amount_days_loc.jrxml=UTF-8
 encoding/due_pct_for.jrxml=UTF-8
 encoding/due_pct_loc.jrxml=UTF-8
 encoding/invest_pct.jrxml=UTF-8
+encoding/saldos_cxc.jrxml=UTF-8
+encoding/saldos_cxc_usd.jrxml=UTF-8
