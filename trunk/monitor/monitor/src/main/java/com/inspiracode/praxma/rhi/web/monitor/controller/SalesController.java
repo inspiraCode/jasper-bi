@@ -61,7 +61,7 @@ public class SalesController extends HttpServlet {
 		
 		List<Monitor> allMonitors = monitorDao.getAllMonitors();
 		for(Monitor monitor : allMonitors){
-			if(monitor.getMonitorName().equals(sMonitor)){
+			if(monitor.getMonitorName().equalsIgnoreCase(sMonitor)){
 				oMonitor = monitor;
 				break;
 			}
